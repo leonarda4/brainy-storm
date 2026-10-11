@@ -1,0 +1,5 @@
+/* Scope the portable character styles so they do not alter product UI. */
+.brainystorm-character{display:flex;align-items:center;justify-content:center;padding-right:var(--agent-label-reserve,56px);box-sizing:border-box;min-height:var(--agent-size,160px)}
+.brainystorm-character .brainystorm-avatar{position:relative;width:var(--agent-size,160px);max-width:100%;flex:none}
+.brainystorm-character svg{width:100%;height:auto;display:block}
+.brainystorm-character .brainystorm-name{position:absolute;z-index:1;font-family:Supreme,system-ui,sans-serif;font-weight:400;font-size:var(--agent-name-size,12px);line-height:1.25;border-radius:4px;background:var(--agent-color);color:var(--tag-ink);padding:4px 7px;white-space:nowrap;pointer-events:none;user-select:none;box-shadow:0 1px 2px #00000012}

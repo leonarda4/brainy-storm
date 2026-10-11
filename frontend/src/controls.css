@@ -97,3 +97,65 @@ body { font-size: var(--text-body); line-height: 1.5; }
   .recording-visual svg { width: 100%; flex-basis: 100%; }
   .idea-back-button { max-width: 100%; overflow-wrap: anywhere; }
 }
+
+/* Keep the graphic and timer above the controls when the board is narrow. */
+.main-column { container-type: inline-size; }
+@container (max-width: 440px) {
+  .recording-dock {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    flex: 0 0 auto;
+    gap: 12px;
+    padding: 12px;
+  }
+  .recording-visual { min-width: 0; }
+  .recording-time { margin-inline-start: 12px; }
+  .recording-dock .record-control { min-width: 0; padding-inline: 8px; }
+  .recording-dock .primary-control { white-space: normal; }
+}
+
+/* The navigation CTA stays neutral; recording retains its brand accent. */
+.new-session-button { color: #fff; background: #000; border-color: #000; }
+.new-session-button:hover { color: #fff; background: #272727; border-color: #272727; }
+.navigation-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.navigation-heading .wordmark { flex: 1; }
+.compact-topbar, .navigation-close, .navigation-transcript, .navigation-scrim { display: none; }
+
+@media (max-width: 1160px) {
+  .app-shell { grid-template-columns: minmax(0, 1fr); }
+  .compact-topbar { display: flex; flex: 0 0 60px; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--border); }
+  .compact-wordmark { font-family: 'Recia', Georgia, serif; font-size: 18px; }
+  .session-sidebar { position: fixed; z-index: 31; inset: 0 auto 0 0; width: min(320px, calc(100vw - 48px)); padding: 16px; visibility: hidden; transform: translateX(-100%); transition: transform 180ms ease, visibility 180ms; }
+  .session-sidebar.navigation-open { visibility: visible; transform: translateX(0); }
+  .navigation-heading { margin-bottom: 20px; }
+  .navigation-heading .wordmark { margin: 0; font-size: var(--text-heading); }
+  .navigation-close { display: inline-grid; }
+  .navigation-transcript { display: inline-flex; flex-shrink: 0; margin: 12px 0; }
+  .navigation-scrim { display: block; position: fixed; z-index: 30; inset: 0; border: 0; background: #18181b55; }
+  .session-sidebar .session-search { display: flex; flex-shrink: 0; height: 44px; margin: 12px 0 20px; }
+  .session-sidebar .session-name { display: block; }
+  .session-sidebar .profile-copy { display: grid; }
+  .session-sidebar .profile-row > svg { display: block; }
+  .folder-toggle { flex-basis: 36px; min-height: 44px; }
+  .folder-row .session-item, .idea-nav-item, .profile-row { min-height: 44px; }
+  .storm-options > button { opacity: 1; }
+  .session-sidebar .folder-ideas { margin-left: 31px; }
+  .session-sidebar .session-list { margin-top: 0; }
+  .compact-topbar .icon-button, .navigation-close, .storm-options .icon-button { width: 44px; height: 44px; }
+  .new-session-button { min-height: 44px; flex-shrink: 0; }
+}
+@media (max-width: 640px) {
+  body { min-width: 320px; }
+  .board-content { padding-top: 20px; }
+  .board-heading-row { flex-direction: column; align-items: stretch; }
+  .recording-time { display: inline-flex; }
+  .recording-dock .record-control { min-height: 44px; }
+  .horizontal-board { overflow-y: auto; }
+  .horizontal-board .board-content { min-height: 100%; height: auto; }
+  .idea-grid.idea-rail { flex: none; height: max(340px, calc(100dvh - 310px)); }
+  .session-search input { font-size: 16px; }
+  .new-session-button .shortcut { display: none; }
+  .recording-dock { margin-bottom: max(9px, env(safe-area-inset-bottom)); }
+}
+/* Only the workspace panes scroll; off-canvas panels must not scroll the page. */
+html, body { overflow: hidden; }

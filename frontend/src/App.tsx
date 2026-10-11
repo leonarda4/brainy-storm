@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
+  Menu,
   Columns3,
   LayoutGrid,
   AudioLines,
@@ -20,6 +21,7 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
+import { StormPresence } from './StormPresence'
 import './enrichedView.css'
 import { AbstractSymbol, BrandShape, MemoPreview, RecordingShape } from './BrandShape'
 import { EditableIdea } from './EditableIdea'
@@ -77,6 +79,32 @@ function App() {
   const [selectedIdea, setSelectedIdea] = useState<string | null>(null)
   const { transcript, recording, error: transcriptionError, speakerWarning, stormWarning, storm, elapsedSeconds, startRecording, stopRecording, finishRecording, restartTranscript, exportTranscript } = useTranscription(activeSession)
   const [transcriptOpen, setTranscriptOpen] = useState(false)
+  const [compactNavigation, setCompactNavigation] = useState(() => window.matchMedia('(max-width: 1160px)').matches)
+  const [navigationOpen, setNavigationOpen] = useState(false)
+  const navigationRef = useRef<HTMLElement>(null)
+  const navigationToggleRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 1160px)')
+    const update = () => { setCompactNavigation(media.matches); setNavigationOpen(false); setTranscriptOpen(false) }
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+  useEffect(() => {
+    if (!navigationOpen) return
+    const toggle = navigationToggleRef.current
+    const panel = navigationRef.current
+    panel?.querySelector<HTMLButtonElement>('button')?.focus()
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setNavigationOpen(false); return }
+      if (event.key !== 'Tab') return
+      const items = Array.from(panel?.querySelectorAll<HTMLElement>('button:not(:disabled), input, summary, [tabindex="0"]') || []).filter(item => item.getClientRects().length > 0)
+      const first = items[0], last = items.at(-1)
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => { document.removeEventListener('keydown', handleKey); toggle?.focus() }
+  }, [navigationOpen])
   const transcriptFeedRef = useRef<HTMLDivElement>(null)
   const discussedCardRef = useRef<HTMLElement | null>(null)
   const boardRef = useRef<HTMLElement | null>(null)
@@ -173,6 +201,7 @@ function App() {
       const id = crypto.randomUUID()
       setSessions(current => [{ id, name: 'New storm', date: 'Just now', ideas: 0 }, ...current])
       setSessionIdeas(current => ({ ...current, [id]: [] }))
+      setNavigationOpen(false)
       setActiveSession(id)
       setExpanded(current => [...current, id])
       setSearch('')
@@ -233,11 +262,12 @@ function App() {
 
   async function openSession(id: string, ideaId: string | null = null) {
     if (switchingRef.current || transitioning) return
-    if (id === activeSession) { setSelectedIdea(ideaId); return }
+    if (id === activeSession) { setSelectedIdea(ideaId); setNavigationOpen(false); return }
     switchingRef.current = true
     setSwitching(true)
     try {
       await finishRecording()
+      setNavigationOpen(false)
       setActiveSession(id)
       setSelectedIdea(ideaId)
       setExpanded(current => current.includes(id) ? current : [...current, id])
@@ -331,8 +361,8 @@ function App() {
           <button className="outline-button" disabled={restarting} onClick={downloadMemory}><Download size={14} /> Download memory</button>
         </div>
       </dialog>
-      <aside className="session-sidebar" aria-label="Your storms">
-        <div className="wordmark">brainy stormy</div>
+      <aside ref={navigationRef} id="workspace-navigation" className={`session-sidebar ${navigationOpen ? 'navigation-open' : ''}`} aria-label="Your storms" role={compactNavigation ? 'dialog' : undefined} aria-modal={compactNavigation && navigationOpen ? true : undefined} inert={compactNavigation && !navigationOpen}>
+        <div className="navigation-heading"><div className="wordmark">brainy stormy</div><button type="button" className="icon-button navigation-close" aria-label="Close navigation" onClick={() => setNavigationOpen(false)}><X size={20} /></button></div>
         <button type="button" className="new-session-button" onClick={() => void createSession()} disabled={transitioning} aria-label="New storm">
           <Plus size={16} />
           <span>New storm</span>
@@ -378,6 +408,7 @@ function App() {
             {visibleSessions.length === 0 && <p className="empty-search">No storms or ideas found</p>}
           </div>
         </nav>
+        <button type="button" className="outline-button navigation-transcript" onClick={() => { setNavigationOpen(false); setTranscriptOpen(true) }}><AudioLines size={18} /> Transcript</button>
         <div className="sidebar-bottom">
           <button type="button" className="profile-row" aria-label="Leonarda Lovrić profile">
             <Avatar className="profile-avatar" initials="LL" color="avatar-self" />
@@ -387,7 +418,12 @@ function App() {
         </div>
       </aside>
 
-      <main className="main-column">
+      {navigationOpen && <button type="button" className="navigation-scrim" tabIndex={-1} aria-label="Close navigation" onClick={() => setNavigationOpen(false)} />}
+      <main className="main-column" inert={compactNavigation && navigationOpen}>
+        <header className="compact-topbar">
+          <button ref={navigationToggleRef} type="button" className="icon-button" aria-label="Open navigation" aria-expanded={navigationOpen} aria-controls="workspace-navigation" onClick={() => { setTranscriptOpen(false); setNavigationOpen(true) }}><Menu size={22} /></button>
+          <span className="compact-wordmark">brainy stormy</span>
+        </header>
         <section ref={boardRef} className={`board-scroll ${!currentIdea && layout === 'horizontal' ? 'horizontal-board' : ''}`}>
           <div className="board-content">
             {currentIdea ? <article className="idea-page">
@@ -455,10 +491,7 @@ function App() {
           </div>
         </section>
 
-        {storm && <div className="storm-intervention" role="status" aria-atomic="true">
-          <span className="storm-badge" aria-hidden="true">◆</span>
-          <div><strong>Storm <span>{storm.phase === 'speaking' ? 'is speaking' : '· focus check'}</span></strong><p>{storm.text}</p></div>
-        </div>}
+        <StormPresence storm={storm} />
         <footer className={`recording-dock${storm ? ' storm-takeover' : ''}`}>
           <RecordingShape active={recording === 'recording'} storm={!!storm} stormSpeaking={storm?.phase === 'speaking'} />
           <span className="recording-time"><Clock3 size={14} /> {minutes}:{seconds}</span>
@@ -476,7 +509,7 @@ function App() {
         </footer>
       </main>
 
-      <aside className={`transcript-sidebar ${transcriptOpen ? 'mobile-open' : ''}`} aria-label="Live transcript">
+      <aside className={`transcript-sidebar ${transcriptOpen ? 'mobile-open' : ''}`} aria-label="Live transcript" inert={compactNavigation && (!transcriptOpen || navigationOpen)}>
         <div className="transcript-header">
           <div><div className="transcript-title-row"><h2>Transcript</h2><button type="button" className="icon-button small mobile-close" onClick={() => setTranscriptOpen(false)} aria-label="Close transcript"><X size={16} /></button></div></div>
           <details className="transcript-options" onBlur={event => {

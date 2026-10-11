@@ -22,6 +22,7 @@ export function useTranscription(sessionId: string) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
   const resources = useRef<{ stream?: MediaStream; context?: AudioContext; node?: AudioWorkletNode; socket?: WebSocket }>({})
   const busy = useRef(false)
+  const startupAttempt = useRef(0)
   const mounted = useRef(true)
   const stopTarget = useRef<Status>('stopped')
   const restartingTranscript = useRef(false)
@@ -74,6 +75,7 @@ export function useTranscription(sessionId: string) {
   }, [readTranscript, sessionId])
 
   function cleanupRecording() {
+    ++startupAttempt.current
     ++historyRequest.current
     clearTimers()
     releaseAudio()
@@ -138,6 +140,7 @@ export function useTranscription(sessionId: string) {
   }, [recording])
 
   function abandonConnection(message: string) {
+    ++startupAttempt.current
     clearTimers()
     releaseAudio()
     const socket = resources.current.socket
@@ -198,23 +201,32 @@ export function useTranscription(sessionId: string) {
     window.speechSynthesis?.resume()
     setRecording('connecting')
     stopTarget.current = 'stopped'
-    const request = historyRequest.current + 1
-    const stillCurrent = () => mounted.current && request === historyRequest.current
+    const attempt = ++startupAttempt.current
+    const stillCurrent = () => mounted.current && attempt === startupAttempt.current
+    let startupStep = 'initializing browser audio'
+    readyTimer.current = window.setTimeout(() => {
+      abandonConnection(`Recording timed out while ${startupStep}. Check microphone permission and your audio input, then try again.`)
+    }, 30000)
     try {
-      // Reload each time, including after another browser changed the room's file.
-      await loadTranscript()
-      if (!stillCurrent()) return
       if (!navigator.mediaDevices?.getUserMedia) throw new Error('Microphone access requires localhost or HTTPS.')
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true }, video: false })
-      if (!stillCurrent()) { stream.getTracks().forEach(track => track.stop()); return }
-      resources.current.stream = stream
+      // Resume inside the click gesture, before fetching history or requesting
+      // permission can consume the browser's audio activation.
       const context = new AudioContext({ sampleRate: 24000 })
       resources.current.context = context
       await context.resume()
-      if (!stillCurrent()) { if (context.state !== 'closed') await context.close(); return }
+      if (!stillCurrent()) return
       if (context.sampleRate !== 24000) throw new Error('This browser does not support 24 kHz microphone audio.')
+      // Reload each time, including after another browser changed the room's file.
+      startupStep = 'loading the saved transcript'
+      await loadTranscript()
+      if (!stillCurrent()) return
+      startupStep = 'waiting for microphone access'
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true }, video: false })
+      if (!stillCurrent()) { stream.getTracks().forEach(track => track.stop()); return }
+      resources.current.stream = stream
+      startupStep = 'loading the audio recorder'
       await context.audioWorklet.addModule('/pcm-worklet.js')
-      if (!stillCurrent()) { if (context.state !== 'closed') await context.close(); return }
+      if (!stillCurrent()) return
       const node = new AudioWorkletNode(context, 'pcm-recorder')
       resources.current.node = node
       const url = new URL(sessionUrl('/ws/transcribe', sessionId), window.location.href)
@@ -227,6 +239,7 @@ export function useTranscription(sessionId: string) {
         setError('Microphone disconnected. Recording stopped.')
         stopRecording()
       }
+      window.clearTimeout(readyTimer.current)
       readyTimer.current = window.setTimeout(() => {
         abandonConnection('The transcription service did not become ready. Try again.')
       }, 15000)
@@ -335,6 +348,10 @@ export function useTranscription(sessionId: string) {
   }
 
   async function restartTranscript() {
+    // Restart must not invalidate a pending startup and strand its busy flag.
+    if (busy.current && !resources.current.socket) {
+      abandonConnection('')
+    }
     restartingTranscript.current = true
     try {
       const socket = resources.current.socket

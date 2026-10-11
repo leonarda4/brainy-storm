@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
+import { AgentCharacter } from './AgentCharacter'
 
 /** Abstract artwork inspired by the brand's scalloped silhouettes. */
 export function BrandShape({ variant: index }: { variant: number }) {
@@ -27,9 +28,7 @@ export function AbstractSymbol({ className = '' }: { className?: string }) {
 }
 
 export function MemoPreview() {
-  return <svg className="memo-preview" viewBox="0 0 192 64" aria-hidden="true" focusable="false">
-    {[30, 74, 118, 162].map((cx, index) => <circle key={cx} cx={cx} cy="32" r="20" style={{ animationDelay: `${index * -0.65}s` }} />)}
-  </svg>
+  return <AgentCharacter name="Memo" />
 }
 
 export function RecordingShape({ active, storm = false, stormSpeaking = false }: { active: boolean; storm?: boolean; stormSpeaking?: boolean }) {

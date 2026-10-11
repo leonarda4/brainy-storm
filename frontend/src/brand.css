@@ -102,7 +102,7 @@ h1, h2, h3, .wordmark, .empty-board strong,
 .storm-transcript-line { margin-left: -6px; padding: 10px 6px; background: color-mix(in srgb, var(--agent-storm) 8%, #fff); border-radius: 7px; }
 .storm-agent-label { display: block; margin-top: 2px; color: color-mix(in srgb, var(--agent-storm) 65%, #171717); font-size: 10px; font-weight: 400; }
 .avatar.avatar-storm { color: #171717; background: var(--agent-storm); border-radius: 0; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
-.recording-time { color: #eee; font-size: var(--text-body); }
+.recording-time { margin-inline-start: 14px; white-space: nowrap; color: #eee; font-size: var(--text-body); }
 .primary-control { height: 36px; padding: 0 13px; color: #fff; background: var(--brand-blue); border-color: var(--brand-blue); font-size: var(--text-body); }
 .primary-control:hover { color: #fff; background: #3540dd; border-color: #3540dd; }
 .primary-control:disabled { opacity: 0.6; cursor: wait; }

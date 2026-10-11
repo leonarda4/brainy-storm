@@ -1,0 +1,24 @@
+.agent-character { display: flex; justify-content: center; }
+.agent-character-memo { margin-bottom: 16px; animation: memo-hover 4.8s ease-in-out infinite; }
+.storm-presence { position: fixed; inset: 0; z-index: 40; pointer-events: none; }
+.storm-presence-shade { position: absolute; inset: 0; background: #101119b8; backdrop-filter: blur(3px); animation: storm-shade-in 240ms ease-out both; }
+.storm-presence-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 24px 140px; }
+.storm-presence-flight { animation: storm-arrive 550ms cubic-bezier(.2,.8,.2,1) both; }
+.storm-presence-caption { width: min(560px, 100%); max-height: 30vh; overflow: auto; pointer-events: auto; text-align: center; color: white; animation: storm-shade-in 350ms ease-out both; }
+.storm-presence-caption span { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #ffb3ad; }
+.storm-presence-caption p { margin: 14px 0 0; font-family: 'Recia', Georgia, serif; font-size: clamp(20px, 3vw, 30px); line-height: 1.45; }
+.storm-presence.is-leaving .storm-presence-flight { animation: storm-fly-away 700ms cubic-bezier(.5,0,.8,.4) both; }
+.storm-presence.is-leaving .storm-presence-shade, .storm-presence.is-leaving .storm-presence-caption { animation: storm-shade-out 700ms ease-in both; }
+.recording-dock.storm-takeover { position: relative; z-index: 41; }
+.is-storm .recording-lobes polygon { transform-origin: center; transform-box: fill-box; animation: brand-listen 420ms ease-in-out infinite alternate; }
+@keyframes memo-hover { 0%,100% { transform: translateY(2px); } 50% { transform: translateY(-7px); } }
+@keyframes storm-shade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes storm-shade-out { to { opacity: 0; } }
+@keyframes storm-arrive { from { opacity: 0; transform: translate(-80px, 45px) scale(.65) rotate(-12deg); } to { opacity: 1; transform: none; } }
+@keyframes storm-fly-away { 20% { transform: translate(-16px, 12px) rotate(-8deg); } to { opacity: 0; transform: translate(65vw, -65vh) scale(.25) rotate(24deg); } }
+@media (max-width: 480px), (max-height: 650px) { .storm-presence-flight { zoom: .75; } .storm-presence-content { padding-bottom: 110px; } }
+@media (prefers-reduced-motion: reduce) {
+  .agent-character-memo, .is-storm .recording-lobes polygon { animation: none; }
+  .storm-presence .storm-presence-flight, .storm-presence .storm-presence-shade, .storm-presence .storm-presence-caption { animation: none; }
+  .storm-presence.is-leaving { opacity: 0; }
+}

@@ -1,0 +1,1 @@
+Memo and Storm geometry and motion engine from https://github.com/leonarda4/brainy-hq (motion kit v1.1). JavaScript exports adapted to ES modules; character styles scoped to avoid product avatar styles.
