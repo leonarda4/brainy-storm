@@ -1,0 +1,40 @@
+{
+  "summary": "Existing tools separately address contact sharing, card-based prompt games, and dating profile prompts, leaving room for personalized in-person icebreakers.",
+  "competitors": [
+    {
+      "name": "Popl",
+      "summary": "Digital business card platform enabling contact and profile sharing through custom QR codes and NFC devices.",
+      "differentiator": "Focuses strictly on static contact exchange, professional links, and CRM lead capture.",
+      "idea": "Contactless digital networking profile sharing via smart hardware and QR codes.",
+      "yearOfFounding": "2019",
+      "shortBio": "Popl builds NFC and QR-based digital business cards to streamline professional in-person networking.",
+      "howWeDiffer": "We deliver personalized conversational icebreakers to stimulate immediate dialogue rather than transmitting static contact info."
+    },
+    {
+      "name": "We're Not Really Strangers",
+      "summary": "Interactive conversation card platform designed to prompt meaningful dialogue through curated, tiered question decks.",
+      "differentiator": "Relies on pre-written generic question cards rather than dynamically personalized prompts tied to an individual.",
+      "idea": "Prompt-based card game centered on deepening interpersonal connections through targeted questions.",
+      "yearOfFounding": "2018",
+      "shortBio": "WNRS produces card games and digital tools with prompt-based questions to deepen conversations.",
+      "howWeDiffer": "Our questions are uniquely tailored to a scanned person's specific interests rather than drawn from standardized decks."
+    },
+    {
+      "name": "Hinge",
+      "summary": "Relationship app using individualized profile prompts to initiate conversation between potential matches.",
+      "differentiator": "Confined to asynchronous digital dating feeds rather than real-world, in-person social gatherings.",
+      "idea": "Profile-bound text prompts that serve as conversational hooks for messaging.",
+      "yearOfFounding": "2012",
+      "shortBio": "Hinge is a relationship-focused dating platform utilizing user-answered prompts to inspire organic chats.",
+      "howWeDiffer": "We enable immediate, real-world social engagement across diverse events through on-demand physical QR scans."
+    }
+  ],
+  "market_landscape": "The market is split between static digital business cards, generic conversational card games, and prompt-driven digital dating apps.",
+  "our_positioning": "We position as an in-person social facilitator that turns physical encounters into personalized, low-friction conversations via dynamic QR codes.",
+  "groundingSources": [
+    "https://popl.com",
+    "https://werenotreallystrangers.com",
+    "https://hinge.co"
+  ],
+  "generated_at": 1791672952.0523689
+}

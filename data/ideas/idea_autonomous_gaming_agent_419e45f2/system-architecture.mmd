@@ -1,0 +1,37 @@
+flowchart LR
+  subgraph Client Tier
+    UI[Web Client & Challenge Studio]
+  end
+
+  subgraph Management & Control
+    GW[API Gateway]
+    CS[Challenge & Matchmaker Service]
+    CDB[(Challenge & Score Store)]
+  end
+
+  subgraph Simulation Runtime
+    SANDBOX[Headless Sandbox Engine]
+    LC[Local State Filter & Controller]
+    BUS[(State & Action Event Bus)]
+  end
+
+  subgraph Autonomous Agent Brain
+    AO[Agent Decision Orchestrator]
+    MEM[(Episodic & Spatial Memory)]
+    LLM[LLM Reasoning Engine]
+  end
+
+  UI -->|Submit challenge| GW
+  GW --> CS
+  CS --> CDB
+  CS -->|Spawn session| SANDBOX
+  SANDBOX -->|Raw tick updates| LC
+  LC -->|Symbolic state| BUS
+  BUS -->|State events| AO
+  AO <-->|Context & map cache| MEM
+  AO -->|State & tool prompt| LLM
+  LLM -->|Macro action plan| AO
+  AO -->|Queue macro actions| BUS
+  BUS -->|Dispatch actions| LC
+  LC -->|Execute engine inputs| SANDBOX
+  SANDBOX -.->|Telemetry & render stream| UI

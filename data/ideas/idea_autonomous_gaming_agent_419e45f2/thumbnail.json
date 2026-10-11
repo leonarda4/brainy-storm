@@ -1,0 +1,27 @@
+{
+  "generator": "title-svg-v2",
+  "source_hash": "b83c82ee689978370ede6abd0e27e6f8667faccf834086142b4f585cd39f5253",
+  "title": "Autonomous Gaming Agent",
+  "palette": [
+    "#000000",
+    "#a83cf4",
+    "#ff4545"
+  ],
+  "art_direction": {
+    "style": "simple-subject",
+    "composition": "side-bleed",
+    "background": "#000000",
+    "foreground": "#a83cf4",
+    "accent": "#ff4545"
+  },
+  "width": 800,
+  "height": 400,
+  "generated_at": 1791676907.6985412,
+  "svg_hash": "71ffa0a81ae1be62",
+  "generation": {
+    "source_hash": "b83c82ee689978370ede6abd0e27e6f8667faccf834086142b4f585cd39f5253",
+    "status": "ready",
+    "attempts": 1,
+    "next_retry_at": 0
+  }
+}

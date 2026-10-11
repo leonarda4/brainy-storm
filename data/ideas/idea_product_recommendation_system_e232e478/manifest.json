@@ -1,0 +1,28 @@
+{
+  "id": "idea_product_recommendation_system_e232e478",
+  "title": "Product Recommendation System",
+  "current_status": "enriched",
+  "content_version": 11,
+  "enriched_version": 11,
+  "updated_at": 1791672775.672956,
+  "files": [
+    "assumptions-open-questions.md",
+    "competitors.json",
+    "competitors.md",
+    "idea.json",
+    "manifest.json",
+    "pros-cons.json",
+    "pros-cons.md",
+    "raw-body.txt",
+    "summary.md",
+    "system-architecture.json",
+    "system-architecture.mmd",
+    "system-architecture.svg",
+    "thumbnail.json",
+    "thumbnail.svg",
+    "transcript-segments.json",
+    "workflow.json",
+    "workflow.mmd",
+    "workflow.svg"
+  ]
+}

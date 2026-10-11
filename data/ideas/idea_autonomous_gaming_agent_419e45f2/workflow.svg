@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="510" viewBox="0 0 1000 510">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>.title{font:700 22px Arial;fill:#0f172a}.box{fill:#fff;stroke:#6366f1;stroke-width:2}.label{font:600 14px Arial;fill:#0f172a}.small{font:12px Arial;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text x="32" y="36" class="title">Workflow</text>
+<rect x="90" y="70" width="820" height="70" rx="12" class="box"/>
+<text x="115" y="98" class="label">Step 1: Observe and capture visual and state data from the game environment</text>
+<line x1="500" y1="140" x2="500" y2="175" class="edge" marker-end="url(#arrow)"/>
+<rect x="90" y="175" width="820" height="70" rx="12" class="box"/>
+<text x="115" y="203" class="label">Step 2: Process the sensory data through an AI decision-making core to plan the next action</text>
+<line x1="500" y1="245" x2="500" y2="280" class="edge" marker-end="url(#arrow)"/>
+<rect x="90" y="280" width="820" height="70" rx="12" class="box"/>
+<text x="115" y="308" class="label">Step 3: Execute the planned action within a custom AI-designed sandbox environment</text>
+<line x1="500" y1="350" x2="500" y2="385" class="edge" marker-end="url(#arrow)"/>
+<rect x="90" y="385" width="820" height="70" rx="12" class="box"/>
+<text x="115" y="413" class="label">Step 4: Evaluate challenge completion and allow users to define new custom agent challenges</text>
+</svg>

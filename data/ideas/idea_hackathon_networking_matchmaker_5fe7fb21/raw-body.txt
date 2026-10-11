@@ -1,0 +1,62 @@
+Leonarda: with networking, you just need people to provide some information and then match them.
+Alex: Okay, but getting people to provide information is arguably harder than scraping IKEA.
+Leonarda: Not at a hackathon. Everyone's
+
+Leonarda: already registering anyway.
+
+[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.
+
+[00:12:37] Giacomo: I don't know why we need an agent for a registration form.
+
+[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.
+
+[00:12:56] Alex: I
+
+Marko: Yeah, but I'm saying we could extract much richer context.
+Leonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.
+Giacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.
+
+Marko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?
+Giacomo: Here we go with the graph again.
+Alex: We don't need a graph database just because
+
+Alex: there's a graph on the frontend.
+[00:14:02] Giacomo: I didn't say we did.
+
+Giacomo: architecture work for matching people based on what they're doing?
+Marko: That's kind of a stretch.
+Giacomo: Yeah, but the memory part is similar.
+Alex: Except one needs game state and the other needs user profiles. Completely different data.
+Giacomo: Sure, but the reasoning layer—
+Leonarda: Can we not turn every idea into the same agent architecture?
+Marko: [laughs] Okay, fair.
+
+Alex: Okay, yeah. I'm changing my mind again.
+Giacomo: That took about a minute.
+Alex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.
+Marko: Same.
+Leonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.
+
+Leonarda: to a hackathon and everybody already has a team.
+
+[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.
+
+Giacomo: I actually think the networking idea is stronger than we gave it credit for.
+Marko: Really? You were against it earlier.
+Giacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.
+Leonarda: Yes, exactly what I've been saying.
+Alex: The problem is it's not very exciting technically.
+
+[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.
+[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.
+[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?
+[00:27:50] Giacomo: Pretty much.
+[00:27:53] Alex: Okay, that's boring.
+[00:27:56] Leonarda: Boring technically doesn't mean boring as a
+
+Marko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.
+Alex: Yeah, but then it's not really something you can evaluate in a weekend.
+Giacomo: That's true.
+Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?
+Alex: Oh, right. I liked that one.
+Marko: Yeah, that

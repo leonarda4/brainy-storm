@@ -1,0 +1,50 @@
+@import url('https://api.fontshare.com/v2/css?f[]=recia@400,500,600,700&f[]=supreme@400,500,700&display=swap');
+
+:root {
+  font-family: 'Supreme', Arial, sans-serif;
+  color: #18181b;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+
+  --background: #fff;
+  --foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --radius: 7px;
+  /* Four type roles: metadata, body/controls, section heading, page title. */
+  --text-small: 12px;
+  --text-body: 14px;
+  --text-heading: 20px;
+  --text-title: 32px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --control-height: 36px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 360px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button, input, textarea { font: inherit; }
+button { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #52525b;
+  outline-offset: 2px;
+}
+
+::selection { color: #fff; background: #27272a; }
+
+#root { min-height: 100vh; }

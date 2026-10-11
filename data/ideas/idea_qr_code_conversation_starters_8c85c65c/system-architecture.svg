@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>.title{font:700 22px Arial;fill:#0f172a}.box{fill:#fff;stroke:#6366f1;stroke-width:2}.label{font:600 14px Arial;fill:#0f172a}.small{font:12px Arial;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text x="32" y="36" class="title">System Architecture</text>
+<line x1="350" y1="125" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">POST /api/v1/scan (QR payload + auth)</text>
+<line x1="730" y1="125" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="113.0" class="small">Validate &amp; decode QR token</text>
+<line x1="1110" y1="125" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="970.0" y="203.0" class="small">Check dynamic QR nonce validity</text>
+<line x1="730" y1="125" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="293.0" class="small">Request starters (Scanner ID + Target ID)</text>
+<line x1="350" y1="485" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Check cached starters (hit/miss)</text>
+<line x1="350" y1="485" x2="70" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="210.0" y="383.0" class="small">Fetch paired attendee profiles</text>
+<line x1="350" y1="305" x2="450" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="293.0" class="small">Query profiles with privacy filters</text>
+<line x1="350" y1="485" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="473.0" class="small">Query semantic overlap of interests</text>
+<line x1="350" y1="485" x2="830" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="473.0" class="small">Prompt with profile diff &amp; overlap context</text>
+<line x1="350" y1="485" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Store generated starters (TTL 30m)</text>
+<line x1="350" y1="485" x2="70" y2="665" class="edge" marker-end="url(#arrow)"/>
+<text x="210.0" y="563.0" class="small">Emit ScanProcessed event</text>
+<line x1="350" y1="485" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="293.0" class="small">Return structured conversation prompts</text>
+<line x1="730" y1="125" x2="70" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">JSON response with tailored starters</text>
+<rect x="70" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="105" class="label">Scanner Mobile App / PWA</text>
+<text x="88" y="130" class="small">Attendee client device scanning the</text>
+<text x="88" y="147" class="small">target attendee&#x27;s dynamic or static QR</text>
+<rect x="450" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="105" class="label">API Gateway &amp; Auth Guard</text>
+<text x="468" y="130" class="small">Authenticates scan requests, applies</text>
+<text x="468" y="147" class="small">rate limiting, and validates caller</text>
+<rect x="830" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="105" class="label">QR Resolver Service</text>
+<text x="848" y="130" class="small">Decodes and verifies cryptographic</text>
+<text x="848" y="147" class="small">dynamic QR payloads, mapping them to</text>
+<rect x="70" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="285" class="label">Profile &amp; Privacy Service</text>
+<text x="88" y="310" class="small">Applies user visibility filters and</text>
+<text x="88" y="327" class="small">extracts public networking interests,</text>
+<rect x="450" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="285" class="label">PostgreSQL Profile Store</text>
+<text x="468" y="310" class="small">Persistent relational store for user</text>
+<text x="468" y="327" class="small">profiles, event registrations, and</text>
+<rect x="830" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="285" class="label">Redis Cache &amp; Nonce Store</text>
+<text x="848" y="310" class="small">Stores QR nonces to prevent replay</text>
+<text x="848" y="327" class="small">attacks and caches generated</text>
+<rect x="70" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="465" class="label">Icebreaker Orchestrator</text>
+<text x="88" y="490" class="small">Aggregates scanner and target</text>
+<text x="88" y="507" class="small">profiles, identifies conversational</text>
+<rect x="450" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="465" class="label">Vector Database (Qdrant / pgvector)</text>
+<text x="468" y="490" class="small">Performs cosine similarity searches on</text>
+<text x="468" y="507" class="small">profile tags and interest embeddings</text>
+<rect x="830" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="465" class="label">LLM Inference API</text>
+<text x="848" y="490" class="small">Receives prompt templates with</text>
+<text x="848" y="507" class="small">redacted overlapping interests and</text>
+<rect x="70" y="615" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="645" class="label">Telemetry Queue (Kafka / SQS)</text>
+<text x="88" y="670" class="small">Asynchronously ingests scan metrics,</text>
+<text x="88" y="687" class="small">engagement telemetry, and starter</text>
+</svg>

@@ -1,0 +1,162 @@
+{
+  "summary": "Architecture for an AI-powered hackathon networking matchmaker featuring organizer data ingestion, interactive conversational profiling, pgvector-based similarity and complementary matching, dynamic graph visualization, and QR-triggered LLM icebreaker generation.",
+  "nodes": [
+    {
+      "id": "pwa_client",
+      "label": "Participant Web App",
+      "description": "Mobile-first PWA providing conversational onboarding chat, interactive 2D interest graph explorer, QR badge scanner, and recommendation feed.",
+      "component_type": "client"
+    },
+    {
+      "id": "api_gateway",
+      "label": "API Gateway & Router",
+      "description": "Handles authentication, participant routing, QR code resolution, and coordinates profile chat sessions.",
+      "component_type": "api"
+    },
+    {
+      "id": "organizer_importer",
+      "label": "Organizer Data Ingest Worker",
+      "description": "Ingests baseline registration rosters and survey CSVs from platforms like Luma, Devpost, or Airtable into staging tables.",
+      "component_type": "worker"
+    },
+    {
+      "id": "profiler_agent",
+      "label": "Conversational Profiler Service",
+      "description": "Orchestrates multi-turn dialogue with participants to extract implicit domain interests, project ideas, and complementary skill needs.",
+      "component_type": "api"
+    },
+    {
+      "id": "llm_engine",
+      "label": "Foundation LLM API",
+      "description": "Executes profiling prompt chains, context extraction, text summarization, and pairwise conversation starter generation.",
+      "component_type": "model"
+    },
+    {
+      "id": "embedding_worker",
+      "label": "Embedding Generator",
+      "description": "Generates dense vector embeddings for extracted participant profiles, thematic interests, and project concepts.",
+      "component_type": "worker"
+    },
+    {
+      "id": "matching_engine",
+      "label": "Hybrid Matching Engine",
+      "description": "Computes cosine distance via pgvector combined with deterministic heuristic filters (e.g., complementary roles, team status).",
+      "component_type": "worker"
+    },
+    {
+      "id": "icebreaker_service",
+      "label": "Contextual Icebreaker Service",
+      "description": "Synthesizes pairwise profile insights to craft contextual conversation prompts when two users match or scan badges.",
+      "component_type": "api"
+    },
+    {
+      "id": "postgres_db",
+      "label": "PostgreSQL + pgvector",
+      "description": "Primary datastore maintaining participant profiles, structured registration fields, high-dimensional vector embeddings, and connection history.",
+      "component_type": "database"
+    },
+    {
+      "id": "redis_cache",
+      "label": "Redis Cache & Session Store",
+      "description": "Maintains ephemeral chat session states for onboarding conversations and caches precomputed match scores and graph coordinates.",
+      "component_type": "database"
+    },
+    {
+      "id": "organizer_source",
+      "label": "Organizer Registration Data",
+      "description": "External attendee data sources (Luma, Typeform, Eventbrite, or CSV dumps).",
+      "component_type": "external"
+    }
+  ],
+  "edges": [
+    {
+      "source": "organizer_source",
+      "target": "organizer_importer",
+      "label": "Batch attendee export (CSV/API)"
+    },
+    {
+      "source": "organizer_importer",
+      "target": "postgres_db",
+      "label": "Persists initial participant records"
+    },
+    {
+      "source": "pwa_client",
+      "target": "api_gateway",
+      "label": "Chat turns, match queries, QR badge scan"
+    },
+    {
+      "source": "api_gateway",
+      "target": "profiler_agent",
+      "label": "Delegates onboarding chat turns"
+    },
+    {
+      "source": "profiler_agent",
+      "target": "redis_cache",
+      "label": "Reads/writes session conversation context"
+    },
+    {
+      "source": "profiler_agent",
+      "target": "llm_engine",
+      "label": "Generates adaptive interview questions & extracts summary"
+    },
+    {
+      "source": "profiler_agent",
+      "target": "postgres_db",
+      "label": "Saves finalized structured persona & preferences"
+    },
+    {
+      "source": "postgres_db",
+      "target": "embedding_worker",
+      "label": "Triggers vectorization on profile update"
+    },
+    {
+      "source": "embedding_worker",
+      "target": "llm_engine",
+      "label": "Requests text embeddings"
+    },
+    {
+      "source": "embedding_worker",
+      "target": "postgres_db",
+      "label": "Stores vector embeddings in pgvector"
+    },
+    {
+      "source": "api_gateway",
+      "target": "matching_engine",
+      "label": "Requests recommendations or network graph"
+    },
+    {
+      "source": "matching_engine",
+      "target": "postgres_db",
+      "label": "Executes ANN vector search and relational filters"
+    },
+    {
+      "source": "matching_engine",
+      "target": "redis_cache",
+      "label": "Caches calculated clusters and match pairs"
+    },
+    {
+      "source": "api_gateway",
+      "target": "icebreaker_service",
+      "label": "QR scan lookup with target user ID"
+    },
+    {
+      "source": "icebreaker_service",
+      "target": "postgres_db",
+      "label": "Fetches both participant profiles"
+    },
+    {
+      "source": "icebreaker_service",
+      "target": "llm_engine",
+      "label": "Synthesizes shared context & starter prompts"
+    },
+    {
+      "source": "icebreaker_service",
+      "target": "pwa_client",
+      "label": "Returns instant personalized conversation starters"
+    }
+  ],
+  "mermaid_code": "flowchart TD\n  subgraph External[External Inputs]\n    EXT_REG[Organizer Registration Data]\n  end\n\n  subgraph Client[Client Layer]\n    APP[Participant Web App / PWA]\n  end\n\n  subgraph CoreAPI[API & Coordination Layer]\n    GW[API Gateway & Router]\n    IMPORT[Organizer Ingest Worker]\n    PROFILER[Conversational Profiler Service]\n    ICEBREAKER[Contextual Icebreaker Service]\n  end\n\n  subgraph ComputeAI[Matching & AI Services]\n    EMB[Embedding Generator]\n    MATCH[Hybrid Matching Engine]\n    LLM[Foundation LLM API]\n  end\n\n  subgraph DataLayer[Data & State Layer]\n    PG[(PostgreSQL + pgvector)]\n    CACHE[(Redis Cache & Session Store)]\n  end\n\n  EXT_REG -->|Batch attendee export| IMPORT\n  IMPORT -->|Seed participants| PG\n\n  APP -->|Chat, Match Requests, QR Scans| GW\n  GW -->|Session routing| PROFILER\n  GW -->|Fetch matches & graph| MATCH\n  GW -->|QR badge resolution| ICEBREAKER\n\n  PROFILER <-->|Session state| CACHE\n  PROFILER -->|Adaptive prompts & synthesis| LLM\n  PROFILER -->|Update rich profile| PG\n\n  PG -.->|Profile change event| EMB\n  EMB -->|Compute embeddings| LLM\n  EMB -->|Write vectors| PG\n\n  MATCH -->|Vector similarity + relational filter| PG\n  MATCH -->|Cache top matches| CACHE\n\n  ICEBREAKER -->|Fetch paired profile data| PG\n  ICEBREAKER -->|Generate context starters| LLM\n  ICEBREAKER -->|Personalized prompts| APP",
+  "image_prompt": "A modern software architecture diagram on a dark slate background with vibrant blue, green, and amber connection lines. Shows a mobile user interface scanning a QR code, an API gateway communicating with microservices, a PostgreSQL database node highlighted with pgvector indexing, and external AI LLM nodes processing embeddings and conversation starters.",
+  "image_url": null,
+  "generated_at": 1791672955.73194
+}

@@ -1,0 +1,14 @@
+{
+  "summary": "An intelligent workflow system that ingests team brainstorming sessions, enriches them with background research, and organizes the insights into a centralized decision tracker.",
+  "steps": [
+    "Step 1: Capture the live discussion into a central raw transcript.",
+    "Step 2: Deploy background research agents to gather relevant context and data.",
+    "Step 3: Process the combined transcript through an AI agent to categorize distinct ideas.",
+    "Step 4: Output structured summaries and decisions into the tracking dashboard."
+  ],
+  "mermaid_code": "graph TD\n    A[Live Discussion] --> B[Central Transcript]\n    C[Background Agents] --> B\n    B --> D[Brainy AI Agent]\n    D --> E[Idea Categorization]\n    E --> F[Decision Tracker Dashboard]",
+  "mermaidCode": null,
+  "image_prompt": "A modern isometric 3D architectural illustration depicting a glowing central data transcript connected to background research nodes and an AI sorting engine, set against a dark tech-themed background with neon blue and purple accents.",
+  "image_url": null,
+  "generated_at": 1791679881.670076
+}

@@ -1,0 +1,20 @@
+flowchart TD
+  Client[Client Application] --> Gateway[API Gateway]
+  Gateway --> ObjStore[(Object Storage)]
+  Gateway --> NLParser[LLM Query Parser]
+  Gateway --> VisionEnc[Multimodal Vision Service]
+  Gateway --> StagingWorker[Visual Staging Service]
+
+  NLParser --> RecsEngine[Hybrid Recommendation Engine]
+  VisionEnc --> RecsEngine
+
+  RecsEngine --> VectorDB[(Vector Database)]
+  RecsEngine --> CatalogDB[(Product Catalog DB)]
+  RecsEngine --> Gateway
+
+  StagingWorker --> ObjStore
+
+  ScrapeQueue[Scraper Task Queue] --> ScrapeWorkers[Catalog Ingestion Workers]
+  ScrapeWorkers --> CatalogDB
+  ScrapeWorkers --> VectorDB
+  ScrapeWorkers --> ObjStore

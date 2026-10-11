@@ -1,0 +1,98 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: frontend
+    ports:
+      - "127.0.0.1:5173:5173"
+    environment:
+      TRANSCRIBER_TARGET: http://transcriber:8000
+      ENRICHMENT_TARGET: http://enricher:8001
+    volumes:
+      - ./frontend:/app/frontend
+      - frontend_dependencies:/app/frontend/node_modules
+    init: true
+    depends_on:
+      transcriber:
+        condition: service_healthy
+      enricher:
+        condition: service_healthy
+
+  transcriber:
+    build:
+      context: .
+      target: transcriber
+    environment:
+      GRADIUM_API_KEY: ${GRADIUM_API_KEY:?Set GRADIUM_API_KEY in the root .env}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?Set GEMINI_API_KEY in the root .env}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      SPEAKER_MODEL: ${SPEAKER_MODEL:-}
+    volumes:
+      - ${DATA_DIR:-./data}:/app/data
+    stop_grace_period: 65s
+    healthcheck:
+      test: ["CMD", ".venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  engine:
+    build:
+      context: .
+      target: engine
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?Set GEMINI_API_KEY in the root .env}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+    volumes:
+      - ${DATA_DIR:-./data}:/app/data
+      - ./pubsub:/app/pubsub
+    depends_on:
+      transcriber:
+        condition: service_healthy
+      enricher:
+        condition: service_healthy
+
+  enricher:
+    build:
+      context: .
+      target: enricher
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?Set GEMINI_API_KEY in the root .env}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      GEMINI_FAST_MODEL: ${GEMINI_FAST_MODEL:-gemini-flash-lite-latest}
+      THUMBNAILS_ENABLED: ${THUMBNAILS_ENABLED:-true}
+      THUMBNAIL_MODEL: ${THUMBNAIL_MODEL:-}
+      THUMBNAIL_TIMEOUT_SECONDS: ${THUMBNAIL_TIMEOUT_SECONDS:-60}
+      DEFAULT_PROVIDER: gemini
+    volumes:
+      - ${DATA_DIR:-./data}:/app/data
+    healthcheck:
+      test: ["CMD", ".venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  classified-worker:
+    build:
+      context: .
+      target: enricher
+    command:
+      - .venv/bin/python
+      - -m
+      - backend.enrichment.classified_chunks_worker
+      - --file
+      - /app/pubsub/classified-chunks.jsonl
+      - --api-url
+      - http://enricher:8001
+      - --interval
+      - "1"
+    volumes:
+      - ./pubsub:/app/pubsub
+    depends_on:
+      enricher:
+        condition: service_healthy
+
+volumes:
+  frontend_dependencies:

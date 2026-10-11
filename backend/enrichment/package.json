@@ -1,0 +1,23 @@
+{
+  "name": "brainstorm-idea-enrichment-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Headless Agentic Idea Enrichment API for Brainstorming Sessions",
+  "scripts": {
+    "start": "tsx server.ts",
+    "dev": "tsx server.ts",
+    "test": "tsx test_api.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2"
+  }
+}

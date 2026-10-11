@@ -1,0 +1,261 @@
+[00:11:36] Giacomo: The biggest issue is probably getting the product data. Like, we can build the recommendation system, but if we don't have a proper catalog, what's it even recommending?
+
+[00:11:45] Alex: Couldn't we just scrape a few websites?
+
+[00:11:48] Giacomo: Yeah, but then you have to maintain it. And they all structure their data differently.
+
+[00:11:53] Leonarda: I still think the networking thing is better, actually.
+
+[00:11:57] Alex: What?
+
+[00:11:59] Leonarda: The first idea. The hackathon one. I keep thinking about it.
+
+[00:12:04] Marko: Yeah, me too, kind of.
+
+[00:12:06] Giacomo: We're literally discussing furniture.
+
+[00:12:09] Leonarda: I know, but with furniture you're depending on all these external stores and whatever. With networking, you just need people to provide some information and then match them.
+
+[00:12:20] Alex: Okay, but getting people to provide information is arguably harder than scraping IKEA.
+
+[00:12:26] Leonarda: Not at a hackathon. Everyone's already registering anyway.
+
+[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.
+
+[00:12:37] Giacomo: I don't know why we need an agent for a registration form.
+
+[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.
+
+[00:12:56] Alex: I think we discussed that already.
+
+[00:12:59] Marko: Yeah, but I'm saying we could extract much richer context.
+
+[00:13:04] Leonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.
+
+[00:13:10] Giacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.
+
+[00:13:26] Alex: He has a point. The furniture demo would look better.
+
+[00:13:31] Leonarda: But is it actually solving something?
+
+[00:13:34] Alex: I mean, yes? Buying furniture is annoying.
+
+[00:13:37] Leonarda: Okay, yeah, fair.
+
+[00:13:41] Marko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?
+
+[00:13:53] Giacomo: Here we go with the graph again.
+
+[00:13:57] Alex: We don't need a graph database just because there's a graph on the frontend.
+
+[00:14:02] Giacomo: I didn't say we did.
+
+[00:14:05] Leonarda: Anyway, sorry, back to furniture. I was thinking maybe the user shouldn't even need to upload a room photo initially. Just show them different furniture styles and let them build a moodboard.
+
+[00:14:19] Marko: Isn't that literally Pinterest?
+
+[00:14:23] Leonarda: Yeah, okay. Never mind.
+
+[00:14:26] Alex: [laughs] We're doing great.
+
+[00:14:30] Giacomo: Actually, the important thing isn't the interface. It's that you can say, "I need a small table under a hundred euros that fits next to my bed," and it finds one.
+
+[00:14:42] Leonarda: But Google Shopping already—
+
+[00:14:45] Giacomo: Yeah, I know. That's what I'm worried about.
+
+---
+
+[00:17:08] Alex: So the gaming agent could essentially run a loop. Observe the environment, choose an action, execute it, and then check whether the goal has been reached.
+
+[00:17:20] Marko: Yeah, but you can't just send screenshots to GPT every frame. It'd be ridiculously slow.
+
+[00:17:27] Giacomo: You'd probably want some kind of local controller. Or a predefined set of tools.
+
+[00:17:34] Leonarda: Sorry, but I still don't understand why someone would want the AI to play the game for them.
+
+[00:17:40] Alex: Because some parts of games are boring.
+
+[00:17:44] Leonarda: But then why play the game?
+
+[00:17:47] Alex: Because other parts are fun?
+
+[00:17:50] Giacomo: [laughs]
+
+[00:17:54] Marko: No, I get what she's saying, though. The tricky part is figuring out which tasks people actually want automated.
+
+[00:18:04] Alex: Yeah, exactly. Like in Minecraft, maybe you want an agent to collect materials while you focus on building.
+
+[00:18:13] Giacomo: Actually, speaking of Minecraft, this kind of reminds me of the networking thing.
+
+[00:18:19] Leonarda: How?
+
+[00:18:21] Giacomo: Well, not the networking thing exactly. More the idea of agents having context about people. Like if an agent knows how someone plays, couldn't that same architecture work for matching people based on what they're doing?
+
+[00:18:36] Marko: That's kind of a stretch.
+
+[00:18:39] Giacomo: Yeah, but the memory part is similar.
+
+[00:18:43] Alex: Except one needs game state and the other needs user profiles. Completely different data.
+
+[00:18:49] Giacomo: Sure, but the reasoning layer—
+
+[00:18:52] Leonarda: Can we not turn every idea into the same agent architecture?
+
+[00:18:58] Marko: [laughs] Okay, fair.
+
+[00:19:01] Alex: Actually, I think I prefer the furniture idea now.
+
+[00:19:07] Leonarda: Seriously?
+
+[00:19:09] Alex: Yeah. Because with the game thing, we'd spend the whole weekend trying to get the agent to interact with the environment, and then maybe it completes one task.
+
+[00:19:21] Marko: But that's the interesting technical challenge.
+
+[00:19:25] Alex: Right, but for a hackathon, it's risky. The furniture one is mostly frontend, a recommendation system, maybe some image processing.
+
+[00:19:36] Giacomo: "Some image processing" is doing a lot of work in that sentence.
+
+[00:19:43] Alex: Okay, but we could fake the placement part for the prototype.
+
+[00:19:49] Leonarda: No, that's exactly what I don't want. I don't want a demo that looks amazing and then doesn't actually work.
+
+[00:20:00] Marko: We could use image generation instead of 3D rendering.
+
+[00:20:04] Giacomo: That doesn't solve the dimensions problem.
+
+[00:20:08] Marko: I know, but maybe we don't need accurate dimensions for the first version.
+
+[00:20:13] Leonarda: But then what's the product? A furniture moodboard generator?
+
+[00:20:19] Alex: Okay, yeah. I'm changing my mind again.
+
+[00:20:24] Giacomo: That took about a minute.
+
+[00:20:28] Alex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.
+
+[00:20:37] Marko: Same.
+
+[00:20:40] Leonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.
+
+[00:20:48] Giacomo: Unless we go to a hackathon and everybody already has a team.
+
+[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.
+
+[00:21:01] Alex: We should probably write that down somewhere.
+
+[00:21:05] Marko: Didn't you have the notes open?
+
+[00:21:08] Alex: I closed them like ten minutes ago.
+
+---
+
+[00:24:11] Leonarda: There's also the question of whether people would pay for any of these. Like, I can imagine using the furniture app once, buying something, and never opening it again.
+
+[00:24:25] Giacomo: That's fine if you make money from the purchase.
+
+[00:24:29] Leonarda: Yeah, but then we're basically an affiliate business.
+
+[00:24:33] Alex: Isn't that a perfectly valid business?
+
+[00:24:36] Leonarda: It is, but I don't know if that's what we want to build.
+
+[00:24:43] Marko: I think we're overthinking the monetization. It's a hackathon.
+
+[00:24:49] Giacomo: That's literally when you should be overthinking it. Otherwise we make some cool prototype nobody wants.
+
+[00:24:57] Alex: I mean, the gaming thing could have a subscription.
+
+[00:25:02] Leonarda: You really want to make that one, don't you?
+
+[00:25:06] Alex: Yeah, kind of.
+
+[00:25:10] Marko: There's definitely a market for gaming assistants, but compatibility would be awful. Supporting ten games could mean ten completely different integrations.
+
+[00:25:23] Giacomo: And then one game updates and breaks everything.
+
+[00:25:28] Alex: Okay, what if we don't support existing games? What if we build a game specifically for AI agents?
+
+[00:25:39] Leonarda: Then we're making a game studio.
+
+[00:25:43] Alex: Not a whole game studio. A small sandbox.
+
+[00:25:48] Marko: Actually, that's more interesting from a research perspective. You could have multiple agents solving puzzles and competing.
+
+[00:25:58] Giacomo: Wasn't that basically what we said earlier?
+
+[00:26:02] Marko: Yeah, but now I'm thinking we could let users define their own challenges.
+
+[00:26:09] Alex: Oh, that's cool.
+
+[00:26:12] Leonarda: But who's the user? Like, who wakes up and thinks, "I wish I could create a puzzle for two AI agents to solve"?
+
+[00:26:23] Alex: Me.
+
+[00:26:25] Giacomo: [laughs]
+
+[00:26:29] Marko: Okay, maybe it's more of a developer tool.
+
+[00:26:33] Leonarda: I think we're doing that thing again where we have an idea and then immediately change the target audience because we can't justify the original use case.
+
+[00:26:45] Alex: Yeah, but that's kind of the point of brainstorming.
+
+[00:26:51] Giacomo: I actually think the networking idea is stronger than we gave it credit for.
+
+[00:26:57] Marko: Really? You were against it earlier.
+
+[00:27:00] Giacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.
+
+[00:27:15] Leonarda: Yes, exactly what I've been saying.
+
+[00:27:19] Alex: The problem is it's not very exciting technically.
+
+[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.
+
+[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.
+
+[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?
+
+[00:27:50] Giacomo: Pretty much.
+
+[00:27:53] Alex: Okay, that's boring.
+
+[00:27:56] Leonarda: Boring technically doesn't mean boring as a product.
+
+[00:28:02] Marko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.
+
+[00:28:15] Alex: Yeah, but then it's not really something you can evaluate in a weekend.
+
+[00:28:20] Giacomo: That's true.
+
+[00:28:23] Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?
+
+[00:28:32] Alex: Oh, right. I liked that one.
+
+[00:28:36] Marko: Yeah, that could be part of the networking product.
+
+[00:28:40] Leonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.
+
+[00:28:50] Giacomo: But that's a feature, not a standalone product.
+
+[00:28:54] Alex: Maybe. Could be the MVP, though.
+
+[00:29:02] Marko: Didn't we already discuss all this?
+
+[00:29:06] Leonarda: Yeah, but I don't remember what we concluded.
+
+[00:29:11] Giacomo: I don't think we concluded anything.
+
+[00:29:15] Alex: We concluded that furniture is hard, gaming is harder, and networking already exists.
+
+[00:29:22] Leonarda: That's not exactly helpful.
+
+[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.
+
+[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.
+
+[00:29:46] Leonarda: Yeah, but not just a transcript. I think there's something more interesting there...
+
+[00:29:52] Alex: What do you mean?
+
+[00:29:56] Leonarda: I'll explain. Give me a second, because I think this might actually be another idea.

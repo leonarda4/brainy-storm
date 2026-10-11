@@ -1,0 +1,427 @@
+{
+  "session_id": "team-discussion",
+  "id": "idea_hackathon_networking_matchmaker_5fe7fb21",
+  "title": "Hackathon Networking Matchmaker",
+  "short_summary": "A networking app for hackathons that matches participants based on complementary interests, previously envisioned with an interactive agent and interest cluster graph. Giacomo suggested implementing it simply using structured fields, embeddings, and profiles in Postgres with an LLM explaining recommendations, though Alex found this approach technically boring. The team also discussed evaluating match quality via post-meeting feedback, though Alex noted it cannot be evaluated in a weekend.",
+  "summary": "An AI-powered matchmaking tool for hackathon participants that uses conversational prompts to extract rich interest profiles and generate contextual conversation starters. The system relies on organizer registration data, simple embeddings, and Postgres to suggest relevant connections.",
+  "is_currently_discussed": false,
+  "transcript": "Leonarda: with networking, you just need people to provide some information and then match them.\nAlex: Okay, but getting people to provide information is arguably harder than scraping IKEA.\nLeonarda: Not at a hackathon. Everyone's\n\nLeonarda: already registering anyway.\n\n[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.\n\n[00:12:37] Giacomo: I don't know why we need an agent for a registration form.\n\n[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.\n\n[00:12:56] Alex: I\n\nMarko: Yeah, but I'm saying we could extract much richer context.\nLeonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.\nGiacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.\n\nMarko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?\nGiacomo: Here we go with the graph again.\nAlex: We don't need a graph database just because\n\nAlex: there's a graph on the frontend.\n[00:14:02] Giacomo: I didn't say we did.\n\nGiacomo: architecture work for matching people based on what they're doing?\nMarko: That's kind of a stretch.\nGiacomo: Yeah, but the memory part is similar.\nAlex: Except one needs game state and the other needs user profiles. Completely different data.\nGiacomo: Sure, but the reasoning layer—\nLeonarda: Can we not turn every idea into the same agent architecture?\nMarko: [laughs] Okay, fair.\n\nAlex: Okay, yeah. I'm changing my mind again.\nGiacomo: That took about a minute.\nAlex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.\nMarko: Same.\nLeonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.\n\nLeonarda: to a hackathon and everybody already has a team.\n\n[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.\n\nGiacomo: I actually think the networking idea is stronger than we gave it credit for.\nMarko: Really? You were against it earlier.\nGiacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.\nLeonarda: Yes, exactly what I've been saying.\nAlex: The problem is it's not very exciting technically.\n\n[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.\n[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.\n[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?\n[00:27:50] Giacomo: Pretty much.\n[00:27:53] Alex: Okay, that's boring.\n[00:27:56] Leonarda: Boring technically doesn't mean boring as a\n\nMarko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.\nAlex: Yeah, but then it's not really something you can evaluate in a weekend.\nGiacomo: That's true.\nLeonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+  "raw_body": "Leonarda: with networking, you just need people to provide some information and then match them.\nAlex: Okay, but getting people to provide information is arguably harder than scraping IKEA.\nLeonarda: Not at a hackathon. Everyone's\n\nLeonarda: already registering anyway.\n\n[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.\n\n[00:12:37] Giacomo: I don't know why we need an agent for a registration form.\n\n[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.\n\n[00:12:56] Alex: I\n\nMarko: Yeah, but I'm saying we could extract much richer context.\nLeonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.\nGiacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.\n\nMarko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?\nGiacomo: Here we go with the graph again.\nAlex: We don't need a graph database just because\n\nAlex: there's a graph on the frontend.\n[00:14:02] Giacomo: I didn't say we did.\n\nGiacomo: architecture work for matching people based on what they're doing?\nMarko: That's kind of a stretch.\nGiacomo: Yeah, but the memory part is similar.\nAlex: Except one needs game state and the other needs user profiles. Completely different data.\nGiacomo: Sure, but the reasoning layer—\nLeonarda: Can we not turn every idea into the same agent architecture?\nMarko: [laughs] Okay, fair.\n\nAlex: Okay, yeah. I'm changing my mind again.\nGiacomo: That took about a minute.\nAlex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.\nMarko: Same.\nLeonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.\n\nLeonarda: to a hackathon and everybody already has a team.\n\n[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.\n\nGiacomo: I actually think the networking idea is stronger than we gave it credit for.\nMarko: Really? You were against it earlier.\nGiacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.\nLeonarda: Yes, exactly what I've been saying.\nAlex: The problem is it's not very exciting technically.\n\n[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.\n[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.\n[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?\n[00:27:50] Giacomo: Pretty much.\n[00:27:53] Alex: Okay, that's boring.\n[00:27:56] Leonarda: Boring technically doesn't mean boring as a\n\nMarko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.\nAlex: Yeah, but then it's not really something you can evaluate in a weekend.\nGiacomo: That's true.\nLeonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+  "transcript_segments": [
+    {
+      "chunk_id": "0de57b453c4af043e93b",
+      "text": "Leonarda: with networking, you just need people to provide some information and then match them.\nAlex: Okay, but getting people to provide information is arguably harder than scraping IKEA.\nLeonarda: Not at a hackathon. Everyone's",
+      "captured_at": 1791672278.332717,
+      "reason": "The speakers discuss the mechanism and potential friction of the hackathon networking matchmaker idea."
+    },
+    {
+      "chunk_id": "cd6d058189d5b2214ccb",
+      "text": "Leonarda: already registering anyway.\n\n[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.\n\n[00:12:37] Giacomo: I don't know why we need an agent for a registration form.\n\n[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.\n\n[00:12:56] Alex: I",
+      "captured_at": 1791672315.41581,
+      "reason": "The transcript discusses data collection during registration, proposing an AI agent alternative to forms to better capture participant interests and skills for the hackathon matchmaking tool."
+    },
+    {
+      "chunk_id": "3b2496d19b4b85bcbca6",
+      "text": "Marko: Yeah, but I'm saying we could extract much richer context.\nLeonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.\nGiacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.",
+      "captured_at": 1791672350.035681,
+      "reason": "The transcript discusses the richer context extraction of the networking matchmaker, contrasts it with another project idea (the chair app), and raises objections regarding its visual appeal and user experience."
+    },
+    {
+      "chunk_id": "01f95253e9e3b19e29e4",
+      "text": "Marko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?\nGiacomo: Here we go with the graph again.\nAlex: We don't need a graph database just because",
+      "captured_at": 1791672387.66713,
+      "reason": "The speakers discuss potential visualization features, specifically an interest-based graph, and technical implementation considerations for the networking matchmaker idea."
+    },
+    {
+      "chunk_id": "9231445ed3e11c8c037b",
+      "text": "Alex: there's a graph on the frontend.\n[00:14:02] Giacomo: I didn't say we did.",
+      "captured_at": 1791672427.492434,
+      "reason": "The snippet continues the technical discussion on whether a graph representation is needed for the frontend of the networking matchmaker."
+    },
+    {
+      "chunk_id": "c468e3344063bcadefb1",
+      "text": "Giacomo: architecture work for matching people based on what they're doing?\nMarko: That's kind of a stretch.\nGiacomo: Yeah, but the memory part is similar.\nAlex: Except one needs game state and the other needs user profiles. Completely different data.\nGiacomo: Sure, but the reasoning layer—\nLeonarda: Can we not turn every idea into the same agent architecture?\nMarko: [laughs] Okay, fair.",
+      "captured_at": 1791672563.33282,
+      "reason": "The speakers discuss the underlying architecture, memory, and reasoning layer for the matching system, as well as a debate on reusing agent architecture."
+    },
+    {
+      "chunk_id": "668b201fb0fd55a32fcf",
+      "text": "Alex: Okay, yeah. I'm changing my mind again.\nGiacomo: That took about a minute.\nAlex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.\nMarko: Same.\nLeonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.",
+      "captured_at": 1791672665.609269,
+      "reason": "The participants discuss their preferences and make evaluative statements regarding the hackathon networking matchmaker idea compared to other concepts."
+    },
+    {
+      "chunk_id": "077b9ca5627d9880494e",
+      "text": "Leonarda: to a hackathon and everybody already has a team.\n\n[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.",
+      "captured_at": 1791672682.757059,
+      "reason": "The transcript discusses a potential issue/risk regarding the hackathon networking matchmaker idea—specifically that participants might already have teams—and the need to validate this assumption."
+    },
+    {
+      "chunk_id": "a84bdad2da40e6105ef4",
+      "text": "Giacomo: I actually think the networking idea is stronger than we gave it credit for.\nMarko: Really? You were against it earlier.\nGiacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.\nLeonarda: Yes, exactly what I've been saying.\nAlex: The problem is it's not very exciting technically.",
+      "captured_at": 1791672863.1495419,
+      "reason": "The new transcript delta discusses the feasibility, scoping, and technical excitement of the Hackathon Networking Matchmaker idea."
+    },
+    {
+      "chunk_id": "cc50d2b1a9d86c0875a3",
+      "text": "[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.\n[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.\n[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?\n[00:27:50] Giacomo: Pretty much.\n[00:27:53] Alex: Okay, that's boring.\n[00:27:56] Leonarda: Boring technically doesn't mean boring as a",
+      "captured_at": 1791672880.986581,
+      "reason": "The snippet explicitly discusses the technical implementation details and architecture (embeddings, Postgres, LLM) for matching people in the hackathon networking tool."
+    },
+    {
+      "chunk_id": "d7f988e3883b9050dece",
+      "text": "Marko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.\nAlex: Yeah, but then it's not really something you can evaluate in a weekend.\nGiacomo: That's true.\nLeonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+      "captured_at": 1791672919.8042848,
+      "reason": "The transcript discusses the evaluation problem of the matching algorithm for the hackathon networking idea, feedback collection, and introduces a related feature (scanning QR codes for conversation starters)."
+    }
+  ],
+  "content_version": 11,
+  "enriched_version": 11,
+  "proponents": [
+    "Leonarda, who believes hackathon attendees are inherently motivated to share profile details for matchmaking",
+    "Marko advocates that AI conversations elicit deeper participant motivations beyond superficial lists of programming languages.",
+    "Leonarda argues that hackathon attendees are uniquely motivated to share information during mandatory registration.",
+    "Leonarda argues mandatory hackathon registration provides an inherent incentive for participants to share personal data.",
+    "Marko contends conversational AI uncovers deep project interests and motivations that static forms routinely miss.",
+    "Leonarda argues mandatory hackathon registration provides an inherent incentive for participants to share profile information.",
+    "Marko contends conversational agents and graph cluster visualizations elicit deeper attendee motivations than static forms.",
+    "Leonarda argues mandatory hackathon registration provides an inherent incentive for participants to share profile details.",
+    "Leonarda argues mandatory hackathon registration inherently incentivizes participants to provide profile data for high real-world utility.",
+    "Marko contends conversational AI and interest-cluster graphs extract far richer project motivations than standard forms.",
+    "Leonarda argues mandatory hackathon registration inherently incentivizes attendees to provide profile data for high real-world utility.",
+    "Marko contends conversational agents and interest-cluster graphs extract far richer project motivations than standard forms.",
+    "Leonarda champions the concept for its immediate real-world utility and natural registration incentives.",
+    "Marko advocates using conversational AI and cluster graphs to uncover deeper attendee motivations.",
+    "Leonarda champions the concept for its high real-world utility and natural registration incentives.",
+    "Marko advocates conversational agents and interest-cluster visualizations to uncover nuanced participant motivations."
+  ],
+  "opponents": [
+    "Alex, who is skeptical that users will reliably input personal profile data",
+    "Alex contends that user reluctance to provide personal profile data will critically undermine matchmaking effectiveness.",
+    "Giacomo challenges the fundamental need to replace standard registration forms with conversational AI agents.",
+    "Alex warns user friction and reluctance to share profile data will undermine match quality.",
+    "Giacomo argues agents overcomplicate registration forms while producing uncompelling, text-heavy match recommendations.",
+    "Alex warns attendee reluctance to input data will undermine match quality and cautions against graph database bloat.",
+    "Giacomo argues conversational agents overcomplicate registration while producing uncompelling, text-heavy match recommendations.",
+    "Alex warns participant reluctance to supply data compromises matching quality and cautions against architectural bloat.",
+    "Giacomo argues conversational agents overcomplicate simple registration while generating uncompelling, text-heavy outputs.",
+    "Alex warns participant reluctance to supply data compromises matching quality and questions demo visual appeal.",
+    "Alex criticizes the solution as technically uninspired and lacking demo appeal.",
+    "Giacomo cautions against conversational registration overhead and uncompelling, text-heavy match recommendations.",
+    "Alex criticizes the solution as technically uninspired, difficult to evaluate quickly, and lacking demo excitement.",
+    "Giacomo cautions against conversational registration bloat and visually unappealing, text-heavy match recommendations."
+  ],
+  "thumbnail": "/ideas/idea_hackathon_networking_matchmaker_5fe7fb21/artifacts/thumbnail.svg?v=ef32c896ca12d07b",
+  "competitors": {
+    "summary": "Existing tools rely on passive forums or heavyweight B2B scheduling, leaving a gap for low-friction, skill-balanced team matchmaking at hackathons.",
+    "competitors": [
+      {
+        "name": "Devpost",
+        "summary": "A global hackathon management platform providing project showcases, judging infrastructure, and public participant team-finding discussion boards.",
+        "differentiator": "Relies on passive message boards where attendees browse and reach out manually to form project groups.",
+        "idea": "Comprehensive hackathon hosting, project submission, and developer portfolio platform.",
+        "yearOfFounding": "2009",
+        "shortBio": "Devpost is the leading platform for hosting virtual and in-person hackathons, developer showcases, and project submissions.",
+        "howWeDiffer": "We actively match complementary teammates using low-friction data intake instead of relying on manual community forum postings."
+      },
+      {
+        "name": "Brella",
+        "summary": "An event networking platform using intent-based AI algorithms to schedule structured one-on-one meetings between attendees.",
+        "differentiator": "Focuses on pre-scheduled business development meetings at commercial conferences rather than dynamic project team formation.",
+        "idea": "Intent-driven matchmaking platform for corporate event meetings and conferences.",
+        "yearOfFounding": "2016",
+        "shortBio": "Brella provides AI-driven matchmaking and networking tools to facilitate targeted business connections at conferences.",
+        "howWeDiffer": "We specialize in skill-balanced developer team creation instead of executive one-on-one corporate calendar scheduling."
+      },
+      {
+        "name": "Donut",
+        "summary": "A chat-based integration tool that automatically pairs community or team members for casual introductions and social bonding.",
+        "differentiator": "Employs randomized or basic lottery pairings inside Slack rather than skill- and role-weighted team composition algorithms.",
+        "idea": "Chatbot-driven social introductions and randomized networking for distributed teams.",
+        "yearOfFounding": "2016",
+        "shortBio": "Donut builds automated social introduction and employee engagement bots for Slack and Microsoft Teams.",
+        "howWeDiffer": "We match hackers by technical competencies and project ambitions rather than facilitating random conversational coffee chats."
+      }
+    ],
+    "market_landscape": "Current event networking solutions split between passive forum-based team listings and heavyweight corporate meeting schedulers with burdensome onboarding.",
+    "our_positioning": "We position ourselves as a frictionless matchmaking engine that minimizes participant onboarding effort to automatically deliver balanced hackathon teams.",
+    "groundingSources": [
+      "https://devpost.com",
+      "https://www.brella.io",
+      "https://www.donut.com"
+    ],
+    "generated_at": 1791672313.3149838
+  },
+  "workflow": {
+    "summary": "The Hackathon Networking Matchmaker ingests organizer registration data and participant conversational inputs to build rich interest profiles. It generates simple embeddings stored in Postgres to compute semantic similarity, subsequently producing contextual conversation starters to connect relevant attendees.",
+    "steps": [
+      "Step 1: Ingest organizer registration data and initialize participant records in the Postgres database.",
+      "Step 2: Collect participant interests and goals through conversational AI prompts.",
+      "Step 3: Generate vector embeddings from the extracted rich interest profiles.",
+      "Step 4: Query Postgres using vector similarity search to identify relevant participant connections.",
+      "Step 5: Output tailored matchmaking suggestions along with contextual conversation starters."
+    ],
+    "mermaid_code": "graph TD\n    A[Organizer Registration Data] --> C[Postgres Database]\n    B[Participant Conversational Prompts] --> D[AI Embedding Engine]\n    D --> C\n    C --> E[Vector Similarity Matchmaker]\n    E --> F[Contextual Conversation Starters]\n    F --> G[Participant Dashboard]",
+    "mermaidCode": null,
+    "image_prompt": "A modern isometric 3D architectural illustration depicting an AI-powered matchmaking platform for a hackathon, featuring glowing digital profile nodes connecting via luminous threads on a sleek dark database interface, vibrant neon accents, ultra-detailed, professional UI/UX design.",
+    "image_url": null,
+    "generated_at": 1791672936.593581
+  },
+  "pros_cons": {
+    "summary": "The team conditionally favors the tool for its practical utility, though concerns linger regarding technical uninventiveness, demo excitement, and pre-formed teams.",
+    "pros": [
+      {
+        "point": "Mandatory hackathon registration naturally motivates participants to provide personal interest data without extra friction.",
+        "category": "Operations",
+        "severity_or_impact": "High",
+        "source_context": "Leonarda noted that attendees are already registering anyway, providing a natural incentive to share information."
+      },
+      {
+        "point": "Conversational agents elicit deeper motivations and problem interests beyond superficial lists of programming languages.",
+        "category": "User Experience",
+        "severity_or_impact": "High",
+        "source_context": "Marko argued an agent extracts richer context when users do not know how to describe what they want."
+      },
+      {
+        "point": "Using organizer-supplied data, standard embeddings, and Postgres keeps implementation scope realistic for a hackathon.",
+        "category": "Technical",
+        "severity_or_impact": "Medium",
+        "source_context": "Giacomo observed that scoping data to one hackathon and using embeddings makes it a manageable problem."
+      },
+      {
+        "point": "Scanning QR codes to deliver contextual conversation starters offers clear, practical in-person utility.",
+        "category": "User Experience",
+        "severity_or_impact": "Medium",
+        "source_context": "Leonarda and Alex endorsed scanning participant QR codes to generate immediate conversation starters."
+      },
+      {
+        "point": "Interest-cluster visualizations can provide an interactive frontend without requiring complex graph database architecture.",
+        "category": "User Experience",
+        "severity_or_impact": "Low",
+        "source_context": "Marko suggested visualizing participants as an interest graph, which Alex noted does not require a graph database."
+      }
+    ],
+    "cons": [
+      {
+        "point": "Many hackathon participants arrive with pre-formed teams, drastically shrinking the target market for match recommendations.",
+        "category": "Business & Market",
+        "severity_or_impact": "High",
+        "source_context": "Leonarda acknowledged the critical point that many people arrive at hackathons already having formed teams."
+      },
+      {
+        "point": "Evaluating true match quality and post-meeting satisfaction is unfeasible within a rapid hackathon weekend timeframe.",
+        "category": "Operations",
+        "severity_or_impact": "High",
+        "source_context": "Alex pointed out that evaluating whether two people are a good match cannot be done in a weekend."
+      },
+      {
+        "point": "Storing profiles in Postgres with LLM summaries is technically mundane and lacks wow factor for judging.",
+        "category": "Technical",
+        "severity_or_impact": "Medium",
+        "source_context": "Alex criticized the Postgres and LLM recommendation architecture as technically boring for a hackathon project."
+      },
+      {
+        "point": "Presenting text-heavy recommendation lists with generated reasoning lacks compelling visual presentation compared to interactive visual demos.",
+        "category": "User Experience",
+        "severity_or_impact": "Medium",
+        "source_context": "Giacomo argued the output risks being an unappealing list of random people with text explanations."
+      },
+      {
+        "point": "Replacing simple registration inputs with conversational prompts overcomplicates the sign-up process for attendees.",
+        "category": "User Experience",
+        "severity_or_impact": "Low",
+        "source_context": "Giacomo questioned the need to replace simple registration forms with conversational agents."
+      }
+    ],
+    "key_risks": [
+      "Event organizers may restrict sharing participant registration details due to strict privacy regulations.",
+      "Conversational AI prompts may generate inaccurate or socially awkward commonalities between participants."
+    ],
+    "assumptions": [
+      "Hackathon organizers will readily grant access to comprehensive attendee registration data.",
+      "Solo participants prefer algorithmic team matching over spontaneous in-person mingling."
+    ],
+    "open_questions": [
+      "What proportion of attendees at typical target hackathons arrive without formed teams?",
+      "How can match accuracy and engagement be measured in real time during the event?"
+    ],
+    "generated_at": 1791672935.232075
+  },
+  "systemGraph": {
+    "summary": "Architecture for an AI-powered hackathon networking matchmaker featuring organizer data ingestion, interactive conversational profiling, pgvector-based similarity and complementary matching, dynamic graph visualization, and QR-triggered LLM icebreaker generation.",
+    "nodes": [
+      {
+        "id": "pwa_client",
+        "label": "Participant Web App",
+        "description": "Mobile-first PWA providing conversational onboarding chat, interactive 2D interest graph explorer, QR badge scanner, and recommendation feed.",
+        "component_type": "client"
+      },
+      {
+        "id": "api_gateway",
+        "label": "API Gateway & Router",
+        "description": "Handles authentication, participant routing, QR code resolution, and coordinates profile chat sessions.",
+        "component_type": "api"
+      },
+      {
+        "id": "organizer_importer",
+        "label": "Organizer Data Ingest Worker",
+        "description": "Ingests baseline registration rosters and survey CSVs from platforms like Luma, Devpost, or Airtable into staging tables.",
+        "component_type": "worker"
+      },
+      {
+        "id": "profiler_agent",
+        "label": "Conversational Profiler Service",
+        "description": "Orchestrates multi-turn dialogue with participants to extract implicit domain interests, project ideas, and complementary skill needs.",
+        "component_type": "api"
+      },
+      {
+        "id": "llm_engine",
+        "label": "Foundation LLM API",
+        "description": "Executes profiling prompt chains, context extraction, text summarization, and pairwise conversation starter generation.",
+        "component_type": "model"
+      },
+      {
+        "id": "embedding_worker",
+        "label": "Embedding Generator",
+        "description": "Generates dense vector embeddings for extracted participant profiles, thematic interests, and project concepts.",
+        "component_type": "worker"
+      },
+      {
+        "id": "matching_engine",
+        "label": "Hybrid Matching Engine",
+        "description": "Computes cosine distance via pgvector combined with deterministic heuristic filters (e.g., complementary roles, team status).",
+        "component_type": "worker"
+      },
+      {
+        "id": "icebreaker_service",
+        "label": "Contextual Icebreaker Service",
+        "description": "Synthesizes pairwise profile insights to craft contextual conversation prompts when two users match or scan badges.",
+        "component_type": "api"
+      },
+      {
+        "id": "postgres_db",
+        "label": "PostgreSQL + pgvector",
+        "description": "Primary datastore maintaining participant profiles, structured registration fields, high-dimensional vector embeddings, and connection history.",
+        "component_type": "database"
+      },
+      {
+        "id": "redis_cache",
+        "label": "Redis Cache & Session Store",
+        "description": "Maintains ephemeral chat session states for onboarding conversations and caches precomputed match scores and graph coordinates.",
+        "component_type": "database"
+      },
+      {
+        "id": "organizer_source",
+        "label": "Organizer Registration Data",
+        "description": "External attendee data sources (Luma, Typeform, Eventbrite, or CSV dumps).",
+        "component_type": "external"
+      }
+    ],
+    "edges": [
+      {
+        "source": "organizer_source",
+        "target": "organizer_importer",
+        "label": "Batch attendee export (CSV/API)"
+      },
+      {
+        "source": "organizer_importer",
+        "target": "postgres_db",
+        "label": "Persists initial participant records"
+      },
+      {
+        "source": "pwa_client",
+        "target": "api_gateway",
+        "label": "Chat turns, match queries, QR badge scan"
+      },
+      {
+        "source": "api_gateway",
+        "target": "profiler_agent",
+        "label": "Delegates onboarding chat turns"
+      },
+      {
+        "source": "profiler_agent",
+        "target": "redis_cache",
+        "label": "Reads/writes session conversation context"
+      },
+      {
+        "source": "profiler_agent",
+        "target": "llm_engine",
+        "label": "Generates adaptive interview questions & extracts summary"
+      },
+      {
+        "source": "profiler_agent",
+        "target": "postgres_db",
+        "label": "Saves finalized structured persona & preferences"
+      },
+      {
+        "source": "postgres_db",
+        "target": "embedding_worker",
+        "label": "Triggers vectorization on profile update"
+      },
+      {
+        "source": "embedding_worker",
+        "target": "llm_engine",
+        "label": "Requests text embeddings"
+      },
+      {
+        "source": "embedding_worker",
+        "target": "postgres_db",
+        "label": "Stores vector embeddings in pgvector"
+      },
+      {
+        "source": "api_gateway",
+        "target": "matching_engine",
+        "label": "Requests recommendations or network graph"
+      },
+      {
+        "source": "matching_engine",
+        "target": "postgres_db",
+        "label": "Executes ANN vector search and relational filters"
+      },
+      {
+        "source": "matching_engine",
+        "target": "redis_cache",
+        "label": "Caches calculated clusters and match pairs"
+      },
+      {
+        "source": "api_gateway",
+        "target": "icebreaker_service",
+        "label": "QR scan lookup with target user ID"
+      },
+      {
+        "source": "icebreaker_service",
+        "target": "postgres_db",
+        "label": "Fetches both participant profiles"
+      },
+      {
+        "source": "icebreaker_service",
+        "target": "llm_engine",
+        "label": "Synthesizes shared context & starter prompts"
+      },
+      {
+        "source": "icebreaker_service",
+        "target": "pwa_client",
+        "label": "Returns instant personalized conversation starters"
+      }
+    ],
+    "mermaid_code": "flowchart TD\n  subgraph External[External Inputs]\n    EXT_REG[Organizer Registration Data]\n  end\n\n  subgraph Client[Client Layer]\n    APP[Participant Web App / PWA]\n  end\n\n  subgraph CoreAPI[API & Coordination Layer]\n    GW[API Gateway & Router]\n    IMPORT[Organizer Ingest Worker]\n    PROFILER[Conversational Profiler Service]\n    ICEBREAKER[Contextual Icebreaker Service]\n  end\n\n  subgraph ComputeAI[Matching & AI Services]\n    EMB[Embedding Generator]\n    MATCH[Hybrid Matching Engine]\n    LLM[Foundation LLM API]\n  end\n\n  subgraph DataLayer[Data & State Layer]\n    PG[(PostgreSQL + pgvector)]\n    CACHE[(Redis Cache & Session Store)]\n  end\n\n  EXT_REG -->|Batch attendee export| IMPORT\n  IMPORT -->|Seed participants| PG\n\n  APP -->|Chat, Match Requests, QR Scans| GW\n  GW -->|Session routing| PROFILER\n  GW -->|Fetch matches & graph| MATCH\n  GW -->|QR badge resolution| ICEBREAKER\n\n  PROFILER <-->|Session state| CACHE\n  PROFILER -->|Adaptive prompts & synthesis| LLM\n  PROFILER -->|Update rich profile| PG\n\n  PG -.->|Profile change event| EMB\n  EMB -->|Compute embeddings| LLM\n  EMB -->|Write vectors| PG\n\n  MATCH -->|Vector similarity + relational filter| PG\n  MATCH -->|Cache top matches| CACHE\n\n  ICEBREAKER -->|Fetch paired profile data| PG\n  ICEBREAKER -->|Generate context starters| LLM\n  ICEBREAKER -->|Personalized prompts| APP",
+    "image_prompt": "A modern software architecture diagram on a dark slate background with vibrant blue, green, and amber connection lines. Shows a mobile user interface scanning a QR code, an API gateway communicating with microservices, a PostgreSQL database node highlighted with pgvector indexing, and external AI LLM nodes processing embeddings and conversation starters.",
+    "image_url": null,
+    "generated_at": 1791672955.73194
+  },
+  "status": "enriched",
+  "active_tools": [],
+  "created_at": 1791672278.332709,
+  "updated_at": 1791672955.778698,
+  "metadata": {
+    "key_takeaway": "While practical and grounded in real-world utility, the team remains divided on whether the technical implementation is too boring compared to alternative projects.",
+    "artifact_versions": {
+      "summary": 11,
+      "pros_cons": 11,
+      "workflow": 11,
+      "architecture": 11,
+      "competitors": 1
+    },
+    "last_enrichment_service": "architecture"
+  }
+}

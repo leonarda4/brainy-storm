@@ -1,0 +1,68 @@
+[
+  {
+    "chunk_id": "0de57b453c4af043e93b",
+    "text": "Leonarda: with networking, you just need people to provide some information and then match them.\nAlex: Okay, but getting people to provide information is arguably harder than scraping IKEA.\nLeonarda: Not at a hackathon. Everyone's",
+    "captured_at": 1791672278.332717,
+    "reason": "The speakers discuss the mechanism and potential friction of the hackathon networking matchmaker idea."
+  },
+  {
+    "chunk_id": "cd6d058189d5b2214ccb",
+    "text": "Leonarda: already registering anyway.\n\n[00:12:30] Marko: Yeah, actually, and you could have an agent that asks them questions instead of a form.\n\n[00:12:37] Giacomo: I don't know why we need an agent for a registration form.\n\n[00:12:42] Marko: No, because people don't know how to describe what they want. You ask them what technologies they know and they list React, Python, whatever. But maybe they're interested in climate tech, or they've been thinking about some specific problem.\n\n[00:12:56] Alex: I",
+    "captured_at": 1791672315.41581,
+    "reason": "The transcript discusses data collection during registration, proposing an AI agent alternative to forms to better capture participant interests and skills for the hackathon matchmaking tool."
+  },
+  {
+    "chunk_id": "3b2496d19b4b85bcbca6",
+    "text": "Marko: Yeah, but I'm saying we could extract much richer context.\nLeonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.\nGiacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.",
+    "captured_at": 1791672350.035681,
+    "reason": "The transcript discusses the richer context extraction of the networking matchmaker, contrasts it with another project idea (the chair app), and raises objections regarding its visual appeal and user experience."
+  },
+  {
+    "chunk_id": "01f95253e9e3b19e29e4",
+    "text": "Marko: Wait, couldn't we make the networking one visual too? Like a graph of participants, clusters based on interests, and you can explore connections?\nGiacomo: Here we go with the graph again.\nAlex: We don't need a graph database just because",
+    "captured_at": 1791672387.66713,
+    "reason": "The speakers discuss potential visualization features, specifically an interest-based graph, and technical implementation considerations for the networking matchmaker idea."
+  },
+  {
+    "chunk_id": "9231445ed3e11c8c037b",
+    "text": "Alex: there's a graph on the frontend.\n[00:14:02] Giacomo: I didn't say we did.",
+    "captured_at": 1791672427.492434,
+    "reason": "The snippet continues the technical discussion on whether a graph representation is needed for the frontend of the networking matchmaker."
+  },
+  {
+    "chunk_id": "c468e3344063bcadefb1",
+    "text": "Giacomo: architecture work for matching people based on what they're doing?\nMarko: That's kind of a stretch.\nGiacomo: Yeah, but the memory part is similar.\nAlex: Except one needs game state and the other needs user profiles. Completely different data.\nGiacomo: Sure, but the reasoning layer—\nLeonarda: Can we not turn every idea into the same agent architecture?\nMarko: [laughs] Okay, fair.",
+    "captured_at": 1791672563.33282,
+    "reason": "The speakers discuss the underlying architecture, memory, and reasoning layer for the matching system, as well as a debate on reusing agent architecture."
+  },
+  {
+    "chunk_id": "668b201fb0fd55a32fcf",
+    "text": "Alex: Okay, yeah. I'm changing my mind again.\nGiacomo: That took about a minute.\nAlex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.\nMarko: Same.\nLeonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.",
+    "captured_at": 1791672665.609269,
+    "reason": "The participants discuss their preferences and make evaluative statements regarding the hackathon networking matchmaker idea compared to other concepts."
+  },
+  {
+    "chunk_id": "077b9ca5627d9880494e",
+    "text": "Leonarda: to a hackathon and everybody already has a team.\n\n[00:20:54] Leonarda: Okay, that's a good point. We'd need to validate that.",
+    "captured_at": 1791672682.757059,
+    "reason": "The transcript discusses a potential issue/risk regarding the hackathon networking matchmaker idea—specifically that participants might already have teams—and the need to validate this assumption."
+  },
+  {
+    "chunk_id": "a84bdad2da40e6105ef4",
+    "text": "Giacomo: I actually think the networking idea is stronger than we gave it credit for.\nMarko: Really? You were against it earlier.\nGiacomo: I wasn't against it. I was against building a massive recommendation system without users. But if it's for one hackathon, and we can get the participant data from the organizer, that's a much smaller problem.\nLeonarda: Yes, exactly what I've been saying.\nAlex: The problem is it's not very exciting technically.",
+    "captured_at": 1791672863.1495419,
+    "reason": "The new transcript delta discusses the feasibility, scoping, and technical excitement of the Hackathon Networking Matchmaker idea."
+  },
+  {
+    "chunk_id": "cc50d2b1a9d86c0875a3",
+    "text": "[00:27:24] Marko: I disagree. Matching people based on complementary interests is actually not trivial.\n[00:27:32] Giacomo: We could probably get something decent with structured fields and embeddings. We don't need to invent a new matching algorithm.\n[00:27:43] Alex: So what, a bunch of profiles in Postgres and an LLM explaining the recommendations?\n[00:27:50] Giacomo: Pretty much.\n[00:27:53] Alex: Okay, that's boring.\n[00:27:56] Leonarda: Boring technically doesn't mean boring as a",
+    "captured_at": 1791672880.986581,
+    "reason": "The snippet explicitly discusses the technical implementation details and architecture (embeddings, Postgres, LLM) for matching people in the hackathon networking tool."
+  },
+  {
+    "chunk_id": "d7f988e3883b9050dece",
+    "text": "Marko: Also, there's an interesting evaluation problem. How do we know two people are actually a good match? We could ask them for feedback after meeting.\nAlex: Yeah, but then it's not really something you can evaluate in a weekend.\nGiacomo: That's true.\nLeonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+    "captured_at": 1791672919.8042848,
+    "reason": "The transcript discusses the evaluation problem of the matching algorithm for the hackathon networking idea, feedback collection, and introduces a related feature (scanning QR codes for conversation starters)."
+  }
+]

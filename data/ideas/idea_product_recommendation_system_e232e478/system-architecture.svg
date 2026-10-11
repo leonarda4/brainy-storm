@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>.title{font:700 22px Arial;fill:#0f172a}.box{fill:#fff;stroke:#6366f1;stroke-width:2}.label{font:600 14px Arial;fill:#0f172a}.small{font:12px Arial;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text x="32" y="36" class="title">System Architecture</text>
+<line x1="350" y1="125" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">Submits prompts, photos, and swipe actions</text>
+<line x1="730" y1="125" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="113.0" class="small">Uploads room images</text>
+<line x1="730" y1="125" x2="70" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="203.0" class="small">Sends raw search prompt</text>
+<line x1="730" y1="125" x2="450" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="203.0" class="small">Passes room image URL</text>
+<line x1="350" y1="305" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="293.0" class="small">Extracted constraints and text embedding</text>
+<line x1="730" y1="305" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="293.0" class="small">Visual style embedding</text>
+<line x1="1110" y1="305" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">ANN vector query</text>
+<line x1="1110" y1="305" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="383.0" class="small">Applies price &amp; dimension filters</text>
+<line x1="1110" y1="305" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="203.0" class="small">Returns ranked product candidates</text>
+<line x1="730" y1="125" x2="450" y2="665" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Dispatches placement render request</text>
+<line x1="730" y1="665" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="383.0" class="small">Writes synthesized room preview</text>
+<line x1="1110" y1="485" x2="70" y2="665" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="563.0" class="small">Scheduled crawl jobs</text>
+<line x1="350" y1="665" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="563.0" class="small">Stores normalized catalog metadata</text>
+<line x1="350" y1="665" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="210.0" y="563.0" class="small">Indexes image/text embeddings</text>
+<line x1="350" y1="665" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Saves cached product images</text>
+<rect x="70" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="105" class="label">Client Application</text>
+<text x="88" y="130" class="small">Web/Mobile frontend for text prompt</text>
+<text x="88" y="147" class="small">entry, room photo uploads, product</text>
+<rect x="450" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="105" class="label">API Gateway</text>
+<text x="468" y="130" class="small">Handles authentication, client</text>
+<text x="468" y="147" class="small">requests, file upload routing, and</text>
+<rect x="830" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="105" class="label">Object Storage</text>
+<text x="848" y="130" class="small">Stores user-uploaded room photos,</text>
+<text x="848" y="147" class="small">scraped product images, and generated</text>
+<rect x="70" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="285" class="label">LLM Query Parser</text>
+<text x="88" y="310" class="small">Extracts semantic style, hard budget</text>
+<text x="88" y="327" class="small">constraints, dimensions, and category</text>
+<rect x="450" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="285" class="label">Multimodal Vision Service</text>
+<text x="468" y="310" class="small">Extracts visual style embeddings and</text>
+<text x="468" y="327" class="small">room context/bounding anchors using</text>
+<rect x="830" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="285" class="label">Hybrid Recommendation Engine</text>
+<text x="848" y="310" class="small">Coordinates candidate retrieval,</text>
+<text x="848" y="327" class="small">combines vector similarities, and</text>
+<rect x="70" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="465" class="label">Vector Database</text>
+<text x="88" y="490" class="small">Stores multimodal text and image</text>
+<text x="88" y="507" class="small">embeddings for fast ANN similarity</text>
+<rect x="450" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="465" class="label">Product Catalog Database</text>
+<text x="468" y="490" class="small">Relational database maintaining</text>
+<text x="468" y="507" class="small">normalized product specifications,</text>
+<rect x="830" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="465" class="label">Scraper Task Queue</text>
+<text x="848" y="490" class="small">Distributes periodic scraping and</text>
+<text x="848" y="507" class="small">catalog refresh jobs across retailer</text>
+<rect x="70" y="615" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="645" class="label">Catalog Ingestion Workers</text>
+<text x="88" y="670" class="small">Scrapes external furniture retailer</text>
+<text x="88" y="687" class="small">websites (e.g., IKEA), standardizes</text>
+<rect x="450" y="615" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="645" class="label">Visual Staging Service</text>
+<text x="468" y="670" class="small">Generates mockup furniture placement</text>
+<text x="468" y="687" class="small">previews using image inpainting and</text>
+</svg>

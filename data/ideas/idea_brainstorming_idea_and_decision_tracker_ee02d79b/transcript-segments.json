@@ -1,0 +1,50 @@
+[
+  {
+    "chunk_id": "93bc9efc10d56018e983",
+    "text": "[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.\n[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.\n[00:29:46] Leonarda: Yeah, but not just a transcript. I think",
+    "captured_at": 1791672989.0338151,
+    "reason": "The participants discuss the problem of losing track of ideas and propose a system to track variations, transcripts, and decisions."
+  },
+  {
+    "chunk_id": "83f1475f4ff189082cb5",
+    "text": "[00:00:00] Leonarda: So I'm just further explaining our brainstorming idea decision tracker. So it's gonna streamline brainstorming process with multiple agents that are gonna kind of research in the background, we're gonna have one transcript, and then a brainy agent is gonna organize it by ideas.",
+    "captured_at": 1791679879.970762,
+    "reason": "The transcript delta directly discusses the brainstorming idea and decision tracker, detailing its proposed workflow using multiple background research agents, a single transcript, and a brainy agent to organize ideas."
+  },
+  {
+    "chunk_id": "a408332ef62dba035fa8",
+    "text": "[2026-10-11T08:53:21.998+00:00] [Speaker 2] Hi, it's Leonardo. So,\n[2026-10-11T08:53:25.998+00:00] [Speaker 2] I think the brainstorming idea, decision tracker, is amazing and we\n[2026-10-11T08:53:29.918+00:00] [Speaker 2] should call it brainy storm. I feel like we should have\n[2026-10-11T08:53:35.438+00:00] [Speaker 2] amazing branding with multiple agents and make it like\n[2026-10-11T08:53:39.998+00:00] [Speaker 2] a playful brand to attract more users.",
+    "captured_at": 1791708842.18375,
+    "reason": "The speaker suggests naming the brainstorming idea and decision tracker 'brainy storm' and discusses branding, multiple agents, and making it playful to attract users."
+  },
+  {
+    "chunk_id": "db78d538f21ded0ade2b",
+    "text": "[2026-10-11T08:54:22.764+00:00] [Speaker 2] Okay, but I feel like API costs should be so big. So I'm not sure how can we validate this idea, because we're just gonna spend all our money on API calls. And you're just students, our budget is literally zero dollars. Marco, do you think any negative",
+    "captured_at": 1791708907.75187,
+    "reason": "The speaker raises concerns about high API costs and having a zero-dollar student budget, which represents a risk and objection for the Brainstorming Idea and Decision Tracker."
+  },
+  {
+    "chunk_id": "4c3e41875bcda678652a",
+    "text": "[2026-10-11T08:54:45.324+00:00] [Speaker 2] sides to this idea?\n[2026-10-11T08:54:47.804+00:00] [Marco] Hi, it's Marco. Yeah, I think there\n[2026-10-11T08:54:50.924+00:00] [Marco] are primarily costs related. I'm not sure how much would\n[2026-10-11T08:54:55.404+00:00] [Marco] the cost to actually test and validate the idea. Otherwise, I think the positioning\n[2026-10-11T08:55:00.364+00:00] [Marco] is good. Looking at the competition. It simply doesn't",
+    "captured_at": 1791708924.376464,
+    "reason": "The speakers discuss the cost-related risks of testing and validating the brainstorming idea tracker, as well as its positioning and competition."
+  },
+  {
+    "chunk_id": "2d0d506cb64fb9c883c5",
+    "text": "[2026-10-11T09:02:33.613+00:00] [Marco] Craze, Marco. I'm thinking about the spring swimming idea decision tracking.\n[2026-10-11T09:02:38.893+00:00] [Marco] What if we underline that use no jazz? No jazz, you know what no jazz is?",
+    "captured_at": 1791709384.115479,
+    "reason": "Marco discusses the brainstorming idea decision tracker and suggests a new aspect (using no-code/no-jazz)."
+  },
+  {
+    "chunk_id": "b9e3eaefce803f1c5dec",
+    "text": "[2026-10-11T09:12:31.273+00:00] [Marco] Hi, it's Marco. Again,\n[2026-10-11T09:12:33.833+00:00] [Marco] about this brainstorming idea, I'm just not sure if we should\n[2026-10-11T09:12:38.633+00:00] [Marco] pursue it or not. I've been talking about this for a while now, and\n[2026-10-11T09:12:43.593+00:00] [Marco] I don't know, we can discuss the technologies, we can discuss this and that. I don't know what not.\n[2026-10-11T09:12:48.633+00:00] [Marco] But anyhow, it's the competition seems coarse.",
+    "captured_at": 1791709986.436744,
+    "reason": "The transcript discusses doubts about whether to pursue the brainstorming idea and mentions competition, which is directly relevant to the idea."
+  },
+  {
+    "chunk_id": "d2fd6db8d4624629d31f",
+    "text": "[2026-10-11T09:15:01.527+00:00] [Marco] Can we have a more detailed view\n[2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.\n[2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves\n[2026-10-11T09:15:14.567+00:00] [Marco] to that startup.",
+    "captured_at": 1791710143.283742,
+    "reason": "The new transcript delta explicitly discusses the brainstorming idea, bringing up Fireflies AI as a competitor and the need to clearly position the project against it."
+  }
+]

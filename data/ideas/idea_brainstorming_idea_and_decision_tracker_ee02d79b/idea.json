@@ -1,0 +1,339 @@
+{
+  "session_id": "team-discussion",
+  "id": "idea_brainstorming_idea_and_decision_tracker_ee02d79b",
+  "title": "Brainstorming Idea and Decision Tracker",
+  "short_summary": "Brainy Storm is a playful brainstorming and decision tracker that uses background AI agents to organize transcripts and track idea variations. The team faces concerns over high API costs on a zero-dollar student budget and needs to clearly position the product against similar tools like Fireflies AI.",
+  "summary": "Brainy Storm is a playful AI-powered platform designed to streamline brainstorming by tracking variations of ideas, organizing transcripts, and utilizing background research agents. However, the student team faces concerns regarding high API costs and heavy competition from existing tools like Fireflies AI.",
+  "is_currently_discussed": false,
+  "transcript": "[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.\n[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.\n[00:29:46] Leonarda: Yeah, but not just a transcript. I think\n\n[00:00:00] Leonarda: So I'm just further explaining our brainstorming idea decision tracker. So it's gonna streamline brainstorming process with multiple agents that are gonna kind of research in the background, we're gonna have one transcript, and then a brainy agent is gonna organize it by ideas.\n\n[2026-10-11T08:53:21.998+00:00] [Speaker 2] Hi, it's Leonardo. So,\n[2026-10-11T08:53:25.998+00:00] [Speaker 2] I think the brainstorming idea, decision tracker, is amazing and we\n[2026-10-11T08:53:29.918+00:00] [Speaker 2] should call it brainy storm. I feel like we should have\n[2026-10-11T08:53:35.438+00:00] [Speaker 2] amazing branding with multiple agents and make it like\n[2026-10-11T08:53:39.998+00:00] [Speaker 2] a playful brand to attract more users.\n\n[2026-10-11T08:54:22.764+00:00] [Speaker 2] Okay, but I feel like API costs should be so big. So I'm not sure how can we validate this idea, because we're just gonna spend all our money on API calls. And you're just students, our budget is literally zero dollars. Marco, do you think any negative\n\n[2026-10-11T08:54:45.324+00:00] [Speaker 2] sides to this idea?\n[2026-10-11T08:54:47.804+00:00] [Marco] Hi, it's Marco. Yeah, I think there\n[2026-10-11T08:54:50.924+00:00] [Marco] are primarily costs related. I'm not sure how much would\n[2026-10-11T08:54:55.404+00:00] [Marco] the cost to actually test and validate the idea. Otherwise, I think the positioning\n[2026-10-11T08:55:00.364+00:00] [Marco] is good. Looking at the competition. It simply doesn't\n\n[2026-10-11T09:02:33.613+00:00] [Marco] Craze, Marco. I'm thinking about the spring swimming idea decision tracking.\n[2026-10-11T09:02:38.893+00:00] [Marco] What if we underline that use no jazz? No jazz, you know what no jazz is?\n\n[2026-10-11T09:12:31.273+00:00] [Marco] Hi, it's Marco. Again,\n[2026-10-11T09:12:33.833+00:00] [Marco] about this brainstorming idea, I'm just not sure if we should\n[2026-10-11T09:12:38.633+00:00] [Marco] pursue it or not. I've been talking about this for a while now, and\n[2026-10-11T09:12:43.593+00:00] [Marco] I don't know, we can discuss the technologies, we can discuss this and that. I don't know what not.\n[2026-10-11T09:12:48.633+00:00] [Marco] But anyhow, it's the competition seems coarse.\n\n[2026-10-11T09:15:01.527+00:00] [Marco] Can we have a more detailed view\n[2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.\n[2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves\n[2026-10-11T09:15:14.567+00:00] [Marco] to that startup.",
+  "raw_body": "[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.\n[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.\n[00:29:46] Leonarda: Yeah, but not just a transcript. I think\n\n[00:00:00] Leonarda: So I'm just further explaining our brainstorming idea decision tracker. So it's gonna streamline brainstorming process with multiple agents that are gonna kind of research in the background, we're gonna have one transcript, and then a brainy agent is gonna organize it by ideas.\n\n[2026-10-11T08:53:21.998+00:00] [Speaker 2] Hi, it's Leonardo. So,\n[2026-10-11T08:53:25.998+00:00] [Speaker 2] I think the brainstorming idea, decision tracker, is amazing and we\n[2026-10-11T08:53:29.918+00:00] [Speaker 2] should call it brainy storm. I feel like we should have\n[2026-10-11T08:53:35.438+00:00] [Speaker 2] amazing branding with multiple agents and make it like\n[2026-10-11T08:53:39.998+00:00] [Speaker 2] a playful brand to attract more users.\n\n[2026-10-11T08:54:22.764+00:00] [Speaker 2] Okay, but I feel like API costs should be so big. So I'm not sure how can we validate this idea, because we're just gonna spend all our money on API calls. And you're just students, our budget is literally zero dollars. Marco, do you think any negative\n\n[2026-10-11T08:54:45.324+00:00] [Speaker 2] sides to this idea?\n[2026-10-11T08:54:47.804+00:00] [Marco] Hi, it's Marco. Yeah, I think there\n[2026-10-11T08:54:50.924+00:00] [Marco] are primarily costs related. I'm not sure how much would\n[2026-10-11T08:54:55.404+00:00] [Marco] the cost to actually test and validate the idea. Otherwise, I think the positioning\n[2026-10-11T08:55:00.364+00:00] [Marco] is good. Looking at the competition. It simply doesn't\n\n[2026-10-11T09:02:33.613+00:00] [Marco] Craze, Marco. I'm thinking about the spring swimming idea decision tracking.\n[2026-10-11T09:02:38.893+00:00] [Marco] What if we underline that use no jazz? No jazz, you know what no jazz is?\n\n[2026-10-11T09:12:31.273+00:00] [Marco] Hi, it's Marco. Again,\n[2026-10-11T09:12:33.833+00:00] [Marco] about this brainstorming idea, I'm just not sure if we should\n[2026-10-11T09:12:38.633+00:00] [Marco] pursue it or not. I've been talking about this for a while now, and\n[2026-10-11T09:12:43.593+00:00] [Marco] I don't know, we can discuss the technologies, we can discuss this and that. I don't know what not.\n[2026-10-11T09:12:48.633+00:00] [Marco] But anyhow, it's the competition seems coarse.\n\n[2026-10-11T09:15:01.527+00:00] [Marco] Can we have a more detailed view\n[2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.\n[2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves\n[2026-10-11T09:15:14.567+00:00] [Marco] to that startup.",
+  "transcript_segments": [
+    {
+      "chunk_id": "93bc9efc10d56018e983",
+      "text": "[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.\n[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.\n[00:29:46] Leonarda: Yeah, but not just a transcript. I think",
+      "captured_at": 1791672989.0338151,
+      "reason": "The participants discuss the problem of losing track of ideas and propose a system to track variations, transcripts, and decisions."
+    },
+    {
+      "chunk_id": "83f1475f4ff189082cb5",
+      "text": "[00:00:00] Leonarda: So I'm just further explaining our brainstorming idea decision tracker. So it's gonna streamline brainstorming process with multiple agents that are gonna kind of research in the background, we're gonna have one transcript, and then a brainy agent is gonna organize it by ideas.",
+      "captured_at": 1791679879.970762,
+      "reason": "The transcript delta directly discusses the brainstorming idea and decision tracker, detailing its proposed workflow using multiple background research agents, a single transcript, and a brainy agent to organize ideas."
+    },
+    {
+      "chunk_id": "a408332ef62dba035fa8",
+      "text": "[2026-10-11T08:53:21.998+00:00] [Speaker 2] Hi, it's Leonardo. So,\n[2026-10-11T08:53:25.998+00:00] [Speaker 2] I think the brainstorming idea, decision tracker, is amazing and we\n[2026-10-11T08:53:29.918+00:00] [Speaker 2] should call it brainy storm. I feel like we should have\n[2026-10-11T08:53:35.438+00:00] [Speaker 2] amazing branding with multiple agents and make it like\n[2026-10-11T08:53:39.998+00:00] [Speaker 2] a playful brand to attract more users.",
+      "captured_at": 1791708842.18375,
+      "reason": "The speaker suggests naming the brainstorming idea and decision tracker 'brainy storm' and discusses branding, multiple agents, and making it playful to attract users."
+    },
+    {
+      "chunk_id": "db78d538f21ded0ade2b",
+      "text": "[2026-10-11T08:54:22.764+00:00] [Speaker 2] Okay, but I feel like API costs should be so big. So I'm not sure how can we validate this idea, because we're just gonna spend all our money on API calls. And you're just students, our budget is literally zero dollars. Marco, do you think any negative",
+      "captured_at": 1791708907.75187,
+      "reason": "The speaker raises concerns about high API costs and having a zero-dollar student budget, which represents a risk and objection for the Brainstorming Idea and Decision Tracker."
+    },
+    {
+      "chunk_id": "4c3e41875bcda678652a",
+      "text": "[2026-10-11T08:54:45.324+00:00] [Speaker 2] sides to this idea?\n[2026-10-11T08:54:47.804+00:00] [Marco] Hi, it's Marco. Yeah, I think there\n[2026-10-11T08:54:50.924+00:00] [Marco] are primarily costs related. I'm not sure how much would\n[2026-10-11T08:54:55.404+00:00] [Marco] the cost to actually test and validate the idea. Otherwise, I think the positioning\n[2026-10-11T08:55:00.364+00:00] [Marco] is good. Looking at the competition. It simply doesn't",
+      "captured_at": 1791708924.376464,
+      "reason": "The speakers discuss the cost-related risks of testing and validating the brainstorming idea tracker, as well as its positioning and competition."
+    },
+    {
+      "chunk_id": "2d0d506cb64fb9c883c5",
+      "text": "[2026-10-11T09:02:33.613+00:00] [Marco] Craze, Marco. I'm thinking about the spring swimming idea decision tracking.\n[2026-10-11T09:02:38.893+00:00] [Marco] What if we underline that use no jazz? No jazz, you know what no jazz is?",
+      "captured_at": 1791709384.115479,
+      "reason": "Marco discusses the brainstorming idea decision tracker and suggests a new aspect (using no-code/no-jazz)."
+    },
+    {
+      "chunk_id": "b9e3eaefce803f1c5dec",
+      "text": "[2026-10-11T09:12:31.273+00:00] [Marco] Hi, it's Marco. Again,\n[2026-10-11T09:12:33.833+00:00] [Marco] about this brainstorming idea, I'm just not sure if we should\n[2026-10-11T09:12:38.633+00:00] [Marco] pursue it or not. I've been talking about this for a while now, and\n[2026-10-11T09:12:43.593+00:00] [Marco] I don't know, we can discuss the technologies, we can discuss this and that. I don't know what not.\n[2026-10-11T09:12:48.633+00:00] [Marco] But anyhow, it's the competition seems coarse.",
+      "captured_at": 1791709986.436744,
+      "reason": "The transcript discusses doubts about whether to pursue the brainstorming idea and mentions competition, which is directly relevant to the idea."
+    },
+    {
+      "chunk_id": "d2fd6db8d4624629d31f",
+      "text": "[2026-10-11T09:15:01.527+00:00] [Marco] Can we have a more detailed view\n[2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.\n[2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves\n[2026-10-11T09:15:14.567+00:00] [Marco] to that startup.",
+      "captured_at": 1791710143.283742,
+      "reason": "The new transcript delta explicitly discusses the brainstorming idea, bringing up Fireflies AI as a competitor and the need to clearly position the project against it."
+    }
+  ],
+  "content_version": 8,
+  "enriched_version": 7,
+  "proponents": [
+    "Marko (advocates tracking idea variations to stop repeating identical concepts)",
+    "Leonarda (champions a multi-agent system for background research and automatic idea organization)",
+    "Giacomo (supports capturing transcripts and explicit decision lists)",
+    "Marko advocates tracking conceptual variations to prevent teams from repeatedly discussing the same ideas.",
+    "Leonarda champions using background research agents, automated organization, and playful branding to drive engagement.",
+    "Giacomo supports capturing structured transcripts and explicit decision logs to improve clarity.",
+    "Marko (advocates tracking conceptual variations to stop circular discussions)",
+    "Giacomo (supports structured transcripts and explicit decision tracking)",
+    "Leonarda (champions multi-agent background research, automated organization, and playful branding)",
+    "Leonarda champions multi-agent background research, automated organization, and playful branding.",
+    "Marko advocates variation tracking to eliminate circular discussions during meetings.",
+    "Giacomo supports structured transcript capture paired with explicit decision lists."
+  ],
+  "opponents": [
+    "Leonarda (challenges project viability due to unaffordable API expenses on a zero-dollar budget)",
+    "Marko (questions financial feasibility regarding testing and validation expenses)",
+    "Leonarda challenges viability due to unaffordable third-party model costs against zero initial funding.",
+    "Marko questions proceeding given unresolved validation costs and aggressive market competition."
+  ],
+  "thumbnail": "/ideas/idea_brainstorming_idea_and_decision_tracker_ee02d79b/artifacts/thumbnail.svg?v=fb7492fd30a69af8",
+  "competitors": {
+    "summary": "While incumbents dominate general meeting transcription and visual whiteboards, Brainy Storm captures unique value by mapping conceptual iterations and utilizing autonomous background research agents.",
+    "competitors": [
+      {
+        "name": "Fireflies.ai",
+        "summary": "Automated meeting transcription and conversation intelligence software for team calls.",
+        "differentiator": "Automated voice-recording bot integration across enterprise video conferencing platforms.",
+        "idea": "AI meeting recorder that transcribes and summarizes team voice conversations.",
+        "yearOfFounding": "2016",
+        "shortBio": "Fireflies.ai automatically transcribes, summarizes, and analyzes voice conversations across major video conferencing platforms.",
+        "howWeDiffer": "We focus on conceptual variation tracking and active idea evolution rather than passive meeting transcription logs."
+      },
+      {
+        "name": "Miro",
+        "summary": "Visual collaboration platform offering digital whiteboards with integrated generative AI tools.",
+        "differentiator": "Infinite freeform visual canvas built for manual diagramming and interactive workshop facilitation.",
+        "idea": "Collaborative digital whiteboard platform for visual brainstorming and project planning.",
+        "yearOfFounding": "2011",
+        "shortBio": "Miro provides an online collaborative whiteboard workspace designed for distributed team brainstorming and agile workflows.",
+        "howWeDiffer": "We proactively track idea iterations and run background research agents instead of requiring manual canvas management."
+      },
+      {
+        "name": "Otter.ai",
+        "summary": "Speech-to-text assistant generating live meeting transcripts and automated summary notes.",
+        "differentiator": "Real-time speech capture paired with automated slide capture and outline generation.",
+        "idea": "Real-time automated speech-to-text transcription engine for business meetings and lectures.",
+        "yearOfFounding": "2016",
+        "shortBio": "Otter.ai converts spoken conversations into searchable, shareable meeting notes and actionable summaries using proprietary voice recognition.",
+        "howWeDiffer": "We specifically prevent circular discussions by mapping idea genealogies and decisions rather than generic conversational text."
+      }
+    ],
+    "market_landscape": "Current tools split between passive meeting transcribers and visual whiteboards that lack automated conceptual branch tracking.",
+    "our_positioning": "We position as an active, playful brainstorming copilot that indexes idea variations and deploys autonomous research agents to stop circular discussions.",
+    "groundingSources": [
+      "https://fireflies.ai",
+      "https://miro.com",
+      "https://otter.ai"
+    ],
+    "generated_at": 1791710175.5459368
+  },
+  "workflow": {
+    "summary": "An intelligent workflow system that ingests team brainstorming sessions, enriches them with background research, and organizes the insights into a centralized decision tracker.",
+    "steps": [
+      "Step 1: Capture the live discussion into a central raw transcript.",
+      "Step 2: Deploy background research agents to gather relevant context and data.",
+      "Step 3: Process the combined transcript through an AI agent to categorize distinct ideas.",
+      "Step 4: Output structured summaries and decisions into the tracking dashboard."
+    ],
+    "mermaid_code": "graph TD\n    A[Live Discussion] --> B[Central Transcript]\n    C[Background Agents] --> B\n    B --> D[Brainy AI Agent]\n    D --> E[Idea Categorization]\n    E --> F[Decision Tracker Dashboard]",
+    "mermaidCode": null,
+    "image_prompt": "A modern isometric 3D architectural illustration depicting a glowing central data transcript connected to background research nodes and an AI sorting engine, set against a dark tech-themed background with neon blue and purple accents.",
+    "image_url": null,
+    "generated_at": 1791679881.670076
+  },
+  "pros_cons": {
+    "summary": "While multi-agent tracking and playful branding could eliminate redundant discussions, prohibitive API costs on a zero-dollar student budget stall validation.",
+    "pros": [
+      {
+        "point": "Automated tracking of idea variations prevents teams from repeatedly rehashing identical concepts during brainstorms.",
+        "category": "Operations",
+        "severity_or_impact": "High",
+        "source_context": "Marko noted the system prevents treating recurring concepts as brand-new ideas every fifteen minutes."
+      },
+      {
+        "point": "Background AI agents streamline brainstorming by conducting live research and automatically organizing transcripts into structured ideas.",
+        "category": "User Experience",
+        "severity_or_impact": "High",
+        "source_context": "Leonarda suggested multi-agent background research alongside automated idea grouping directly from meeting transcripts."
+      },
+      {
+        "point": "Playful branding centered on multi-agent collaboration can differentiate the product and drive user acquisition.",
+        "category": "Business & Market",
+        "severity_or_impact": "Medium",
+        "source_context": "Leonarda emphasized creating playful branding like 'Brainy Storm' to attract a larger user base."
+      },
+      {
+        "point": "Extracting structured transcripts and explicit decision logs provides immediate operational clarity for collaborative sessions.",
+        "category": "Operations",
+        "severity_or_impact": "Medium",
+        "source_context": "Giacomo stated that maintaining a proper transcript and a dedicated decision list would help."
+      }
+    ],
+    "cons": [
+      {
+        "point": "High recurring LLM API expenses render initial concept validation infeasible under a zero-dollar student budget.",
+        "category": "Financial",
+        "severity_or_impact": "High",
+        "source_context": "Leonarda warned that API costs will exhaust their zero-dollar student budget during early validation."
+      },
+      {
+        "point": "Testing and prototype experimentation expenses are unknown and threaten project viability before building begins.",
+        "category": "Financial",
+        "severity_or_impact": "High",
+        "source_context": "Marko expressed deep uncertainty regarding the baseline financial capital required to test and validate."
+      },
+      {
+        "point": "Uncertain competitive positioning raises doubts about whether the product provides sufficient differentiation to pursue.",
+        "category": "Business & Market",
+        "severity_or_impact": "Medium",
+        "source_context": "Marko questioned pursuing the idea given coarse competitive dynamics and unclear technical strategy."
+      }
+    ],
+    "key_risks": [
+      "Multi-agent background latency might slow down real-time conversational brainstorming significantly.",
+      "Background AI summarization might misinterpret nuances or discard valuable outlier concepts prematurely."
+    ],
+    "assumptions": [
+      "Users find playful agent branding appealing enough to switch from existing free-form note-taking tools.",
+      "A free tier or low-cost open-source model can sufficiently power multi-agent workflows."
+    ],
+    "open_questions": [
+      "Can local or open-source language models replace paid APIs to eliminate operating costs?",
+      "What specific competitors exist in meeting-transcript decision tracking, and how does Brainy Storm differentiate?"
+    ],
+    "generated_at": 1791709997.4339359
+  },
+  "systemGraph": {
+    "summary": "Distributed event-driven architecture that ingests transcripts, groups semantic idea variations using LLMs and vector search, and conducts background research.",
+    "nodes": [
+      {
+        "id": "web_ui",
+        "label": "Web Client",
+        "description": "Provides real-time brainstorm boards, transcript views, and decision approval gates.",
+        "component_type": "client"
+      },
+      {
+        "id": "api_gw",
+        "label": "API Gateway",
+        "description": "Routes REST commands, transcript streams, and WebSocket broadcast connections.",
+        "component_type": "api"
+      },
+      {
+        "id": "event_queue",
+        "label": "Transcript & Event Queue",
+        "description": "Buffers streaming transcript chunks and downstream agent processing tasks.",
+        "component_type": "queue"
+      },
+      {
+        "id": "brainy_agent",
+        "label": "Brainy Agent Worker",
+        "description": "Extracts ideas, tracks variations against historical items, and logs candidate decisions.",
+        "component_type": "worker"
+      },
+      {
+        "id": "research_agent",
+        "label": "Research Agent Worker",
+        "description": "Enriches proposed ideas with automated background context and external research.",
+        "component_type": "worker"
+      },
+      {
+        "id": "llm_service",
+        "label": "LLM Inference API",
+        "description": "Executes semantic extraction, deduplication logic, and summarization prompts.",
+        "component_type": "model"
+      },
+      {
+        "id": "vector_db",
+        "label": "Vector Database",
+        "description": "Indexes idea embeddings to detect duplicate or evolving concepts over time.",
+        "component_type": "database"
+      },
+      {
+        "id": "primary_db",
+        "label": "Relational Database",
+        "description": "Stores transcripts, structured ideas, variation lineages, and finalized decisions.",
+        "component_type": "database"
+      },
+      {
+        "id": "search_api",
+        "label": "External Search API",
+        "description": "Fetches background information and domain references for active ideas.",
+        "component_type": "external"
+      }
+    ],
+    "edges": [
+      {
+        "source": "web_ui",
+        "target": "api_gw",
+        "label": "Stream audio & transcripts"
+      },
+      {
+        "source": "api_gw",
+        "target": "event_queue",
+        "label": "Publish chunks"
+      },
+      {
+        "source": "event_queue",
+        "target": "brainy_agent",
+        "label": "Consume chunks"
+      },
+      {
+        "source": "brainy_agent",
+        "target": "llm_service",
+        "label": "Extract & cluster ideas"
+      },
+      {
+        "source": "brainy_agent",
+        "target": "vector_db",
+        "label": "Query & upsert embeddings"
+      },
+      {
+        "source": "brainy_agent",
+        "target": "primary_db",
+        "label": "Persist ideas & decisions"
+      },
+      {
+        "source": "brainy_agent",
+        "target": "event_queue",
+        "label": "Enqueue research tasks"
+      },
+      {
+        "source": "event_queue",
+        "target": "research_agent",
+        "label": "Consume tasks"
+      },
+      {
+        "source": "research_agent",
+        "target": "search_api",
+        "label": "Query facts"
+      },
+      {
+        "source": "research_agent",
+        "target": "primary_db",
+        "label": "Store research notes"
+      },
+      {
+        "source": "primary_db",
+        "target": "api_gw",
+        "label": "Push updates via WS"
+      },
+      {
+        "source": "web_ui",
+        "target": "api_gw",
+        "label": "Approve decisions"
+      }
+    ],
+    "mermaid_code": "flowchart TD\n  web_ui[\"Web Client\"] -->|\"Stream audio/text\"| api_gw[\"API Gateway\"]\n  web_ui -->|\"Approve decisions\"| api_gw\n  api_gw -->|\"Push updates\"| web_ui\n  api_gw -->|\"Enqueue chunks\"| event_queue[\"Event Queue\"]\n  event_queue -->|\"Consume chunks\"| brainy_agent[\"Brainy Agent Worker\"]\n  brainy_agent -->|\"Classify & cluster\"| llm_service[\"LLM Inference API\"]\n  brainy_agent -->|\"Similarity search\"| vector_db[(\"Vector Database\")]\n  brainy_agent -->|\"Save ideas & decisions\"| primary_db[(\"Relational Database\")]\n  brainy_agent -->|\"Trigger research\"| event_queue\n  event_queue -->|\"Consume tasks\"| research_agent[\"Research Agent Worker\"]\n  research_agent -->|\"Fetch context\"| search_api[\"External Search API\"]\n  research_agent -->|\"Attach findings\"| primary_db\n  primary_db -.->|\"Emit events\"| api_gw",
+    "image_prompt": "A modern software architecture diagram depicting an AI-powered brainstorming tracker with microservices, message queues, relational and vector databases, and background LLM agent workers on a clean dark slate background.",
+    "image_url": null,
+    "generated_at": 1791679892.708255
+  },
+  "status": "enriched",
+  "active_tools": [],
+  "created_at": 1791672989.033789,
+  "updated_at": 1791710175.588633,
+  "metadata": {
+    "key_takeaway": "The team remains undecided on whether to pursue the idea due to zero budget constraints and strong market competition.",
+    "artifact_versions": {
+      "summary": 8,
+      "pros_cons": 7,
+      "workflow": 2,
+      "architecture": 2,
+      "competitors": 8
+    },
+    "last_enrichment_service": "competitors"
+  }
+}

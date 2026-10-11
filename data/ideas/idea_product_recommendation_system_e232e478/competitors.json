@@ -1,0 +1,40 @@
+{
+  "summary": "Incumbents excel either at catalog scale or single-brand AR, leaving an opening for cross-brand conversational curation.",
+  "competitors": [
+    {
+      "name": "IKEA Kreativ",
+      "summary": "An AI and spatial computing tool allowing customers to visualize catalog furniture in scanned rooms.",
+      "differentiator": "Proprietary spatial scanning tied exclusively to IKEA's single-brand retail ecosystem.",
+      "idea": "Virtual room design and furniture placement using spatial scanning and machine learning.",
+      "yearOfFounding": "2022",
+      "shortBio": "IKEA's digital interior design platform developed from its acquisition of Geomagical Labs.",
+      "howWeDiffer": "We aggregate cross-retailer inventory via natural language search rather than locking users into a single brand."
+    },
+    {
+      "name": "Collov AI",
+      "summary": "A generative interior design platform that restyles room photos and links aesthetic styles to furniture purchases.",
+      "differentiator": "Generative diffusion models applied directly to room images for instant visual restyling.",
+      "idea": "AI-generated interior styling paired with multi-vendor product recommendations.",
+      "yearOfFounding": "2021",
+      "shortBio": "A venture-backed startup offering generative interior design tools for consumers and real estate staging.",
+      "howWeDiffer": "We focus on conversational dimension-aware search rather than purely aesthetic generative image re-skinning."
+    },
+    {
+      "name": "Google Shopping",
+      "summary": "A global product search engine indexing millions of merchant listings with keyword and visual search.",
+      "differentiator": "Unmatched crawling infrastructure and universal merchant reach across the web.",
+      "idea": "Universal multi-store e-commerce search aggregation.",
+      "yearOfFounding": "2002",
+      "shortBio": "Google's dedicated commercial search platform connecting consumers with distributed retail catalogs.",
+      "howWeDiffer": "We evaluate spatial fit and interactive room context instead of returning disconnected tabular product grids."
+    }
+  ],
+  "market_landscape": "The market bifurcates between closed single-retailer AR tools and broad search engines lacking spatial room context.",
+  "our_positioning": "We combine cross-store conversational search with rapid visual placement to bridge product discovery and dimensional fit.",
+  "groundingSources": [
+    "https://www.ikea.com/us/en/home-design/kreativ/",
+    "https://collov.ai",
+    "https://shopping.google.com"
+  ],
+  "generated_at": 1791672775.630999
+}

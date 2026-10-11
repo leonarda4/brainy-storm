@@ -1,0 +1,141 @@
+{
+  "summary": "System architecture for an Autonomous Gaming Sandbox platform. Instead of brittle pixel-based integrations with commercial games, the platform features a purpose-built headless simulation sandbox, a low-latency local controller for discrete action execution, and a decoupled high-level reasoning agent that queries an LLM intermittently alongside short- and long-term memory systems.",
+  "nodes": [
+    {
+      "id": "client_ui",
+      "label": "Web Client & Challenge Studio",
+      "description": "User interface for authoring custom sandbox challenges, defining objectives, and spectating agent live runs via WebSocket stream.",
+      "component_type": "client"
+    },
+    {
+      "id": "api_gw",
+      "label": "API Gateway",
+      "description": "Manages routing, user authentication, rate limits, and live connection termination.",
+      "component_type": "api"
+    },
+    {
+      "id": "challenge_service",
+      "label": "Challenge & Matchmaker Service",
+      "description": "Validates user challenge parameters, tracks victory conditions, and provisions isolated sandbox instances.",
+      "component_type": "api"
+    },
+    {
+      "id": "challenge_db",
+      "label": "Challenge & Score Store",
+      "description": "Relational database storing challenge maps, rulesets, evaluation metrics, and agent leaderboards.",
+      "component_type": "database"
+    },
+    {
+      "id": "sandbox_engine",
+      "label": "Headless Sandbox Engine",
+      "description": "Deterministic simulation environment running physics, inventory, terrain generation, and object interactions.",
+      "component_type": "worker"
+    },
+    {
+      "id": "local_controller",
+      "label": "Local State Filter & Controller",
+      "description": "Buffers high-frequency engine ticks, aggregates symbolic state, and executes deterministic low-level pathfinding/actions.",
+      "component_type": "worker"
+    },
+    {
+      "id": "event_bus",
+      "label": "State & Action Event Bus",
+      "description": "Redis/Kafka broker handling state update broadcasts, action queues, and challenge completion events.",
+      "component_type": "queue"
+    },
+    {
+      "id": "agent_orchestrator",
+      "label": "Agent Decision Orchestrator",
+      "description": "Implements the Observe-Plan-Act loop; filters out redundant observations and triggers strategic reasoning when goals shift.",
+      "component_type": "worker"
+    },
+    {
+      "id": "agent_memory",
+      "label": "Episodic & Spatial Memory",
+      "description": "Vector and key-value store maintaining terrain maps, historical attempts, and environmental knowledge across episodes.",
+      "component_type": "database"
+    },
+    {
+      "id": "llm_planner",
+      "label": "LLM Reasoning Engine",
+      "description": "Language and vision model invoked with structured context and tool definitions to produce macro action sequences.",
+      "component_type": "model"
+    }
+  ],
+  "edges": [
+    {
+      "source": "client_ui",
+      "target": "api_gw",
+      "label": "Submit challenge & stream control (HTTP/WS)"
+    },
+    {
+      "source": "api_gw",
+      "target": "challenge_service",
+      "label": "Route challenge configurations"
+    },
+    {
+      "source": "challenge_service",
+      "target": "challenge_db",
+      "label": "Persist challenges & scores"
+    },
+    {
+      "source": "challenge_service",
+      "target": "sandbox_engine",
+      "label": "Spawn simulation container with rule spec"
+    },
+    {
+      "source": "sandbox_engine",
+      "target": "local_controller",
+      "label": "Raw tick state & collisions"
+    },
+    {
+      "source": "local_controller",
+      "target": "event_bus",
+      "label": "Publish symbolic state changes"
+    },
+    {
+      "source": "event_bus",
+      "target": "agent_orchestrator",
+      "label": "Consume state events & goal triggers"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "agent_memory",
+      "label": "Query & update context / spatial graph"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "llm_planner",
+      "label": "Prompt with state summary & available tools"
+    },
+    {
+      "source": "llm_planner",
+      "target": "agent_orchestrator",
+      "label": "Return structured action plan"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "event_bus",
+      "label": "Queue macro action plan"
+    },
+    {
+      "source": "event_bus",
+      "target": "local_controller",
+      "label": "Deliver macro actions"
+    },
+    {
+      "source": "local_controller",
+      "target": "sandbox_engine",
+      "label": "Execute micro tick inputs & tool calls"
+    },
+    {
+      "source": "sandbox_engine",
+      "target": "client_ui",
+      "label": "Stream visual viewport & telemetry (WebRTC/WS)"
+    }
+  ],
+  "mermaid_code": "flowchart LR\n  subgraph Client Tier\n    UI[Web Client & Challenge Studio]\n  end\n\n  subgraph Management & Control\n    GW[API Gateway]\n    CS[Challenge & Matchmaker Service]\n    CDB[(Challenge & Score Store)]\n  end\n\n  subgraph Simulation Runtime\n    SANDBOX[Headless Sandbox Engine]\n    LC[Local State Filter & Controller]\n    BUS[(State & Action Event Bus)]\n  end\n\n  subgraph Autonomous Agent Brain\n    AO[Agent Decision Orchestrator]\n    MEM[(Episodic & Spatial Memory)]\n    LLM[LLM Reasoning Engine]\n  end\n\n  UI -->|Submit challenge| GW\n  GW --> CS\n  CS --> CDB\n  CS -->|Spawn session| SANDBOX\n  SANDBOX -->|Raw tick updates| LC\n  LC -->|Symbolic state| BUS\n  BUS -->|State events| AO\n  AO <-->|Context & map cache| MEM\n  AO -->|State & tool prompt| LLM\n  LLM -->|Macro action plan| AO\n  AO -->|Queue macro actions| BUS\n  BUS -->|Dispatch actions| LC\n  LC -->|Execute engine inputs| SANDBOX\n  SANDBOX -.->|Telemetry & render stream| UI",
+  "image_prompt": "A modern technological architecture diagram with dark cyan and slate grey accents, showing an AI agent sandbox platform: web studio interface on the left, an event-driven headless game engine in the center with local micro-controllers, and a high-level cognitive LLM planning brain on the right with spatial vector memory databases, clean vector engineering aesthetic.",
+  "image_url": null,
+  "generated_at": 1791672850.622624
+}

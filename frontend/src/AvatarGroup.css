@@ -1,0 +1,23 @@
+.people-badge { display: inline-flex; align-items: center; flex-shrink: 0; border-radius: var(--radius); }
+.people-tooltip {
+  position: fixed;
+  z-index: 100;
+  width: max-content;
+  min-width: 160px;
+  max-width: min(320px, calc(100vw - 24px));
+  max-height: min(320px, calc(100dvh - 24px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px #18181b1a;
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+}
+.people-tooltip ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.people-tooltip li { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.people-tooltip li > span:last-child { min-width: 0; white-space: normal; overflow-wrap: anywhere; }

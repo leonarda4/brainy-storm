@@ -1,0 +1,28 @@
+{
+  "generator": "title-svg-v2",
+  "style_revision": "simple-forms-v3",
+  "source_hash": "b2f0ca0ad483e289df39e71be07783eec91042a54ec904e1d64ab530c86f73d4",
+  "title": "Hackathon Networking Matchmaker",
+  "palette": [
+    "#000000",
+    "#ff7146"
+  ],
+  "art_direction": {
+    "style": "suggestive-shape",
+    "composition": "side-bleed",
+    "background": "#000000",
+    "foreground": "#ff7146",
+    "accent": "#f4ff61",
+    "color_mode": "two-tone"
+  },
+  "width": 800,
+  "height": 400,
+  "generated_at": 1791680515.086299,
+  "svg_hash": "ef32c896ca12d07b",
+  "generation": {
+    "source_hash": "b2f0ca0ad483e289df39e71be07783eec91042a54ec904e1d64ab530c86f73d4",
+    "status": "ready",
+    "attempts": 1,
+    "next_retry_at": 0
+  }
+}

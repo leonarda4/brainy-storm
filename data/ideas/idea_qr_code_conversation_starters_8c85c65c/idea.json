@@ -1,0 +1,280 @@
+{
+  "session_id": "team-discussion",
+  "id": "idea_qr_code_conversation_starters_8c85c65c",
+  "title": "QR Code Conversation Starters",
+  "short_summary": "An idea to scan another participant's QR code to receive generated conversation starters. Leonarda favored it over matchmaking since participants may still struggle with conversation topics even when matched. While Giacomo argued it is a feature of the networking product rather than a standalone tool, Alex suggested it could be the MVP.",
+  "summary": "Users struggling with networking conversations can scan someone's QR code to receive tailored conversation starters. The group debated whether this concept should be a standalone product or just a feature, with some suggesting it could serve as an MVP.",
+  "is_currently_discussed": false,
+  "transcript": "Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that\n\nMarko: could be part of the networking product.\nLeonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.\nGiacomo: But that's a feature, not a standalone product.\nAlex: Maybe. Could be the MVP, though.\nMarko: Didn't we already discuss all this?\nLeonarda: Yeah, but I don't remember what we concluded.\nGiacomo: I don't think we concluded",
+  "raw_body": "Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that\n\nMarko: could be part of the networking product.\nLeonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.\nGiacomo: But that's a feature, not a standalone product.\nAlex: Maybe. Could be the MVP, though.\nMarko: Didn't we already discuss all this?\nLeonarda: Yeah, but I don't remember what we concluded.\nGiacomo: I don't think we concluded",
+  "transcript_segments": [
+    {
+      "chunk_id": "d7f988e3883b9050dece",
+      "text": "Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+      "captured_at": 1791672919.874557,
+      "reason": "The transcript discusses the QR code conversation starters idea explicitly, mentioning scanning someone's QR code to get conversation starters."
+    },
+    {
+      "chunk_id": "6587383ca20c5cf8cf39",
+      "text": "Marko: could be part of the networking product.\nLeonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.\nGiacomo: But that's a feature, not a standalone product.\nAlex: Maybe. Could be the MVP, though.\nMarko: Didn't we already discuss all this?\nLeonarda: Yeah, but I don't remember what we concluded.\nGiacomo: I don't think we concluded",
+      "captured_at": 1791672958.197355,
+      "reason": "The participants discuss whether the QR code conversation starters idea is a standalone product, a feature, or an MVP, and compare it to matching."
+    }
+  ],
+  "content_version": 2,
+  "enriched_version": 2,
+  "proponents": [
+    "Alex expressed clear personal support for the concept.",
+    "Leonarda reintroduced the idea positively to re-engage team consideration.",
+    "Leonarda argued that providing conversation starters addresses a bigger networking problem than simply matching participants.",
+    "Alex supported the idea and proposed developing it as a targeted MVP."
+  ],
+  "opponents": [
+    "Giacomo challenged the viability of the concept as an independent commercial product, categorizing it strictly as a feature."
+  ],
+  "thumbnail": "/ideas/idea_qr_code_conversation_starters_8c85c65c/artifacts/thumbnail.svg?v=e373085b060a9cf7",
+  "competitors": {
+    "summary": "Existing tools separately address contact sharing, card-based prompt games, and dating profile prompts, leaving room for personalized in-person icebreakers.",
+    "competitors": [
+      {
+        "name": "Popl",
+        "summary": "Digital business card platform enabling contact and profile sharing through custom QR codes and NFC devices.",
+        "differentiator": "Focuses strictly on static contact exchange, professional links, and CRM lead capture.",
+        "idea": "Contactless digital networking profile sharing via smart hardware and QR codes.",
+        "yearOfFounding": "2019",
+        "shortBio": "Popl builds NFC and QR-based digital business cards to streamline professional in-person networking.",
+        "howWeDiffer": "We deliver personalized conversational icebreakers to stimulate immediate dialogue rather than transmitting static contact info."
+      },
+      {
+        "name": "We're Not Really Strangers",
+        "summary": "Interactive conversation card platform designed to prompt meaningful dialogue through curated, tiered question decks.",
+        "differentiator": "Relies on pre-written generic question cards rather than dynamically personalized prompts tied to an individual.",
+        "idea": "Prompt-based card game centered on deepening interpersonal connections through targeted questions.",
+        "yearOfFounding": "2018",
+        "shortBio": "WNRS produces card games and digital tools with prompt-based questions to deepen conversations.",
+        "howWeDiffer": "Our questions are uniquely tailored to a scanned person's specific interests rather than drawn from standardized decks."
+      },
+      {
+        "name": "Hinge",
+        "summary": "Relationship app using individualized profile prompts to initiate conversation between potential matches.",
+        "differentiator": "Confined to asynchronous digital dating feeds rather than real-world, in-person social gatherings.",
+        "idea": "Profile-bound text prompts that serve as conversational hooks for messaging.",
+        "yearOfFounding": "2012",
+        "shortBio": "Hinge is a relationship-focused dating platform utilizing user-answered prompts to inspire organic chats.",
+        "howWeDiffer": "We enable immediate, real-world social engagement across diverse events through on-demand physical QR scans."
+      }
+    ],
+    "market_landscape": "The market is split between static digital business cards, generic conversational card games, and prompt-driven digital dating apps.",
+    "our_positioning": "We position as an in-person social facilitator that turns physical encounters into personalized, low-friction conversations via dynamic QR codes.",
+    "groundingSources": [
+      "https://popl.com",
+      "https://werenotreallystrangers.com",
+      "https://hinge.co"
+    ],
+    "generated_at": 1791672952.0523689
+  },
+  "workflow": {
+    "summary": "The QR Code Conversation Starters system captures a user's professional profile via QR code, analyzes shared contexts, and generates personalized, AI-driven networking conversation starters to break the ice.",
+    "steps": [
+      "Step 1: User A generates and displays their digital networking QR code containing their professional profile and interests.",
+      "Step 2: User B scans User A's QR code using their mobile device camera or companion app.",
+      "Step 3: The system extracts profile data for both users and queries an AI engine to find common interests and context.",
+      "Step 4: The system dynamically generates tailored conversation starters displayed on User B's screen.",
+      "Step 5: Users engage in the conversation, with the option to save contacts or log the interaction for follow-up."
+    ],
+    "mermaid_code": "graph TD\n    A[Display QR Code] -->|User A Shares| B[Scan QR Code]\n    B -->|User B Scans| C{Analyze Context}\n    C -->|Extract Profiles| D[AI Conversation Engine]\n    D -->|Generate Starters| E[Display Icebreakers on Screen]\n    E --> F[Initiate Networking Conversation]",
+    "mermaidCode": null,
+    "image_prompt": "A modern isometric 3D vector illustration of two professionals at a conference, one holding up a glowing digital QR code on a smartphone while the other scans it with their device, with floating UI cards displaying conversational icebreakers and networking nodes connecting them in a sleek, glowing blue and violet color palette.",
+    "image_url": null,
+    "generated_at": 1791672969.410814
+  },
+  "pros_cons": {
+    "summary": "The team debated whether QR-based conversation starters solve immediate networking friction well enough to serve as an MVP or remain just a feature.",
+    "pros": [
+      {
+        "point": "Solves real-time conversational friction even when attendees already know whom they are meeting.",
+        "category": "User Experience",
+        "severity_or_impact": "High",
+        "source_context": "Leonarda noted, 'even if you already know who you're meeting, you still might not know what to talk about.'"
+      },
+      {
+        "point": "Provides a focused, lightweight value proposition suitable for launching as a Minimum Viable Product.",
+        "category": "Business & Market",
+        "severity_or_impact": "Medium",
+        "source_context": "Alex suggested, 'Could be the MVP, though.'"
+      }
+    ],
+    "cons": [
+      {
+        "point": "Lacks sufficient breadth and defensibility to function as a standalone product rather than a minor feature.",
+        "category": "Business & Market",
+        "severity_or_impact": "High",
+        "source_context": "Giacomo argued, 'that's a feature, not a standalone product.'"
+      }
+    ],
+    "key_risks": [
+      "Physical friction and social awkwardness of pulling out phones to scan codes during live networking may deter adoption.",
+      "Generated conversation starters may feel generic or unhelpful, causing rapid drop-off in user engagement."
+    ],
+    "assumptions": [
+      "Event attendees are willing to present and scan QR codes before initiating spontaneous face-to-face discussions.",
+      "Tailored prompts provide noticeably superior conversational outcomes compared to browsing a standard professional profile."
+    ],
+    "open_questions": [
+      "What specific profile data points will be used to generate relevant, contextual conversation starters?",
+      "Should the capability be tested as a standalone pilot app or integrated into a comprehensive event networking platform?"
+    ],
+    "generated_at": 1791672967.843355
+  },
+  "systemGraph": {
+    "summary": "System architecture for the QR Code Conversation Starter platform. When an attendee scans another participant's QR code, an API Gateway authenticates the request and passes signed QR tokens to a QR Resolution Service. The Icebreaker Generation Orchestrator pulls profile and privacy scopes for both attendees, queries a Vector DB for semantic topic overlaps, prompts an LLM with strict privacy guardrails to synthesize tailored conversation starters, caches results in Redis, and asynchronously dispatches telemetry events via a message broker.",
+    "nodes": [
+      {
+        "id": "client_scanner",
+        "label": "Scanner Mobile App / PWA",
+        "description": "Attendee client device scanning the target attendee's dynamic or static QR code and rendering icebreakers.",
+        "component_type": "client"
+      },
+      {
+        "id": "api_gateway",
+        "label": "API Gateway & Auth Guard",
+        "description": "Authenticates scan requests, applies rate limiting, and validates caller session tokens.",
+        "component_type": "security"
+      },
+      {
+        "id": "qr_resolver",
+        "label": "QR Resolver Service",
+        "description": "Decodes and verifies cryptographic dynamic QR payloads, mapping them to target user IDs.",
+        "component_type": "api"
+      },
+      {
+        "id": "profile_service",
+        "label": "Profile & Privacy Service",
+        "description": "Applies user visibility filters and extracts public networking interests, bios, and event metadata.",
+        "component_type": "api"
+      },
+      {
+        "id": "profile_db",
+        "label": "PostgreSQL Profile Store",
+        "description": "Persistent relational store for user profiles, event registrations, and privacy permissions.",
+        "component_type": "database"
+      },
+      {
+        "id": "redis_cache",
+        "label": "Redis Cache & Nonce Store",
+        "description": "Stores QR nonces to prevent replay attacks and caches generated conversation starters for quick retrieval.",
+        "component_type": "database"
+      },
+      {
+        "id": "icebreaker_orchestrator",
+        "label": "Icebreaker Orchestrator",
+        "description": "Aggregates scanner and target profiles, identifies conversational overlaps, and coordinates LLM generation.",
+        "component_type": "api"
+      },
+      {
+        "id": "vector_store",
+        "label": "Vector Database (Qdrant / pgvector)",
+        "description": "Performs cosine similarity searches on profile tags and interest embeddings to locate shared context.",
+        "component_type": "database"
+      },
+      {
+        "id": "llm_service",
+        "label": "LLM Inference API",
+        "description": "Receives prompt templates with redacted overlapping interests and synthesizes polite, context-aware icebreakers.",
+        "component_type": "model"
+      },
+      {
+        "id": "event_broker",
+        "label": "Telemetry Queue (Kafka / SQS)",
+        "description": "Asynchronously ingests scan metrics, engagement telemetry, and starter ratings for analytics.",
+        "component_type": "queue"
+      }
+    ],
+    "edges": [
+      {
+        "source": "client_scanner",
+        "target": "api_gateway",
+        "label": "POST /api/v1/scan (QR payload + auth)"
+      },
+      {
+        "source": "api_gateway",
+        "target": "qr_resolver",
+        "label": "Validate & decode QR token"
+      },
+      {
+        "source": "qr_resolver",
+        "target": "redis_cache",
+        "label": "Check dynamic QR nonce validity"
+      },
+      {
+        "source": "api_gateway",
+        "target": "icebreaker_orchestrator",
+        "label": "Request starters (Scanner ID + Target ID)"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "redis_cache",
+        "label": "Check cached starters (hit/miss)"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "profile_service",
+        "label": "Fetch paired attendee profiles"
+      },
+      {
+        "source": "profile_service",
+        "target": "profile_db",
+        "label": "Query profiles with privacy filters"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "vector_store",
+        "label": "Query semantic overlap of interests"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "llm_service",
+        "label": "Prompt with profile diff & overlap context"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "redis_cache",
+        "label": "Store generated starters (TTL 30m)"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "event_broker",
+        "label": "Emit ScanProcessed event"
+      },
+      {
+        "source": "icebreaker_orchestrator",
+        "target": "api_gateway",
+        "label": "Return structured conversation prompts"
+      },
+      {
+        "source": "api_gateway",
+        "target": "client_scanner",
+        "label": "JSON response with tailored starters"
+      }
+    ],
+    "mermaid_code": "flowchart TD\n  subgraph Client Tier\n    Scanner[Scanner Mobile App / PWA]\n  end\n\n  subgraph Edge & Security\n    GW[API Gateway & Auth Guard]\n  end\n\n  subgraph Application Tier\n    QR[QR Resolver Service]\n    Orch[Icebreaker Orchestrator]\n    ProfSvc[Profile & Privacy Service]\n  end\n\n  subgraph Storage & Cache\n    Redis[(Redis Cache & Nonces)]\n    PG[(PostgreSQL Profile Store)]\n    VDB[(Vector Database)]\n  end\n\n  subgraph AI & Analytics\n    LLM[LLM Inference API]\n    Queue[Telemetry Queue - Kafka/SQS]\n  end\n\n  Scanner -->|POST /scan| GW\n  GW -->|Validate Token| QR\n  QR -->|Check Nonce| Redis\n  GW -->|Trigger Pipeline| Orch\n  Orch -->|Lookup Cache| Redis\n  Orch -->|Get Paired Profiles| ProfSvc\n  ProfSvc -->|Read Profiles| PG\n  Orch -->|Semantic Match| VDB\n  Orch -->|Generate Starters| LLM\n  LLM -->|Return Prompts| Orch\n  Orch -->|Cache Results| Redis\n  Orch -->|Publish Telemetry| Queue\n  Orch -->|Starters Payload| GW\n  GW -->|Render Starters| Scanner",
+    "image_prompt": "Clean enterprise software architecture diagram of a QR code networking system with microservices, vector database, LLM provider, and mobile scanners, high tech aesthetic, blueprint style, crisp lines and labeled boxes",
+    "image_url": null,
+    "generated_at": 1791672988.238711
+  },
+  "status": "enriched",
+  "active_tools": [],
+  "created_at": 1791672919.87455,
+  "updated_at": 1791672988.287689,
+  "metadata": {
+    "key_takeaway": "The team has not reached a consensus on whether the QR code concept should be a standalone product or a feature within a larger networking tool.",
+    "artifact_versions": {
+      "summary": 2,
+      "pros_cons": 2,
+      "workflow": 2,
+      "architecture": 2,
+      "competitors": 1
+    },
+    "last_enrichment_service": "architecture"
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "chunk_id": "1eb434b769be15c28fcc",
+    "text": "[00:11:36] Giacomo: The biggest issue is probably getting the product data. Like, we can build the recommendation system, but if we don't have a proper catalog, what's it even recommending?\n[00:11:45] Alex: Couldn't we just scrape a few websites?\n[00:11:48] Giacomo: Yeah, but then you have to maintain it. And they all structure their data differently.",
+    "captured_at": 1791672239.734796,
+    "reason": "The speakers discuss the problem of obtaining product data and catalog maintenance for the recommendation system, along with a potential scraping solution and its associated maintenance objections."
+  },
+  {
+    "chunk_id": "0de57b453c4af043e93b",
+    "text": "[00:12:06] Giacomo: We're literally discussing furniture.\n[00:12:09] Leonarda: I know, but with furniture you're depending on all these external stores and whatever. With networking, you just need people to provide some information and then match them.\n[00:12:20] Alex: Okay, but getting people to provide information is arguably harder than scraping IKEA.\n[00:12:26] Leonarda: Not at a hackathon. Everyone's",
+    "captured_at": 1791672278.291188,
+    "reason": "The participants discuss the challenges of obtaining product data for the furniture recommendation system, comparing scraping external stores like IKEA with alternative data collection methods."
+  },
+  {
+    "chunk_id": "3b2496d19b4b85bcbca6",
+    "text": "[00:12:59] Marko: Yeah, but I'm saying we could extract much richer context.\n[00:13:04] Leonarda: Exactly. And honestly, that sounds more interesting than swiping through chairs.\n[00:13:10] Giacomo: I disagree. The chair thing is much easier to show people. You upload your room, swipe on a few products, and immediately get something visual. The networking one is going to be a list of random people with AI-generated reasons to talk to them.",
+    "captured_at": 1791672349.979564,
+    "reason": "The participants discuss the workflow, advantages, and objections regarding the furniture product recommendation system versus a networking alternative."
+  },
+  {
+    "chunk_id": "01f95253e9e3b19e29e4",
+    "text": "[00:13:28] Alex: He has a point. The furniture demo would look better.\n[00:13:31] Leonarda: But is it actually solving something?\n[00:13:34] Alex: I mean, yes? Buying furniture is annoying.\n[00:13:37] Leonarda: Okay, yeah, fair.",
+    "captured_at": 1791672387.484637,
+    "reason": "The excerpt discusses the visual appeal and problem-solving value of the furniture recommendation system demo."
+  },
+  {
+    "chunk_id": "9231445ed3e11c8c037b",
+    "text": "[00:14:05] Leonarda: Anyway, sorry, back to furniture. I was thinking maybe the user shouldn't even need to upload a room photo initially. Just show them different furniture styles and let them build a moodboard.\n[00:14:19] Marko: Isn't that literally Pinterest?\n[00:14:23] Leonarda: Yeah, okay. Never mind.\n[00:14:26] Alex: [laughs] We're doing great.\n[00:14:30] Giacomo: Actually, the important thing isn't the",
+    "captured_at": 1791672427.5416372,
+    "reason": "The excerpt discusses an alternative feature proposal (moodboards instead of room photo uploads) for the furniture product recommendation system, along with critical feedback comparing it to a competitor."
+  },
+  {
+    "chunk_id": "9f324e79e67b3d86dc75",
+    "text": "[00:14:30] Giacomo: Actually, the important thing isn't the interface. It's that you can say, \"I need a small table under a hundred euros that fits next to my bed,\" and it finds one.\n[00:14:42] Leonarda: But Google Shopping already—\n[00:14:45] Giacomo: Yeah, I know. That's what I'm worried about.",
+    "captured_at": 1791672466.727073,
+    "reason": "The snippet discusses a core feature/requirement of the product recommendation system (natural language search for furniture) and mentions a competitor (Google Shopping) as a concern."
+  },
+  {
+    "chunk_id": "5504c3fedb261edfa6bf",
+    "text": "[00:19:25] Alex: Right, but for a hackathon, it's risky. The furniture one is mostly frontend, a recommendation system, maybe some image processing.\n[00:19:36] Giacomo: \"Some image processing\" is",
+    "captured_at": 1791672602.30839,
+    "reason": "The speakers compare the risks and technical scope of an alternative project idea against the furniture recommendation system, discussing its components like frontend, recommendation system, and image processing."
+  },
+  {
+    "chunk_id": "c4723124e5afa9375293",
+    "text": "[00:19:36] Giacomo: \"Some image processing\" is doing a lot of work in that sentence.\n[00:19:43] Alex: Okay, but we could fake the placement part for the prototype.\n[00:19:49] Leonarda: No, that's exactly what I don't want. I don't want a demo that looks amazing and then doesn't actually work.\n[00:20:00] Marko: We could use image generation instead of 3D rendering.\n[00:20:04] Giacomo: That doesn't solve the dimensions problem.\n[00:20:08] Marko: I know, but maybe we don't need accurate dimensions for the first version.",
+    "captured_at": 1791672637.068481,
+    "reason": "The speakers discuss the technical implementation, prototyping shortcuts, image processing, and rendering challenges specifically for the furniture product recommendation system."
+  },
+  {
+    "chunk_id": "668b201fb0fd55a32fcf",
+    "text": "Leonarda: But then what's the product? A furniture moodboard generator?\nAlex: Okay, yeah. I'm changing my mind again.\nGiacomo: That took about a minute.\nAlex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.\nMarko: Same.\nLeonarda: I like networking more. I think it's the only one where I can immediately imagine actual people using it.",
+    "captured_at": 1791672665.471084,
+    "reason": "The team discusses moving away from the furniture recommendation system to other project ideas like networking or a game agent."
+  },
+  {
+    "chunk_id": "077b9ca5627d9880494e",
+    "text": "[00:24:11] Leonarda: There's also the question of whether people would pay for any of these. Like, I can imagine using the furniture app once, buying something, and never opening it again.",
+    "captured_at": 1791672682.830157,
+    "reason": "The excerpt discusses retention and business viability issues specific to the furniture recommendation app."
+  },
+  {
+    "chunk_id": "6621e0aa0d4e049ecd52",
+    "text": "[00:24:25] Giacomo: That's fine if you make money from the purchase.\n[00:24:29] Leonarda: Yeah, but then we're basically an affiliate business.\n[00:24:33] Alex: Isn't that a perfectly valid business?\n[00:24:36] Leonarda: It is, but I don't know if that's what we want to build.\n[00:24:43] Marko: I think we're overthinking the monetization. It's a hackathon.\n[00:24:49] Giacomo: That's literally when you should be overthinking it. Otherwise we make some cool prototype nobody wants.",
+    "captured_at": 1791672726.142773,
+    "reason": "The transcript discusses the monetization strategy and business model (affiliate revenue) for the furniture recommendation product."
+  }
+]

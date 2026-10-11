@@ -1,0 +1,33 @@
+[00:29:28] Marko: We should probably have some sort of system that tracks all these variations, because we're treating the same ideas as new ideas every fifteen minutes.
+[00:29:40] Giacomo: Honestly, just having a proper transcript and a list of decisions would help.
+[00:29:46] Leonarda: Yeah, but not just a transcript. I think
+
+[00:00:00] Leonarda: So I'm just further explaining our brainstorming idea decision tracker. So it's gonna streamline brainstorming process with multiple agents that are gonna kind of research in the background, we're gonna have one transcript, and then a brainy agent is gonna organize it by ideas.
+
+[2026-10-11T08:53:21.998+00:00] [Speaker 2] Hi, it's Leonardo. So,
+[2026-10-11T08:53:25.998+00:00] [Speaker 2] I think the brainstorming idea, decision tracker, is amazing and we
+[2026-10-11T08:53:29.918+00:00] [Speaker 2] should call it brainy storm. I feel like we should have
+[2026-10-11T08:53:35.438+00:00] [Speaker 2] amazing branding with multiple agents and make it like
+[2026-10-11T08:53:39.998+00:00] [Speaker 2] a playful brand to attract more users.
+
+[2026-10-11T08:54:22.764+00:00] [Speaker 2] Okay, but I feel like API costs should be so big. So I'm not sure how can we validate this idea, because we're just gonna spend all our money on API calls. And you're just students, our budget is literally zero dollars. Marco, do you think any negative
+
+[2026-10-11T08:54:45.324+00:00] [Speaker 2] sides to this idea?
+[2026-10-11T08:54:47.804+00:00] [Marco] Hi, it's Marco. Yeah, I think there
+[2026-10-11T08:54:50.924+00:00] [Marco] are primarily costs related. I'm not sure how much would
+[2026-10-11T08:54:55.404+00:00] [Marco] the cost to actually test and validate the idea. Otherwise, I think the positioning
+[2026-10-11T08:55:00.364+00:00] [Marco] is good. Looking at the competition. It simply doesn't
+
+[2026-10-11T09:02:33.613+00:00] [Marco] Craze, Marco. I'm thinking about the spring swimming idea decision tracking.
+[2026-10-11T09:02:38.893+00:00] [Marco] What if we underline that use no jazz? No jazz, you know what no jazz is?
+
+[2026-10-11T09:12:31.273+00:00] [Marco] Hi, it's Marco. Again,
+[2026-10-11T09:12:33.833+00:00] [Marco] about this brainstorming idea, I'm just not sure if we should
+[2026-10-11T09:12:38.633+00:00] [Marco] pursue it or not. I've been talking about this for a while now, and
+[2026-10-11T09:12:43.593+00:00] [Marco] I don't know, we can discuss the technologies, we can discuss this and that. I don't know what not.
+[2026-10-11T09:12:48.633+00:00] [Marco] But anyhow, it's the competition seems coarse.
+
+[2026-10-11T09:15:01.527+00:00] [Marco] Can we have a more detailed view
+[2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.
+[2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves
+[2026-10-11T09:15:14.567+00:00] [Marco] to that startup.

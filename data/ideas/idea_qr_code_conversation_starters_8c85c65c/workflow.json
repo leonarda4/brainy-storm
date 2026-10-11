@@ -1,0 +1,15 @@
+{
+  "summary": "The QR Code Conversation Starters system captures a user's professional profile via QR code, analyzes shared contexts, and generates personalized, AI-driven networking conversation starters to break the ice.",
+  "steps": [
+    "Step 1: User A generates and displays their digital networking QR code containing their professional profile and interests.",
+    "Step 2: User B scans User A's QR code using their mobile device camera or companion app.",
+    "Step 3: The system extracts profile data for both users and queries an AI engine to find common interests and context.",
+    "Step 4: The system dynamically generates tailored conversation starters displayed on User B's screen.",
+    "Step 5: Users engage in the conversation, with the option to save contacts or log the interaction for follow-up."
+  ],
+  "mermaid_code": "graph TD\n    A[Display QR Code] -->|User A Shares| B[Scan QR Code]\n    B -->|User B Scans| C{Analyze Context}\n    C -->|Extract Profiles| D[AI Conversation Engine]\n    D -->|Generate Starters| E[Display Icebreakers on Screen]\n    E --> F[Initiate Networking Conversation]",
+  "mermaidCode": null,
+  "image_prompt": "A modern isometric 3D vector illustration of two professionals at a conference, one holding up a glowing digital QR code on a smartphone while the other scans it with their device, with floating UI cards displaying conversational icebreakers and networking nodes connecting them in a sleek, glowing blue and violet color palette.",
+  "image_url": null,
+  "generated_at": 1791672969.410814
+}

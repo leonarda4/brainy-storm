@@ -1,0 +1,49 @@
+flowchart TD
+  subgraph External[External Inputs]
+    EXT_REG[Organizer Registration Data]
+  end
+
+  subgraph Client[Client Layer]
+    APP[Participant Web App / PWA]
+  end
+
+  subgraph CoreAPI[API & Coordination Layer]
+    GW[API Gateway & Router]
+    IMPORT[Organizer Ingest Worker]
+    PROFILER[Conversational Profiler Service]
+    ICEBREAKER[Contextual Icebreaker Service]
+  end
+
+  subgraph ComputeAI[Matching & AI Services]
+    EMB[Embedding Generator]
+    MATCH[Hybrid Matching Engine]
+    LLM[Foundation LLM API]
+  end
+
+  subgraph DataLayer[Data & State Layer]
+    PG[(PostgreSQL + pgvector)]
+    CACHE[(Redis Cache & Session Store)]
+  end
+
+  EXT_REG -->|Batch attendee export| IMPORT
+  IMPORT -->|Seed participants| PG
+
+  APP -->|Chat, Match Requests, QR Scans| GW
+  GW -->|Session routing| PROFILER
+  GW -->|Fetch matches & graph| MATCH
+  GW -->|QR badge resolution| ICEBREAKER
+
+  PROFILER <-->|Session state| CACHE
+  PROFILER -->|Adaptive prompts & synthesis| LLM
+  PROFILER -->|Update rich profile| PG
+
+  PG -.->|Profile change event| EMB
+  EMB -->|Compute embeddings| LLM
+  EMB -->|Write vectors| PG
+
+  MATCH -->|Vector similarity + relational filter| PG
+  MATCH -->|Cache top matches| CACHE
+
+  ICEBREAKER -->|Fetch paired profile data| PG
+  ICEBREAKER -->|Generate context starters| LLM
+  ICEBREAKER -->|Personalized prompts| APP

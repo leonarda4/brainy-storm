@@ -1,0 +1,125 @@
+{
+  "summary": "Distributed event-driven architecture that ingests transcripts, groups semantic idea variations using LLMs and vector search, and conducts background research.",
+  "nodes": [
+    {
+      "id": "web_ui",
+      "label": "Web Client",
+      "description": "Provides real-time brainstorm boards, transcript views, and decision approval gates.",
+      "component_type": "client"
+    },
+    {
+      "id": "api_gw",
+      "label": "API Gateway",
+      "description": "Routes REST commands, transcript streams, and WebSocket broadcast connections.",
+      "component_type": "api"
+    },
+    {
+      "id": "event_queue",
+      "label": "Transcript & Event Queue",
+      "description": "Buffers streaming transcript chunks and downstream agent processing tasks.",
+      "component_type": "queue"
+    },
+    {
+      "id": "brainy_agent",
+      "label": "Brainy Agent Worker",
+      "description": "Extracts ideas, tracks variations against historical items, and logs candidate decisions.",
+      "component_type": "worker"
+    },
+    {
+      "id": "research_agent",
+      "label": "Research Agent Worker",
+      "description": "Enriches proposed ideas with automated background context and external research.",
+      "component_type": "worker"
+    },
+    {
+      "id": "llm_service",
+      "label": "LLM Inference API",
+      "description": "Executes semantic extraction, deduplication logic, and summarization prompts.",
+      "component_type": "model"
+    },
+    {
+      "id": "vector_db",
+      "label": "Vector Database",
+      "description": "Indexes idea embeddings to detect duplicate or evolving concepts over time.",
+      "component_type": "database"
+    },
+    {
+      "id": "primary_db",
+      "label": "Relational Database",
+      "description": "Stores transcripts, structured ideas, variation lineages, and finalized decisions.",
+      "component_type": "database"
+    },
+    {
+      "id": "search_api",
+      "label": "External Search API",
+      "description": "Fetches background information and domain references for active ideas.",
+      "component_type": "external"
+    }
+  ],
+  "edges": [
+    {
+      "source": "web_ui",
+      "target": "api_gw",
+      "label": "Stream audio & transcripts"
+    },
+    {
+      "source": "api_gw",
+      "target": "event_queue",
+      "label": "Publish chunks"
+    },
+    {
+      "source": "event_queue",
+      "target": "brainy_agent",
+      "label": "Consume chunks"
+    },
+    {
+      "source": "brainy_agent",
+      "target": "llm_service",
+      "label": "Extract & cluster ideas"
+    },
+    {
+      "source": "brainy_agent",
+      "target": "vector_db",
+      "label": "Query & upsert embeddings"
+    },
+    {
+      "source": "brainy_agent",
+      "target": "primary_db",
+      "label": "Persist ideas & decisions"
+    },
+    {
+      "source": "brainy_agent",
+      "target": "event_queue",
+      "label": "Enqueue research tasks"
+    },
+    {
+      "source": "event_queue",
+      "target": "research_agent",
+      "label": "Consume tasks"
+    },
+    {
+      "source": "research_agent",
+      "target": "search_api",
+      "label": "Query facts"
+    },
+    {
+      "source": "research_agent",
+      "target": "primary_db",
+      "label": "Store research notes"
+    },
+    {
+      "source": "primary_db",
+      "target": "api_gw",
+      "label": "Push updates via WS"
+    },
+    {
+      "source": "web_ui",
+      "target": "api_gw",
+      "label": "Approve decisions"
+    }
+  ],
+  "mermaid_code": "flowchart TD\n  web_ui[\"Web Client\"] -->|\"Stream audio/text\"| api_gw[\"API Gateway\"]\n  web_ui -->|\"Approve decisions\"| api_gw\n  api_gw -->|\"Push updates\"| web_ui\n  api_gw -->|\"Enqueue chunks\"| event_queue[\"Event Queue\"]\n  event_queue -->|\"Consume chunks\"| brainy_agent[\"Brainy Agent Worker\"]\n  brainy_agent -->|\"Classify & cluster\"| llm_service[\"LLM Inference API\"]\n  brainy_agent -->|\"Similarity search\"| vector_db[(\"Vector Database\")]\n  brainy_agent -->|\"Save ideas & decisions\"| primary_db[(\"Relational Database\")]\n  brainy_agent -->|\"Trigger research\"| event_queue\n  event_queue -->|\"Consume tasks\"| research_agent[\"Research Agent Worker\"]\n  research_agent -->|\"Fetch context\"| search_api[\"External Search API\"]\n  research_agent -->|\"Attach findings\"| primary_db\n  primary_db -.->|\"Emit events\"| api_gw",
+  "image_prompt": "A modern software architecture diagram depicting an AI-powered brainstorming tracker with microservices, message queues, relational and vector databases, and background LLM agent workers on a clean dark slate background.",
+  "image_url": null,
+  "generated_at": 1791679892.708255
+}

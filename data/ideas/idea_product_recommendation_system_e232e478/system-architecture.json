@@ -1,0 +1,152 @@
+{
+  "summary": "System architecture for a multimodal furniture recommendation platform supporting natural language constraint queries, visual room matching, automated catalog scraping, and virtual staging mockup generation.",
+  "nodes": [
+    {
+      "id": "client_ui",
+      "label": "Client Application",
+      "description": "Web/Mobile frontend for text prompt entry, room photo uploads, product swiping, and staging preview.",
+      "component_type": "client"
+    },
+    {
+      "id": "api_gateway",
+      "label": "API Gateway",
+      "description": "Handles authentication, client requests, file upload routing, and session state.",
+      "component_type": "api"
+    },
+    {
+      "id": "object_storage",
+      "label": "Object Storage",
+      "description": "Stores user-uploaded room photos, scraped product images, and generated staging renders.",
+      "component_type": "database"
+    },
+    {
+      "id": "nl_parser",
+      "label": "LLM Query Parser",
+      "description": "Extracts semantic style, hard budget constraints, dimensions, and category entities from natural language queries.",
+      "component_type": "model"
+    },
+    {
+      "id": "vision_encoder",
+      "label": "Multimodal Vision Service",
+      "description": "Extracts visual style embeddings and room context/bounding anchors using CLIP and object detection models.",
+      "component_type": "model"
+    },
+    {
+      "id": "recs_engine",
+      "label": "Hybrid Recommendation Engine",
+      "description": "Coordinates candidate retrieval, combines vector similarities, and applies metadata filters (price, dimensions).",
+      "component_type": "api"
+    },
+    {
+      "id": "vector_store",
+      "label": "Vector Database",
+      "description": "Stores multimodal text and image embeddings for fast ANN similarity retrieval.",
+      "component_type": "database"
+    },
+    {
+      "id": "catalog_db",
+      "label": "Product Catalog Database",
+      "description": "Relational database maintaining normalized product specifications, dimensions, pricing, and retailer URLs.",
+      "component_type": "database"
+    },
+    {
+      "id": "scraper_queue",
+      "label": "Scraper Task Queue",
+      "description": "Distributes periodic scraping and catalog refresh jobs across retailer targets.",
+      "component_type": "queue"
+    },
+    {
+      "id": "scraper_workers",
+      "label": "Catalog Ingestion Workers",
+      "description": "Scrapes external furniture retailer websites (e.g., IKEA), standardizes specs, and generates embeddings.",
+      "component_type": "worker"
+    },
+    {
+      "id": "staging_worker",
+      "label": "Visual Staging Service",
+      "description": "Generates mockup furniture placement previews using image inpainting and diffusion models.",
+      "component_type": "worker"
+    }
+  ],
+  "edges": [
+    {
+      "source": "client_ui",
+      "target": "api_gateway",
+      "label": "Submits prompts, photos, and swipe actions"
+    },
+    {
+      "source": "api_gateway",
+      "target": "object_storage",
+      "label": "Uploads room images"
+    },
+    {
+      "source": "api_gateway",
+      "target": "nl_parser",
+      "label": "Sends raw search prompt"
+    },
+    {
+      "source": "api_gateway",
+      "target": "vision_encoder",
+      "label": "Passes room image URL"
+    },
+    {
+      "source": "nl_parser",
+      "target": "recs_engine",
+      "label": "Extracted constraints and text embedding"
+    },
+    {
+      "source": "vision_encoder",
+      "target": "recs_engine",
+      "label": "Visual style embedding"
+    },
+    {
+      "source": "recs_engine",
+      "target": "vector_store",
+      "label": "ANN vector query"
+    },
+    {
+      "source": "recs_engine",
+      "target": "catalog_db",
+      "label": "Applies price & dimension filters"
+    },
+    {
+      "source": "recs_engine",
+      "target": "api_gateway",
+      "label": "Returns ranked product candidates"
+    },
+    {
+      "source": "api_gateway",
+      "target": "staging_worker",
+      "label": "Dispatches placement render request"
+    },
+    {
+      "source": "staging_worker",
+      "target": "object_storage",
+      "label": "Writes synthesized room preview"
+    },
+    {
+      "source": "scraper_queue",
+      "target": "scraper_workers",
+      "label": "Scheduled crawl jobs"
+    },
+    {
+      "source": "scraper_workers",
+      "target": "catalog_db",
+      "label": "Stores normalized catalog metadata"
+    },
+    {
+      "source": "scraper_workers",
+      "target": "vector_store",
+      "label": "Indexes image/text embeddings"
+    },
+    {
+      "source": "scraper_workers",
+      "target": "object_storage",
+      "label": "Saves cached product images"
+    }
+  ],
+  "mermaid_code": "flowchart TD\n  Client[Client Application] --> Gateway[API Gateway]\n  Gateway --> ObjStore[(Object Storage)]\n  Gateway --> NLParser[LLM Query Parser]\n  Gateway --> VisionEnc[Multimodal Vision Service]\n  Gateway --> StagingWorker[Visual Staging Service]\n\n  NLParser --> RecsEngine[Hybrid Recommendation Engine]\n  VisionEnc --> RecsEngine\n\n  RecsEngine --> VectorDB[(Vector Database)]\n  RecsEngine --> CatalogDB[(Product Catalog DB)]\n  RecsEngine --> Gateway\n\n  StagingWorker --> ObjStore\n\n  ScrapeQueue[Scraper Task Queue] --> ScrapeWorkers[Catalog Ingestion Workers]\n  ScrapeWorkers --> CatalogDB\n  ScrapeWorkers --> VectorDB\n  ScrapeWorkers --> ObjStore",
+  "image_prompt": "Clean enterprise architecture diagram depicting a multimodal furniture recommendation platform. Highlighting clients, an API Gateway, vector and relational databases, an LLM query parsing service, a multimodal vision encoder, web scraping workers, and a visual inpainting service. Modern minimalist cloud tech schematic with dark background, glowing connection lines, and clean technical icons.",
+  "image_url": null,
+  "generated_at": 1791672663.368237
+}

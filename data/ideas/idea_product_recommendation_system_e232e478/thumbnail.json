@@ -1,0 +1,30 @@
+{
+  "generator": "title-svg-v2",
+  "style_revision": "simple-forms-v3",
+  "source_hash": "d172bb1f0e4ecfd7f59dabcc92a2bf6eb469d0425098ac45127abb8e150196fa",
+  "title": "Product Recommendation System",
+  "palette": [
+    "#000000",
+    "#f4ff61"
+  ],
+  "art_direction": {
+    "style": "suggestive-shape",
+    "composition": "diagonal-bleed",
+    "background": "#f4ff61",
+    "foreground": "#000000",
+    "accent": "#9da51a",
+    "color_mode": "two-tone"
+  },
+  "width": 800,
+  "height": 400,
+  "generated_at": 1791678445.630496,
+  "svg_hash": "9be798e4bd9bcc27",
+  "generation": {
+    "source_hash": "d172bb1f0e4ecfd7f59dabcc92a2bf6eb469d0425098ac45127abb8e150196fa",
+    "status": "ready",
+    "attempts": 0,
+    "next_retry_at": 0,
+    "method": "curated-svg",
+    "design": "Two offset circles; oversized lower-left circle"
+  }
+}

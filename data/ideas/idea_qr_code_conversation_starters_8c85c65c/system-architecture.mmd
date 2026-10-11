@@ -1,0 +1,40 @@
+flowchart TD
+  subgraph Client Tier
+    Scanner[Scanner Mobile App / PWA]
+  end
+
+  subgraph Edge & Security
+    GW[API Gateway & Auth Guard]
+  end
+
+  subgraph Application Tier
+    QR[QR Resolver Service]
+    Orch[Icebreaker Orchestrator]
+    ProfSvc[Profile & Privacy Service]
+  end
+
+  subgraph Storage & Cache
+    Redis[(Redis Cache & Nonces)]
+    PG[(PostgreSQL Profile Store)]
+    VDB[(Vector Database)]
+  end
+
+  subgraph AI & Analytics
+    LLM[LLM Inference API]
+    Queue[Telemetry Queue - Kafka/SQS]
+  end
+
+  Scanner -->|POST /scan| GW
+  GW -->|Validate Token| QR
+  QR -->|Check Nonce| Redis
+  GW -->|Trigger Pipeline| Orch
+  Orch -->|Lookup Cache| Redis
+  Orch -->|Get Paired Profiles| ProfSvc
+  ProfSvc -->|Read Profiles| PG
+  Orch -->|Semantic Match| VDB
+  Orch -->|Generate Starters| LLM
+  LLM -->|Return Prompts| Orch
+  Orch -->|Cache Results| Redis
+  Orch -->|Publish Telemetry| Queue
+  Orch -->|Starters Payload| GW
+  GW -->|Render Starters| Scanner

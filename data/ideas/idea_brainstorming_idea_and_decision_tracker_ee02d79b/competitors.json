@@ -1,0 +1,40 @@
+{
+  "summary": "While incumbents dominate general meeting transcription and visual whiteboards, Brainy Storm captures unique value by mapping conceptual iterations and utilizing autonomous background research agents.",
+  "competitors": [
+    {
+      "name": "Fireflies.ai",
+      "summary": "Automated meeting transcription and conversation intelligence software for team calls.",
+      "differentiator": "Automated voice-recording bot integration across enterprise video conferencing platforms.",
+      "idea": "AI meeting recorder that transcribes and summarizes team voice conversations.",
+      "yearOfFounding": "2016",
+      "shortBio": "Fireflies.ai automatically transcribes, summarizes, and analyzes voice conversations across major video conferencing platforms.",
+      "howWeDiffer": "We focus on conceptual variation tracking and active idea evolution rather than passive meeting transcription logs."
+    },
+    {
+      "name": "Miro",
+      "summary": "Visual collaboration platform offering digital whiteboards with integrated generative AI tools.",
+      "differentiator": "Infinite freeform visual canvas built for manual diagramming and interactive workshop facilitation.",
+      "idea": "Collaborative digital whiteboard platform for visual brainstorming and project planning.",
+      "yearOfFounding": "2011",
+      "shortBio": "Miro provides an online collaborative whiteboard workspace designed for distributed team brainstorming and agile workflows.",
+      "howWeDiffer": "We proactively track idea iterations and run background research agents instead of requiring manual canvas management."
+    },
+    {
+      "name": "Otter.ai",
+      "summary": "Speech-to-text assistant generating live meeting transcripts and automated summary notes.",
+      "differentiator": "Real-time speech capture paired with automated slide capture and outline generation.",
+      "idea": "Real-time automated speech-to-text transcription engine for business meetings and lectures.",
+      "yearOfFounding": "2016",
+      "shortBio": "Otter.ai converts spoken conversations into searchable, shareable meeting notes and actionable summaries using proprietary voice recognition.",
+      "howWeDiffer": "We specifically prevent circular discussions by mapping idea genealogies and decisions rather than generic conversational text."
+    }
+  ],
+  "market_landscape": "Current tools split between passive meeting transcribers and visual whiteboards that lack automated conceptual branch tracking.",
+  "our_positioning": "We position as an active, playful brainstorming copilot that indexes idea variations and deploys autonomous research agents to stop circular discussions.",
+  "groundingSources": [
+    "https://fireflies.ai",
+    "https://miro.com",
+    "https://otter.ai"
+  ],
+  "generated_at": 1791710175.5459368
+}

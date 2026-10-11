@@ -1,0 +1,29 @@
+{
+  "generator": "title-svg-v2",
+  "style_revision": "simple-forms-v3",
+  "source_hash": "b8d69dc9bd2d44ed98e339a95a6838d73b0d6f9f47a86834fc9dd73c40e1fb06",
+  "title": "QR Code Conversation Starters",
+  "palette": [
+    "#000000",
+    "#a83cf4"
+  ],
+  "art_direction": {
+    "style": "abstract-pattern",
+    "composition": "top-bleed",
+    "background": "#a83cf4",
+    "foreground": "#000000",
+    "accent": "#ff7146",
+    "color_mode": "two-tone"
+  },
+  "width": 800,
+  "height": 400,
+  "generated_at": 1791677748.2241092,
+  "svg_hash": "e373085b060a9cf7",
+  "generation": {
+    "source_hash": "b8d69dc9bd2d44ed98e339a95a6838d73b0d6f9f47a86834fc9dd73c40e1fb06",
+    "status": "ready",
+    "attempts": 0,
+    "next_retry_at": 0,
+    "method": "curated-svg"
+  }
+}

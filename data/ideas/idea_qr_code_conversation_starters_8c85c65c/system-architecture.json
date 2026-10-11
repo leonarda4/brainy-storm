@@ -1,0 +1,136 @@
+{
+  "summary": "System architecture for the QR Code Conversation Starter platform. When an attendee scans another participant's QR code, an API Gateway authenticates the request and passes signed QR tokens to a QR Resolution Service. The Icebreaker Generation Orchestrator pulls profile and privacy scopes for both attendees, queries a Vector DB for semantic topic overlaps, prompts an LLM with strict privacy guardrails to synthesize tailored conversation starters, caches results in Redis, and asynchronously dispatches telemetry events via a message broker.",
+  "nodes": [
+    {
+      "id": "client_scanner",
+      "label": "Scanner Mobile App / PWA",
+      "description": "Attendee client device scanning the target attendee's dynamic or static QR code and rendering icebreakers.",
+      "component_type": "client"
+    },
+    {
+      "id": "api_gateway",
+      "label": "API Gateway & Auth Guard",
+      "description": "Authenticates scan requests, applies rate limiting, and validates caller session tokens.",
+      "component_type": "security"
+    },
+    {
+      "id": "qr_resolver",
+      "label": "QR Resolver Service",
+      "description": "Decodes and verifies cryptographic dynamic QR payloads, mapping them to target user IDs.",
+      "component_type": "api"
+    },
+    {
+      "id": "profile_service",
+      "label": "Profile & Privacy Service",
+      "description": "Applies user visibility filters and extracts public networking interests, bios, and event metadata.",
+      "component_type": "api"
+    },
+    {
+      "id": "profile_db",
+      "label": "PostgreSQL Profile Store",
+      "description": "Persistent relational store for user profiles, event registrations, and privacy permissions.",
+      "component_type": "database"
+    },
+    {
+      "id": "redis_cache",
+      "label": "Redis Cache & Nonce Store",
+      "description": "Stores QR nonces to prevent replay attacks and caches generated conversation starters for quick retrieval.",
+      "component_type": "database"
+    },
+    {
+      "id": "icebreaker_orchestrator",
+      "label": "Icebreaker Orchestrator",
+      "description": "Aggregates scanner and target profiles, identifies conversational overlaps, and coordinates LLM generation.",
+      "component_type": "api"
+    },
+    {
+      "id": "vector_store",
+      "label": "Vector Database (Qdrant / pgvector)",
+      "description": "Performs cosine similarity searches on profile tags and interest embeddings to locate shared context.",
+      "component_type": "database"
+    },
+    {
+      "id": "llm_service",
+      "label": "LLM Inference API",
+      "description": "Receives prompt templates with redacted overlapping interests and synthesizes polite, context-aware icebreakers.",
+      "component_type": "model"
+    },
+    {
+      "id": "event_broker",
+      "label": "Telemetry Queue (Kafka / SQS)",
+      "description": "Asynchronously ingests scan metrics, engagement telemetry, and starter ratings for analytics.",
+      "component_type": "queue"
+    }
+  ],
+  "edges": [
+    {
+      "source": "client_scanner",
+      "target": "api_gateway",
+      "label": "POST /api/v1/scan (QR payload + auth)"
+    },
+    {
+      "source": "api_gateway",
+      "target": "qr_resolver",
+      "label": "Validate & decode QR token"
+    },
+    {
+      "source": "qr_resolver",
+      "target": "redis_cache",
+      "label": "Check dynamic QR nonce validity"
+    },
+    {
+      "source": "api_gateway",
+      "target": "icebreaker_orchestrator",
+      "label": "Request starters (Scanner ID + Target ID)"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "redis_cache",
+      "label": "Check cached starters (hit/miss)"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "profile_service",
+      "label": "Fetch paired attendee profiles"
+    },
+    {
+      "source": "profile_service",
+      "target": "profile_db",
+      "label": "Query profiles with privacy filters"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "vector_store",
+      "label": "Query semantic overlap of interests"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "llm_service",
+      "label": "Prompt with profile diff & overlap context"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "redis_cache",
+      "label": "Store generated starters (TTL 30m)"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "event_broker",
+      "label": "Emit ScanProcessed event"
+    },
+    {
+      "source": "icebreaker_orchestrator",
+      "target": "api_gateway",
+      "label": "Return structured conversation prompts"
+    },
+    {
+      "source": "api_gateway",
+      "target": "client_scanner",
+      "label": "JSON response with tailored starters"
+    }
+  ],
+  "mermaid_code": "flowchart TD\n  subgraph Client Tier\n    Scanner[Scanner Mobile App / PWA]\n  end\n\n  subgraph Edge & Security\n    GW[API Gateway & Auth Guard]\n  end\n\n  subgraph Application Tier\n    QR[QR Resolver Service]\n    Orch[Icebreaker Orchestrator]\n    ProfSvc[Profile & Privacy Service]\n  end\n\n  subgraph Storage & Cache\n    Redis[(Redis Cache & Nonces)]\n    PG[(PostgreSQL Profile Store)]\n    VDB[(Vector Database)]\n  end\n\n  subgraph AI & Analytics\n    LLM[LLM Inference API]\n    Queue[Telemetry Queue - Kafka/SQS]\n  end\n\n  Scanner -->|POST /scan| GW\n  GW -->|Validate Token| QR\n  QR -->|Check Nonce| Redis\n  GW -->|Trigger Pipeline| Orch\n  Orch -->|Lookup Cache| Redis\n  Orch -->|Get Paired Profiles| ProfSvc\n  ProfSvc -->|Read Profiles| PG\n  Orch -->|Semantic Match| VDB\n  Orch -->|Generate Starters| LLM\n  LLM -->|Return Prompts| Orch\n  Orch -->|Cache Results| Redis\n  Orch -->|Publish Telemetry| Queue\n  Orch -->|Starters Payload| GW\n  GW -->|Render Starters| Scanner",
+  "image_prompt": "Clean enterprise software architecture diagram of a QR code networking system with microservices, vector database, LLM provider, and mobile scanners, high tech aesthetic, blueprint style, crisp lines and labeled boxes",
+  "image_url": null,
+  "generated_at": 1791672988.238711
+}

@@ -1,0 +1,40 @@
+{
+  "summary": "Existing tools rely on passive forums or heavyweight B2B scheduling, leaving a gap for low-friction, skill-balanced team matchmaking at hackathons.",
+  "competitors": [
+    {
+      "name": "Devpost",
+      "summary": "A global hackathon management platform providing project showcases, judging infrastructure, and public participant team-finding discussion boards.",
+      "differentiator": "Relies on passive message boards where attendees browse and reach out manually to form project groups.",
+      "idea": "Comprehensive hackathon hosting, project submission, and developer portfolio platform.",
+      "yearOfFounding": "2009",
+      "shortBio": "Devpost is the leading platform for hosting virtual and in-person hackathons, developer showcases, and project submissions.",
+      "howWeDiffer": "We actively match complementary teammates using low-friction data intake instead of relying on manual community forum postings."
+    },
+    {
+      "name": "Brella",
+      "summary": "An event networking platform using intent-based AI algorithms to schedule structured one-on-one meetings between attendees.",
+      "differentiator": "Focuses on pre-scheduled business development meetings at commercial conferences rather than dynamic project team formation.",
+      "idea": "Intent-driven matchmaking platform for corporate event meetings and conferences.",
+      "yearOfFounding": "2016",
+      "shortBio": "Brella provides AI-driven matchmaking and networking tools to facilitate targeted business connections at conferences.",
+      "howWeDiffer": "We specialize in skill-balanced developer team creation instead of executive one-on-one corporate calendar scheduling."
+    },
+    {
+      "name": "Donut",
+      "summary": "A chat-based integration tool that automatically pairs community or team members for casual introductions and social bonding.",
+      "differentiator": "Employs randomized or basic lottery pairings inside Slack rather than skill- and role-weighted team composition algorithms.",
+      "idea": "Chatbot-driven social introductions and randomized networking for distributed teams.",
+      "yearOfFounding": "2016",
+      "shortBio": "Donut builds automated social introduction and employee engagement bots for Slack and Microsoft Teams.",
+      "howWeDiffer": "We match hackers by technical competencies and project ambitions rather than facilitating random conversational coffee chats."
+    }
+  ],
+  "market_landscape": "Current event networking solutions split between passive forum-based team listings and heavyweight corporate meeting schedulers with burdensome onboarding.",
+  "our_positioning": "We position ourselves as a frictionless matchmaking engine that minimizes participant onboarding effort to automatically deliver balanced hackathon teams.",
+  "groundingSources": [
+    "https://devpost.com",
+    "https://www.brella.io",
+    "https://www.donut.com"
+  ],
+  "generated_at": 1791672313.3149838
+}

@@ -1,0 +1,14 @@
+{
+  "summary": "The Product Recommendation System workflow captures user intent via natural language prompts or visual image uploads, processes the input through a recommendation engine querying the product catalog, and presents tailored furniture recommendations.",
+  "steps": [
+    "Step 1: User provides input via a natural language text prompt or uploads an inspirational furniture image.",
+    "Step 2: The system processes the input using image recognition and natural language understanding models.",
+    "Step 3: The recommendation logic queries the product catalog database based on extracted features and intent.",
+    "Step 4: The system generates and displays a curated list of matching furniture items to the user."
+  ],
+  "mermaid_code": "graph TD\n    A[User Input] --> B{Input Type?}\n    B -->|Text Prompt| C[Natural Language Processing]\n    B -->|Image Upload| D[Image Processing & Feature Extraction]\n    C --> E[Recommendation Engine]\n    D --> E[Recommendation Engine]\n    E --> F[Query Product Catalog]\n    F --> G[Rank & Filter Results]\n    G --> H[Display Curated Furniture Recommendations]",
+  "mermaidCode": null,
+  "image_prompt": "A modern isometric 3D architectural illustration depicting an AI-powered furniture recommendation dashboard, with glowing holographic product catalogs, natural language text boxes, and visual image-matching nodes floating above a sleek workstation, vibrant and professional design.",
+  "image_url": null,
+  "generated_at": 1791672647.001478
+}

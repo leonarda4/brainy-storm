@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+if [ ! -x "$root/.venv/bin/python" ]; then
+  echo 'Create the shared environment first: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt' >&2
+  exit 1
+fi
+exec "$root/.venv/bin/python" "$root/scripts/dev.py" "$@"

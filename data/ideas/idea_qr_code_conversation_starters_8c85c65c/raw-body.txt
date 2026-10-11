@@ -1,0 +1,11 @@
+Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?
+Alex: Oh, right. I liked that one.
+Marko: Yeah, that
+
+Marko: could be part of the networking product.
+Leonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.
+Giacomo: But that's a feature, not a standalone product.
+Alex: Maybe. Could be the MVP, though.
+Marko: Didn't we already discuss all this?
+Leonarda: Yeah, but I don't remember what we concluded.
+Giacomo: I don't think we concluded

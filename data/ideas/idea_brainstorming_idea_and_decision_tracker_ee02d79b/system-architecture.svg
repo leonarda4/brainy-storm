@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>.title{font:700 22px Arial;fill:#0f172a}.box{fill:#fff;stroke:#6366f1;stroke-width:2}.label{font:600 14px Arial;fill:#0f172a}.small{font:12px Arial;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text x="32" y="36" class="title">System Architecture</text>
+<line x1="350" y1="125" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">Stream audio &amp; transcripts</text>
+<line x1="730" y1="125" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="113.0" class="small">Publish chunks</text>
+<line x1="1110" y1="125" x2="70" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="203.0" class="small">Consume chunks</text>
+<line x1="350" y1="305" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="293.0" class="small">Extract &amp; cluster ideas</text>
+<line x1="350" y1="305" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="210.0" y="383.0" class="small">Query &amp; upsert embeddings</text>
+<line x1="350" y1="305" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="383.0" class="small">Persist ideas &amp; decisions</text>
+<line x1="350" y1="305" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="203.0" class="small">Enqueue research tasks</text>
+<line x1="1110" y1="125" x2="450" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="203.0" class="small">Consume tasks</text>
+<line x1="730" y1="305" x2="830" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="383.0" class="small">Query facts</text>
+<line x1="730" y1="305" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Store research notes</text>
+<line x1="730" y1="485" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="293.0" class="small">Push updates via WS</text>
+<line x1="350" y1="125" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">Approve decisions</text>
+<rect x="70" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="105" class="label">Web Client</text>
+<text x="88" y="130" class="small">Provides real-time brainstorm boards,</text>
+<text x="88" y="147" class="small">transcript views, and decision</text>
+<rect x="450" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="105" class="label">API Gateway</text>
+<text x="468" y="130" class="small">Routes REST commands, transcript</text>
+<text x="468" y="147" class="small">streams, and WebSocket broadcast</text>
+<rect x="830" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="105" class="label">Transcript &amp; Event Queue</text>
+<text x="848" y="130" class="small">Buffers streaming transcript chunks</text>
+<text x="848" y="147" class="small">and downstream agent processing tasks.</text>
+<rect x="70" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="285" class="label">Brainy Agent Worker</text>
+<text x="88" y="310" class="small">Extracts ideas, tracks variations</text>
+<text x="88" y="327" class="small">against historical items, and logs</text>
+<rect x="450" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="285" class="label">Research Agent Worker</text>
+<text x="468" y="310" class="small">Enriches proposed ideas with automated</text>
+<text x="468" y="327" class="small">background context and external</text>
+<rect x="830" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="285" class="label">LLM Inference API</text>
+<text x="848" y="310" class="small">Executes semantic extraction,</text>
+<text x="848" y="327" class="small">deduplication logic, and summarization</text>
+<rect x="70" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="465" class="label">Vector Database</text>
+<text x="88" y="490" class="small">Indexes idea embeddings to detect</text>
+<text x="88" y="507" class="small">duplicate or evolving concepts over</text>
+<rect x="450" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="465" class="label">Relational Database</text>
+<text x="468" y="490" class="small">Stores transcripts, structured ideas,</text>
+<text x="468" y="507" class="small">variation lineages, and finalized</text>
+<rect x="830" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="465" class="label">External Search API</text>
+<text x="848" y="490" class="small">Fetches background information and</text>
+<text x="848" y="507" class="small">domain references for active ideas.</text>
+</svg>

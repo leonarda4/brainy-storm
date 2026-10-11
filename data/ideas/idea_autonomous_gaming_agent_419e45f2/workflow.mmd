@@ -1,0 +1,8 @@
+graph TD
+    A[Game Environment] -->|Visual & State Data| B[Observation Module]
+    B --> C[AI Decision Core]
+    C -->|Action Command| D[Execution Engine]
+    D --> E[Custom Sandbox]
+    E --> F[Challenge Evaluation]
+    F -->|New Parameters| G[User Defined Challenges]
+    G --> C

@@ -1,0 +1,14 @@
+[
+  {
+    "chunk_id": "d7f988e3883b9050dece",
+    "text": "Leonarda: Wait, what happened to that idea about scanning someone's QR code and getting conversation starters?\nAlex: Oh, right. I liked that one.\nMarko: Yeah, that",
+    "captured_at": 1791672919.874557,
+    "reason": "The transcript discusses the QR code conversation starters idea explicitly, mentioning scanning someone's QR code to get conversation starters."
+  },
+  {
+    "chunk_id": "6587383ca20c5cf8cf39",
+    "text": "Marko: could be part of the networking product.\nLeonarda: I actually like that more than the matching. Because even if you already know who you're meeting, you still might not know what to talk about.\nGiacomo: But that's a feature, not a standalone product.\nAlex: Maybe. Could be the MVP, though.\nMarko: Didn't we already discuss all this?\nLeonarda: Yeah, but I don't remember what we concluded.\nGiacomo: I don't think we concluded",
+    "captured_at": 1791672958.197355,
+    "reason": "The participants discuss whether the QR code conversation starters idea is a standalone product, a feature, or an MVP, and compare it to matching."
+  }
+]

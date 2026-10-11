@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>.title{font:700 22px Arial;fill:#0f172a}.box{fill:#fff;stroke:#6366f1;stroke-width:2}.label{font:600 14px Arial;fill:#0f172a}.small{font:12px Arial;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text x="32" y="36" class="title">System Architecture</text>
+<line x1="350" y1="125" x2="450" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="113.0" class="small">Submit challenge &amp; stream control (HTTP/WS)</text>
+<line x1="730" y1="125" x2="830" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="113.0" class="small">Route challenge configurations</text>
+<line x1="1110" y1="125" x2="70" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="203.0" class="small">Persist challenges &amp; scores</text>
+<line x1="1110" y1="125" x2="450" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="203.0" class="small">Spawn simulation container with rule spec</text>
+<line x1="730" y1="305" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="293.0" class="small">Raw tick state &amp; collisions</text>
+<line x1="1110" y1="305" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Publish symbolic state changes</text>
+<line x1="350" y1="485" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="473.0" class="small">Consume state events &amp; goal triggers</text>
+<line x1="730" y1="485" x2="830" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="473.0" class="small">Query &amp; update context / spatial graph</text>
+<line x1="730" y1="485" x2="70" y2="665" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="563.0" class="small">Prompt with state summary &amp; available tools</text>
+<line x1="350" y1="665" x2="450" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="563.0" class="small">Return structured action plan</text>
+<line x1="730" y1="485" x2="70" y2="485" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="473.0" class="small">Queue macro action plan</text>
+<line x1="350" y1="485" x2="830" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="590.0" y="383.0" class="small">Deliver macro actions</text>
+<line x1="1110" y1="305" x2="450" y2="305" class="edge" marker-end="url(#arrow)"/>
+<text x="780.0" y="293.0" class="small">Execute micro tick inputs &amp; tool calls</text>
+<line x1="730" y1="305" x2="70" y2="125" class="edge" marker-end="url(#arrow)"/>
+<text x="400.0" y="203.0" class="small">Stream visual viewport &amp; telemetry (WebRTC/WS)</text>
+<rect x="70" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="105" class="label">Web Client &amp; Challenge Studio</text>
+<text x="88" y="130" class="small">User interface for authoring custom</text>
+<text x="88" y="147" class="small">sandbox challenges, defining</text>
+<rect x="450" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="105" class="label">API Gateway</text>
+<text x="468" y="130" class="small">Manages routing, user authentication,</text>
+<text x="468" y="147" class="small">rate limits, and live connection</text>
+<rect x="830" y="75" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="105" class="label">Challenge &amp; Matchmaker Service</text>
+<text x="848" y="130" class="small">Validates user challenge parameters,</text>
+<text x="848" y="147" class="small">tracks victory conditions, and</text>
+<rect x="70" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="285" class="label">Challenge &amp; Score Store</text>
+<text x="88" y="310" class="small">Relational database storing challenge</text>
+<text x="88" y="327" class="small">maps, rulesets, evaluation metrics,</text>
+<rect x="450" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="285" class="label">Headless Sandbox Engine</text>
+<text x="468" y="310" class="small">Deterministic simulation environment</text>
+<text x="468" y="327" class="small">running physics, inventory, terrain</text>
+<rect x="830" y="255" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="285" class="label">Local State Filter &amp; Controller</text>
+<text x="848" y="310" class="small">Buffers high-frequency engine ticks,</text>
+<text x="848" y="327" class="small">aggregates symbolic state, and</text>
+<rect x="70" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="465" class="label">State &amp; Action Event Bus</text>
+<text x="88" y="490" class="small">Redis/Kafka broker handling state</text>
+<text x="88" y="507" class="small">update broadcasts, action queues, and</text>
+<rect x="450" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="468" y="465" class="label">Agent Decision Orchestrator</text>
+<text x="468" y="490" class="small">Implements the Observe-Plan-Act loop;</text>
+<text x="468" y="507" class="small">filters out redundant observations and</text>
+<rect x="830" y="435" width="280" height="100" rx="12" class="box"/>
+<text x="848" y="465" class="label">Episodic &amp; Spatial Memory</text>
+<text x="848" y="490" class="small">Vector and key-value store maintaining</text>
+<text x="848" y="507" class="small">terrain maps, historical attempts, and</text>
+<rect x="70" y="615" width="280" height="100" rx="12" class="box"/>
+<text x="88" y="645" class="label">LLM Reasoning Engine</text>
+<text x="88" y="670" class="small">Language and vision model invoked with</text>
+<text x="88" y="687" class="small">structured context and tool</text>
+</svg>

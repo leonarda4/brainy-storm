@@ -1,0 +1,40 @@
+{
+  "summary": "Existing game agents prioritize exploratory research or social companionship, leaving an opportunity for lightweight, utility-driven grinding automation.",
+  "competitors": [
+    {
+      "name": "Google DeepMind SIMA",
+      "summary": "A research agent trained across diverse 3D video games to execute natural language gameplay instructions.",
+      "differentiator": "Relies on broad vision-language-action foundation models trained directly on proprietary game partner environments.",
+      "idea": "Multiworld instruction-following gaming foundation model.",
+      "yearOfFounding": "2024",
+      "shortBio": "Google DeepMind is an artificial intelligence research laboratory dedicated to developing general-purpose AI technologies.",
+      "howWeDiffer": "We offer pragmatic, user-directed task automation rather than an experimental generalist foundation model."
+    },
+    {
+      "name": "Altera",
+      "summary": "Develops autonomous AI agents with social-emotional intelligence designed to play video games collaboratively with humans.",
+      "differentiator": "Focuses on emotional connection, friendship, and emergent social behavior rather than task utility.",
+      "idea": "Autonomous digital human companions for interactive virtual worlds.",
+      "yearOfFounding": "2024",
+      "shortBio": "Altera is an AI startup building autonomous, human-like digital agents for gaming and simulation.",
+      "howWeDiffer": "We target mechanical efficiency and repetitive chore delegation instead of simulated social companionship."
+    },
+    {
+      "name": "Voyager (MineDojo)",
+      "summary": "An open-source lifelong learning agent that uses large language models to acquire skills autonomously in Minecraft.",
+      "differentiator": "Utilizes iterative code generation and an explicit vector skill library to master game mechanics.",
+      "idea": "LLM-driven embodied agent capable of continuous skill discovery.",
+      "yearOfFounding": "2023",
+      "shortBio": "Voyager is an academic research project developed collaboratively by Nvidia, Caltech, Stanford, and UT Austin.",
+      "howWeDiffer": "We utilize localized controllers and predefined toolsets to minimize expensive model calls across varied commercial titles."
+    }
+  ],
+  "market_landscape": "The ecosystem is dominated by deep tech research initiatives, academic LLM benchmarks, and companionship-oriented gaming startups.",
+  "our_positioning": "We position as an accessible, low-latency utility assistant that automates tedious grinding via local controllers without exorbitant API overhead.",
+  "groundingSources": [
+    "https://deepmind.google/discover/blog/sima-generalist-ai-agent-for-3d-virtual-environments/",
+    "https://altera.al/",
+    "https://voyager.minedojo.org/"
+  ],
+  "generated_at": 1791672811.542751
+}

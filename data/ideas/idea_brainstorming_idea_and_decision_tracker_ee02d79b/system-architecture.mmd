@@ -1,0 +1,14 @@
+flowchart TD
+  web_ui["Web Client"] -->|"Stream audio/text"| api_gw["API Gateway"]
+  web_ui -->|"Approve decisions"| api_gw
+  api_gw -->|"Push updates"| web_ui
+  api_gw -->|"Enqueue chunks"| event_queue["Event Queue"]
+  event_queue -->|"Consume chunks"| brainy_agent["Brainy Agent Worker"]
+  brainy_agent -->|"Classify & cluster"| llm_service["LLM Inference API"]
+  brainy_agent -->|"Similarity search"| vector_db[("Vector Database")]
+  brainy_agent -->|"Save ideas & decisions"| primary_db[("Relational Database")]
+  brainy_agent -->|"Trigger research"| event_queue
+  event_queue -->|"Consume tasks"| research_agent["Research Agent Worker"]
+  research_agent -->|"Fetch context"| search_api["External Search API"]
+  research_agent -->|"Attach findings"| primary_db
+  primary_db -.->|"Emit events"| api_gw

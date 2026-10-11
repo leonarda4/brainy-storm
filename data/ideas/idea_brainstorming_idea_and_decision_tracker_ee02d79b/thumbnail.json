@@ -1,0 +1,28 @@
+{
+  "generator": "title-svg-v2",
+  "style_revision": "simple-forms-v3",
+  "source_hash": "00f81a3b252512ea41e53548208651094d618b76a663751bbce699a6ce804faa",
+  "title": "Brainstorming Idea and Decision Tracker",
+  "palette": [
+    "#000000",
+    "#ff4545"
+  ],
+  "art_direction": {
+    "style": "simple-subject",
+    "composition": "diagonal-bleed",
+    "background": "#ff4545",
+    "foreground": "#000000",
+    "accent": "#9da51a",
+    "color_mode": "two-tone"
+  },
+  "width": 800,
+  "height": 400,
+  "generated_at": 1791679049.173685,
+  "svg_hash": "fb7492fd30a69af8",
+  "generation": {
+    "source_hash": "00f81a3b252512ea41e53548208651094d618b76a663751bbce699a6ce804faa",
+    "status": "ready",
+    "attempts": 1,
+    "next_retry_at": 0
+  }
+}

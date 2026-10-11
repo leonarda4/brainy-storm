@@ -1,0 +1,54 @@
+[00:17:08] Alex: So the gaming agent could essentially run a loop. Observe the environment, choose an action, execute it, and then check whether the goal has been reached.
+[00:17:20] Marko: Yeah, but you can't just send screenshots to GPT every frame.
+
+[00:17:23] Giacomo: You'd probably want some kind of local controller. Or a predefined set of tools.
+[00:17:34] Leonarda: Sorry, but I still don't understand why someone would want the AI to play the game for them.
+[00:17:40] Alex: Because some parts of games are boring.
+[00:17:44] Leonarda: But then why play the game?
+[00:17:47] Alex: Because other parts are fun?
+[00:17:50] Giacomo: [laughs]
+[00:17:54] Marko: No, I get what she's saying, though. The tricky
+
+[00:17:54] Marko: No, I get what she's saying, though. The tricky
+part is figuring out which tasks people actually want automated.
+[00:18:04] Alex: Yeah, exactly. Like in Minecraft, maybe you want an agent to collect materials while you focus on building.
+[00:18:21] Giacomo: Well, not the networking thing exactly. More the idea of agents having context about people. Like if an agent knows how someone plays, couldn't that same
+
+[00:18:21] Giacomo: Well, not the networking thing exactly. More the idea of agents having context about people. Like if an agent knows how someone plays, couldn't that same
+architecture work for matching people based on what they're doing?
+[00:18:36] Marko: That's kind of a stretch.
+[00:18:39] Giacomo: Yeah, but the memory part is similar.
+[00:18:43] Alex: Except one needs game state and the other needs user profiles. Completely different data.
+[00:18:49] Giacomo: Sure, but the reasoning layer—
+[00:18:52] Leonarda: Can we not turn every idea into the same agent architecture?
+[00:18:58] Marko: [laughs] Okay, fair.
+
+[00:19:09] Alex: Yeah. Because with the game thing, we'd spend the whole weekend trying to get the agent to interact with the environment, and then maybe it completes one task.
+[00:19:21] Marko: But that's the interesting technical challenge.
+[00:19:25] Alex: Right, but for a hackathon, it's risky. The furniture one is mostly frontend, a recommendation system, maybe some image processing.
+
+[00:28:28] Alex: Look, the networking one is probably the most straightforward. I just think the game agent would be the coolest demo.
+[00:28:37] Marko: Same.
+
+[00:24:57] Alex: I mean, the gaming thing could have a subscription.
+[00:25:02] Leonarda: You really want to make that one, don't you?
+[00:25:06] Alex: Yeah, kind of.
+[00:25:10] Marko: There's definitely a market for gaming assistants, but compatibility would be awful. Supporting ten games could mean ten completely different integrations.
+[00:25:23] Giacomo: And then one game updates and breaks everything.
+[00:25:28] Alex: Okay, what if we don't support existing games? What if we build a
+
+[00:25:28] Alex: Okay, what if we don't support existing games? What if we build a
+game specifically for AI agents?
+[00:25:39] Leonarda: Then we're making a game studio.
+[00:25:43] Alex: Not a whole game studio. A small sandbox.
+[00:25:48] Marko: Actually, that's more interesting from a research perspective. You could have multiple agents solving puzzles and competing.
+[00:25:58] Giacomo: Wasn't that basically what we said earlier?
+[00:26:02] Marko: Yeah, but now I'm thinking we could let users define their own challenges.
+[00:26:09] Alex: Oh, that's cool.
+
+Leonarda: But who's the user? Like, who wakes up and thinks, "I wish I could create a puzzle for two AI agents to solve"?
+Alex: Me.
+Giacomo: [laughs]
+Marko: Okay, maybe it's more of a developer tool.
+Leonarda: I think we're doing that thing again where we have an idea and then immediately change the target audience because we can't justify the original use case.
+Alex: Yeah, but that's kind of the point of brainstorming.

@@ -1,0 +1,11 @@
+[project]
+name = "transcriber"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.14.4",
+    "fastapi>=0.115",
+    "gradium>=0.6.4",
+    "python-dotenv>=1.2.4",
+    "uvicorn[standard]>=0.34",
+]
