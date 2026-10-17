@@ -1,4 +1,5 @@
 {
+  "discussion_focus": {},
   "ideas": [
     {
       "session_id": "team-discussion",
@@ -120,7 +121,7 @@
         "Leonarda: Rejects the concept due to third-party catalog dependencies, low user retention, and overlap with Google Shopping.",
         "Giacomo: Argues catalog schema heterogeneity, dimensional accuracy issues, and scraping overhead threaten long-term technical feasibility."
       ],
-      "thumbnail": "/ideas/idea_product_recommendation_system_e232e478/artifacts/thumbnail.svg?v=9be798e4bd9bcc27",
+      "thumbnail": "/ideas/idea_product_recommendation_system_e232e478/artifacts/thumbnail.svg?v=ecd18cb41af403da",
       "competitors": {
         "summary": "Incumbents excel either at catalog scale or single-brand AR, leaving an opening for cross-brand conversational curation.",
         "competitors": [
@@ -524,7 +525,7 @@
         "Alex criticizes the solution as technically uninspired, difficult to evaluate quickly, and lacking demo excitement.",
         "Giacomo cautions against conversational registration bloat and visually unappealing, text-heavy match recommendations."
       ],
-      "thumbnail": "/ideas/idea_hackathon_networking_matchmaker_5fe7fb21/artifacts/thumbnail.svg?v=ef32c896ca12d07b",
+      "thumbnail": "/ideas/idea_hackathon_networking_matchmaker_5fe7fb21/artifacts/thumbnail.svg?v=fe30c10e3fc6ba91",
       "competitors": {
         "summary": "Existing tools rely on passive forums or heavyweight B2B scheduling, leaving a gap for low-friction, skill-balanced team matchmaking at hackathons.",
         "competitors": [
@@ -928,7 +929,7 @@
         "Leonarda: Rejects the premise, questioning why players would adopt an AI that replaces actual gameplay.",
         "Marko: Challenges feasibility citing prohibitive API bandwidth, complex maintenance across updates, and unverified task preferences."
       ],
-      "thumbnail": "/ideas/idea_autonomous_gaming_agent_419e45f2/artifacts/thumbnail.svg?v=71ffa0a81ae1be62",
+      "thumbnail": "/ideas/idea_autonomous_gaming_agent_419e45f2/artifacts/thumbnail.svg?v=45bacadd3677184f",
       "competitors": {
         "summary": "Existing game agents prioritize exploratory research or social companionship, leaving an opportunity for lightweight, utility-driven grinding automation.",
         "competitors": [
@@ -1254,7 +1255,7 @@
       "opponents": [
         "Giacomo challenged the viability of the concept as an independent commercial product, categorizing it strictly as a feature."
       ],
-      "thumbnail": "/ideas/idea_qr_code_conversation_starters_8c85c65c/artifacts/thumbnail.svg?v=e373085b060a9cf7",
+      "thumbnail": "/ideas/idea_qr_code_conversation_starters_8c85c65c/artifacts/thumbnail.svg?v=61fd6ce499ee319b",
       "competitors": {
         "summary": "Existing tools separately address contact sharing, card-based prompt games, and dating profile prompts, leaving room for personalized in-person icebreakers.",
         "competitors": [
@@ -1576,13 +1577,12 @@
         "Giacomo supports structured transcript capture paired with explicit decision lists."
       ],
       "opponents": [
-        "None currently identified in the recorded discussion.",
         "Leonarda (challenges project viability due to unaffordable API expenses on a zero-dollar budget)",
         "Marko (questions financial feasibility regarding testing and validation expenses)",
         "Leonarda challenges viability due to unaffordable third-party model costs against zero initial funding.",
         "Marko questions proceeding given unresolved validation costs and aggressive market competition."
       ],
-      "thumbnail": "/ideas/idea_brainstorming_idea_and_decision_tracker_ee02d79b/artifacts/thumbnail.svg?v=fb7492fd30a69af8",
+      "thumbnail": "/ideas/idea_brainstorming_idea_and_decision_tracker_ee02d79b/artifacts/thumbnail.svg?v=ffea2896fb4062d9",
       "competitors": {
         "summary": "While incumbents dominate general meeting transcription and visual whiteboards, Brainy Storm captures unique value by mapping conceptual iterations and utilizing autonomous background research agents.",
         "competitors": [
@@ -1839,6 +1839,38 @@
         },
         "last_enrichment_service": "competitors"
       }
+    },
+    {
+      "session_id": "team-discussion",
+      "id": "fb051011-27fb-4ab5-9d24-042d656d23d4",
+      "title": "A new idea tamhnhtking shape",
+      "short_summary": null,
+      "summary": "A fresh thought from the room. Add context as the conversation unfolds.",
+      "is_currently_discussed": false,
+      "transcript": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+      "raw_body": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+      "transcript_segments": [
+        {
+          "chunk_id": "text-edit:875a244b-5b88-474f-ad02-d94557c1e579",
+          "text": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+          "captured_at": 1792158481.716554,
+          "reason": "User added or corrected idea text"
+        }
+      ],
+      "content_version": 1,
+      "enriched_version": 0,
+      "proponents": [],
+      "opponents": [],
+      "thumbnail": "/ideas/fb051011-27fb-4ab5-9d24-042d656d23d4/artifacts/thumbnail.svg?v=a55ccee707c41fa5",
+      "competitors": null,
+      "workflow": null,
+      "pros_cons": null,
+      "systemGraph": null,
+      "status": "error",
+      "active_tools": [],
+      "created_at": 1792158481.716527,
+      "updated_at": 1792158481.91612,
+      "metadata": {}
     }
   ]
 }

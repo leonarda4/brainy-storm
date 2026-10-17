@@ -323,3 +323,28 @@
 [2026-10-11T09:15:03.687+00:00] [Speaker 4] about Fireflies AI for the brainstorming idea? They feel quite similar to what we do.
 [2026-10-11T09:15:09.047+00:00] [Speaker 4] I would like to see if we can clearly position ourselves
 [2026-10-11T09:15:14.567+00:00] [Marco] to that startup.
+[2026-10-11T20:21:53.619+00:00] [Unknown speaker] So I
+[2026-10-11T20:21:54.979+00:00] [Unknown speaker] wanted to say something about the product recommendation
+[2026-10-11T20:22:00.179+00:00] [Unknown speaker] system. You see, the thing is,
+[2026-10-11T20:22:05.539+00:00] [Unknown speaker] I don't want to be scrolling
+[2026-10-11T20:22:10.259+00:00] [Unknown speaker] on Facebook marketplace
+[2026-10-11T20:22:14.739+00:00] [Unknown speaker] all the time. So I feel like this could be a good
+[2026-10-11T20:22:19.539+00:00] [Unknown speaker] addition. By the way, I'm Leonardo. So
+[2026-10-11T20:22:44.499+00:00] [Unknown speaker] when
+[2026-10-11T20:22:45.059+00:00] [Unknown speaker] talking about hackathon networking matchmaker,
+[2026-10-11T20:22:49.539+00:00] [Unknown speaker] hackathon networking, yeah, I mean, I would love to
+[2026-10-11T20:22:54.259+00:00] [Unknown speaker] see what people are doing. Especially like on this previous hackathon. I met some people and then forgot
+[2026-10-11T21:24:56.163+00:00] [Unknown speaker] So about the brainstorming idea and
+[2026-10-11T21:24:59.283+00:00] [Unknown speaker] decision tracker, I would like to point out that not only
+[2026-10-11T21:25:04.323+00:00] [Unknown speaker] is it the best idea ever, but it's also
+[2026-10-11T21:25:09.683+00:00] [Unknown speaker] so relevant for the psychosome because we were brainstorming literally
+[2026-10-11T21:25:15.203+00:00] [Unknown speaker] more than we were building. So I would appreciate
+[2026-10-11T21:25:19.443+00:00] [Unknown speaker] if the brainstorming idea and decision tracker would be highlighted right
+[2026-10-11T21:25:24.483+00:00] [Unknown speaker] now, because I want to see if the agents are
+[2026-10-11T21:25:29.763+00:00] [Unknown speaker] recognizing that I'm talking about brainstorming idea.
+[2026-10-11T21:25:34.723+00:00] [Unknown speaker] And it should be streamlined with multiple agents,
+[2026-10-11T21:25:39.363+00:00] [Unknown speaker] because this is an agentic hackathon. And then we could have
+[2026-10-11T21:25:44.643+00:00] [Unknown speaker] like, organizer, let's looking at the transcript
+[2026-10-11T21:25:49.363+00:00] [Unknown speaker] and organizing ideas.
+[2026-10-11T22:10:27.997+00:00] [Unknown speaker] Blah, blah, blah, blah, blah, blah.
+[2026-10-11T22:10:33.117+00:00] [Unknown speaker] You can see our ideas here.

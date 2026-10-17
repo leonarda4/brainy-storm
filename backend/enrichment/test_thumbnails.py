@@ -5,12 +5,14 @@ import time
 import unittest
 from pathlib import Path
 from unittest.mock import AsyncMock, patch
+from xml.etree import ElementTree as ET
 
 import httpx
 
 from backend.enrichment.main import app, lifespan
 from backend.enrichment.models import Idea
 from backend.enrichment.storage import StorageManager
+from backend.enrichment.brand_graphics import CATALOG, render_thumbnail
 from backend.enrichment.thumbnail import (
     ThumbnailAgent, art_direction_for, generation_palette_for, palette_for, source_hash, validate_svg,
 )
@@ -35,6 +37,22 @@ def artwork(idea):
 
 
 class SvgValidationTest(unittest.TestCase):
+    def test_catalog_recipes_render_safe_svg_for_every_motif_variant_and_palette(self):
+        for motif in CATALOG["motifs"]:
+            for pair_index, pair in enumerate(CATALOG["pairs"]):
+                for variant in range(len(motif["variants"])):
+                    with self.subTest(motif=motif["id"], pair=pair_index, variant=variant):
+                        svg, metadata = render_thumbnail(
+                            "A title <script>", "fixed-seed", motif["id"], pair_index, variant,
+                        )
+                        root = ET.fromstring(svg)
+                        self.assertEqual(root.get("viewBox"), "0 0 800 450")
+                        self.assertNotIn("script", svg)
+                        self.assertEqual(metadata["shape"], motif["id"])
+                        self.assertEqual(metadata["variant"], variant)
+                        allowed = set(pair.values())
+                        self.assertTrue(all(element.get("fill") in allowed for element in root))
+
     def test_rejects_excess_shapes_and_ornate_single_paths(self):
         idea = Idea(id="gaming", title="Gaming")
         base = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><rect width="800" height="400" fill="{palette_for(idea)[0]}"/>'
@@ -151,13 +169,58 @@ class ThumbnailWorkerTest(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(await self.worker.process_pending(), 1)
         self.assertEqual(self.agent.generate.await_count, 2)
 
-    async def test_title_only_model_prompt_and_validation(self):
-        response = AsyncMock(return_value={"svg": artwork(self.idea)})
-        with patch.object(thumbnail_module.llm_client, "generate_json", response):
-            svg = await ThumbnailAgent().generate(self.idea)
-        self.assertIn("Autonomous gaming agent", response.call_args.kwargs["prompt"])
-        self.assertNotIn(self.idea.summary, response.call_args.kwargs["prompt"])
-        self.assertIn('width="800"', svg)
+    async def test_model_selects_catalog_motif_and_local_code_renders_svg(self):
+        response = AsyncMock(return_value={"motif_id": "focus"})
+        with patch.object(thumbnail_module.llm_client, "gemini_key", "test-key"), \
+                patch.object(thumbnail_module.llm_client, "_call_gemini", response):
+            svg, recipe = await ThumbnailAgent().generate(self.idea)
+        prompt = response.call_args.args[0]
+        self.assertIn("Autonomous gaming agent", prompt)
+        self.assertNotIn(self.idea.summary, prompt)
+        self.assertIn('"motif_id"', prompt)
+        self.assertNotIn("Return JSON with one key, \"svg\"", prompt)
+        self.assertEqual(recipe["shape"], "focus")
+        self.assertEqual(recipe["selection_source"], "gemini")
+        self.assertIn('viewBox="0 0 800 450"', svg)
+
+    async def test_gemini_failure_logs_and_uses_random_catalog_motif(self):
+        response = AsyncMock(side_effect=RuntimeError("provider unavailable"))
+        with patch.object(thumbnail_module.llm_client, "gemini_key", "test-key"), \
+                patch.object(thumbnail_module.llm_client, "_call_gemini", response), \
+                patch.object(thumbnail_module.random, "choice", return_value={"id": "pair"}), \
+                self.assertLogs(thumbnail_module.logger, level="WARNING") as captured:
+            svg, recipe = await ThumbnailAgent().generate(self.idea)
+        self.assertIn("Gemini is not working", captured.output[0])
+        self.assertEqual(recipe["shape"], "pair")
+        self.assertEqual(recipe["selection_source"], "random-fallback")
+        self.assertIn('viewBox="0 0 800 450"', svg)
+
+    async def test_gemini_selection_timeout_uses_random_catalog_motif(self):
+        async def hang(*_args, **_kwargs):
+            await asyncio.Event().wait()
+
+        with patch.object(thumbnail_module.llm_client, "gemini_key", "test-key"), \
+                patch.object(thumbnail_module.llm_client, "_call_gemini", side_effect=hang), \
+                patch.object(thumbnail_module, "THUMBNAIL_TIMEOUT_SECONDS", 0.02), \
+                patch.object(thumbnail_module.random, "choice", return_value={"id": "open"}), \
+                self.assertLogs(thumbnail_module.logger, level="WARNING") as captured:
+            svg, recipe = await ThumbnailAgent().generate(self.idea)
+        self.assertIn("Gemini is not working", captured.output[0])
+        self.assertEqual(recipe["shape"], "open")
+        self.assertEqual(recipe["selection_source"], "random-fallback")
+        self.assertIn('viewBox="0 0 800 450"', svg)
+
+    async def test_generated_recipe_is_persisted_with_thumbnail(self):
+        response = AsyncMock(return_value={"motif_id": "focus"})
+        self.worker.agent = ThumbnailAgent()
+        with patch.object(thumbnail_module.llm_client, "gemini_key", "test-key"), \
+                patch.object(thumbnail_module.llm_client, "_call_gemini", response):
+            self.assertEqual(await self.worker.process_pending(), 1)
+        metadata = self.store.artifacts.thumbnail_metadata(self.idea.id)
+        self.assertEqual(metadata["graphic_recipe"]["shape"], "focus")
+        self.assertEqual(metadata["graphic_recipe"]["selection_source"], "gemini")
+        self.assertEqual(metadata["art_direction"]["motif"], "focus")
+        self.assertEqual((metadata["width"], metadata["height"]), (800, 450))
 
     async def test_prompt_refinement_preserves_existing_v2_artwork(self):
         await self.worker.process_pending()
@@ -178,7 +241,7 @@ class ThumbnailWorkerTest(unittest.IsolatedAsyncioTestCase):
         })
         self.assertEqual(await self.worker.process_pending(), 1)
         metadata = self.store.artifacts.thumbnail_metadata(self.idea.id)
-        self.assertEqual(metadata["generator"], "title-svg-v2")
+        self.assertEqual(metadata["generator"], "brand-graphics-v1")
         self.assertEqual(metadata["art_direction"], art_direction_for(self.idea))
         self.assertEqual(await self.worker.process_pending(), 0)
 

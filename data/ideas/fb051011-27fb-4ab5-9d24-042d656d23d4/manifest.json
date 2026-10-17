@@ -1,0 +1,17 @@
+{
+  "id": "fb051011-27fb-4ab5-9d24-042d656d23d4",
+  "title": "A new idea tamhnhtking shape",
+  "current_status": "error",
+  "content_version": 1,
+  "enriched_version": 0,
+  "updated_at": 1792158481.91612,
+  "files": [
+    "idea.json",
+    "manifest.json",
+    "raw-body.txt",
+    "summary.md",
+    "thumbnail.json",
+    "thumbnail.svg",
+    "transcript-segments.json"
+  ]
+}

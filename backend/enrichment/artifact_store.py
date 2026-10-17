@@ -1,11 +1,10 @@
 import html
-import hashlib
 import json
-import random
 import re
 from pathlib import Path
 from typing import Iterable, Optional
 
+from .brand_graphics import render_thumbnail
 from .models import ArchitectureEnrichment, Idea, WorkflowEnrichment
 
 
@@ -35,7 +34,8 @@ class IdeaArtifactStore:
         metadata = self.thumbnail_metadata(idea.id)
         if not target.is_file() or not metadata:
             seed_text = str(idea.metadata.get("thumbnail_seed") or idea.id)
-            svg, metadata = self._thumbnail_svg(seed_text)
+            svg, metadata = self._thumbnail_svg(idea.title, seed_text)
+            metadata.pop("svg_hash", None)
             self._write_text(target, svg)
             self._write_json(metadata_path, metadata)
         idea.thumbnail = f"/ideas/{idea.id}/artifacts/thumbnail.svg"
@@ -248,62 +248,8 @@ class IdeaArtifactStore:
         return self._svg_document(width, height, "\n".join(body), "System Architecture")
 
     @staticmethod
-    def _thumbnail_svg(seed_text: str):
-        seed = int(hashlib.sha256(seed_text.encode("utf-8")).hexdigest()[:16], 16)
-        rng = random.Random(seed)
-        # Eight supporting brand colors; blue stays reserved for CTA controls.
-        brand_colors = (
-            "#ff7146", "#f47aff", "#9ff6ee", "#f4ff61", "#a83cf4",
-            "#ffe600", "#9da51a", "#ff4545",
-        )
-        palettes = [
-            pair
-            for color in brand_colors
-            for pair in (("#000000", color), (color, "#000000"))
-        ]
-        background, foreground = rng.choice(palettes)
-        shape = rng.choice(["scallops", "stacked"])
-        canvas_width, canvas_height = 720, 360
-
-        # Use the same two silhouettes and proportions as frontend/BrandShape.
-        # A 360 × 180 viewBox keeps the artwork identical at any output size.
-        if shape == "scallops":
-            artwork = '<path d="M-20 180V120Q12 30 44 130Q77-42 110 101Q145-97 180 76Q217-43 248 115Q278 9 310 137Q340 56 380 137V180Z"/>'
-        else:
-            artwork = '''<ellipse cx="180" cy="50" rx="108" ry="18"/>
-<ellipse cx="180" cy="76" rx="130" ry="22"/>
-<ellipse cx="180" cy="110" rx="153" ry="27"/>
-<ellipse cx="180" cy="151" rx="178" ry="33"/>
-<path d="M0 150h360v40H0z"/>'''
-
-        # Keep most compositions clean; occasional dots add a third brand color.
-        accent = None
-        dot = ""
-        if rng.randrange(3) == 0:
-            accent = rng.choice([
-                color for color in brand_colors
-                if color not in (background, foreground)
-            ])
-            dot_x = rng.choice((54, 306))
-            dot = f'<circle cx="{dot_x}" cy="29" r="9" fill="{accent}"/>'
-
-        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_width}" height="{canvas_height}" viewBox="0 0 360 180" preserveAspectRatio="xMidYMid slice">
-<rect width="360" height="180" fill="{background}"/>
-<g fill="{foreground}">{artwork}</g>
-{dot}
-</svg>'''
-        return svg, {
-            "generator": "deterministic-abstract-v4",
-            "seed": seed_text,
-            "shape": shape,
-            "palette": {
-                "background": background,
-                "foreground": foreground,
-                "accent": accent,
-            },
-            "width": canvas_width,
-            "height": canvas_height,
-        }
+    def _thumbnail_svg(title: str, seed_text: str):
+        return render_thumbnail(title, seed_text)
 
     @staticmethod
     def _wrap(text: str, length: int) -> Iterable[str]:

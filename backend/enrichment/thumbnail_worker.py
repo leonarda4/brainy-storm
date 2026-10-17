@@ -62,9 +62,14 @@ class ThumbnailWorker:
         if not await self.storage.update_thumbnail(idea.id, expected_source, state):
             return
         try:
-            svg = await asyncio.wait_for(self.agent.generate(idea), THUMBNAIL_TIMEOUT_SECONDS)
+            result = await asyncio.wait_for(self.agent.generate(idea), THUMBNAIL_TIMEOUT_SECONDS)
+            if isinstance(result, tuple):
+                svg, recipe = result
+            else:
+                svg, recipe = result, None
             await self.storage.update_thumbnail(
-                idea.id, expected_source, {**state, "status": "ready", "next_retry_at": 0}, svg,
+                idea.id, expected_source, {**state, "status": "ready", "next_retry_at": 0},
+                svg, recipe,
             )
         except asyncio.CancelledError:
             await self.storage.update_thumbnail(idea.id, expected_source, {

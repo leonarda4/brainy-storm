@@ -1,29 +1,42 @@
 {
-  "generator": "title-svg-v2",
-  "style_revision": "simple-forms-v3",
-  "source_hash": "b8d69dc9bd2d44ed98e339a95a6838d73b0d6f9f47a86834fc9dd73c40e1fb06",
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "ca5d3ff34ca28bcb5f3dbb0d1eecb50cbeea3e0b5d0efe36b5c37b26ebd13176",
   "title": "QR Code Conversation Starters",
   "palette": [
     "#000000",
-    "#a83cf4"
+    "#868C0C",
+    "#F9D715"
   ],
   "art_direction": {
-    "style": "abstract-pattern",
-    "composition": "top-bleed",
-    "background": "#a83cf4",
-    "foreground": "#000000",
-    "accent": "#ff7146",
-    "color_mode": "two-tone"
+    "motif": "sequence",
+    "variant": 0,
+    "selection_source": "random-fallback"
   },
   "width": 800,
-  "height": 400,
-  "generated_at": 1791677748.2241092,
-  "svg_hash": "e373085b060a9cf7",
+  "height": 450,
+  "generated_at": 1792157551.042784,
+  "svg_hash": "61fd6ce499ee319b",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "96894704f7290ca8ea8a5b7d0b4099b5",
+    "shape": "sequence",
+    "variant": 0,
+    "pair_index": 5,
+    "palette": {
+      "background": "#000000",
+      "foreground": "#868C0C",
+      "accent": "#F9D715"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "61fd6ce499ee319b",
+    "selection_source": "random-fallback"
+  },
   "generation": {
-    "source_hash": "b8d69dc9bd2d44ed98e339a95a6838d73b0d6f9f47a86834fc9dd73c40e1fb06",
+    "source_hash": "ca5d3ff34ca28bcb5f3dbb0d1eecb50cbeea3e0b5d0efe36b5c37b26ebd13176",
     "status": "ready",
-    "attempts": 0,
-    "next_retry_at": 0,
-    "method": "curated-svg"
+    "attempts": 1,
+    "next_retry_at": 0
   }
 }

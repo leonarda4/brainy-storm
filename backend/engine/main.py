@@ -254,8 +254,19 @@ class TranscriptProcessor:
             self.offset = int(saved["offset"])
         except (OSError, ValueError, KeyError, TypeError):
             pass
+        self.pending_idea_ids = set()
         self.previous_length = self.offset
         self.last_text_at = time.monotonic()
+
+    def write_activity(self, phase, new_idea_ids=None):
+        if new_idea_ids:
+            self.pending_idea_ids.update(new_idea_ids)
+        self.pending_idea_ids.difference_update(load_known_ideas(self.ideas_path, self.session_id))
+        target = self.path.with_suffix(".brainy.json")
+        temporary = target.with_suffix(".tmp")
+        temporary.write_text(json.dumps({"phase": phase, "new_idea_ids": sorted(self.pending_idea_ids) if phase != "idle" else [],
+                                         "updated_at": time.time(), "identity": self.identity}), encoding="utf-8")
+        temporary.replace(target)
 
     def tick(self, extract, idea_updates_path, classified_chunks_path, chunk_chars):
         identity, transcript = read_transcript(self.path)
@@ -263,6 +274,7 @@ class TranscriptProcessor:
             self.identity = identity
             self.offset = 0
             self.previous_length = 0
+            self.pending_idea_ids.clear()
             self.known = load_known_ideas(self.ideas_path, self.session_id)
         if len(transcript) != self.previous_length:
             self.previous_length = len(transcript)
@@ -275,14 +287,20 @@ class TranscriptProcessor:
             return
         # Include written ideas that arrived since the preceding spoken chunk.
         known = {**self.known, **load_known_ideas(self.ideas_path, self.session_id)}
-        updates = extract(known, chunk)
-        next_known, references = resolve_updates(known, updates, self.session_id)
+        self.write_activity("classifying")
+        try:
+            updates = extract(known, chunk)
+            next_known, references = resolve_updates(known, updates, self.session_id)
+        except Exception:
+            self.write_activity("idle")
+            raise
         if file_identity(self.path) != identity:
             return
         seed = f"{self.session_id}:{identity}:{self.offset}:".encode("utf-8") + chunk.encode("utf-8")
         chunk_id = hashlib.sha256(seed).hexdigest()[:20]
         publish(idea_updates_path, references)
         publish(classified_chunks_path, [{"session_id": self.session_id, "chunk_id": chunk_id, "chunk": chunk, "ideas": references}])
+        self.write_activity("classified", [item["id"] for item in references if item["id"] not in known])
         self.known = next_known
         self.offset += len(chunk)
         temporary = self.checkpoint.with_suffix(".tmp")
