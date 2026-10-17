@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
+  Menu,
   Columns3,
   LayoutGrid,
   AudioLines,
@@ -20,8 +21,13 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
+import brandLogo from './assets/brainy-storm-logo.svg'
+import { FlyingAgent } from './FlyingAgent'
+import { BrainyPlaceholder } from './components/BrainyPlaceholder'
+import { IdeaThumbnail } from './components/IdeaThumbnail'
+import { StormPresence } from './StormPresence'
 import './enrichedView.css'
-import { AbstractSymbol, BrandShape, MemoPreview, RecordingShape } from './BrandShape'
+import { BrandShape, RecordingShape } from './BrandShape'
 import { EditableIdea } from './EditableIdea'
 import { AvatarGroup } from './AvatarGroup'
 import { Avatar } from './Avatar'
@@ -36,6 +42,8 @@ import { useTranscription } from './useTranscription'
 import { useIdeaTextSync } from './useIdeaTextSync'
 import { sessionParticipants } from './ideaParticipants'
 import { createBrainyFocus } from './brainyFocus'
+import { useBrainyActivity } from './useBrainyActivity'
+import { stormPresentation } from './stormPresentation'
 
 function thumbnailUrl(thumbnail?: string | null) {
   if (!thumbnail || /^(?:https?:|data:|blob:)/.test(thumbnail)) return thumbnail || ''
@@ -73,10 +81,38 @@ function App() {
   const resetInProgress = useRef(false)
   const [layout, setLayout] = useState<'horizontal' | 'grid'>('horizontal')
   const ideas = sessionIdeas[activeSession] || []
+  const processingNewIdea = useBrainyActivity(activeSession, ideas)
   const setIdeas = (update: (current: Idea[]) => Idea[]) => setSessionIdeas(current => ({ ...current, [activeSession]: update(current[activeSession] || []) }))
   const [selectedIdea, setSelectedIdea] = useState<string | null>(null)
-  const { transcript, recording, error: transcriptionError, speakerWarning, stormWarning, storm, elapsedSeconds, startRecording, stopRecording, finishRecording, restartTranscript, exportTranscript } = useTranscription(activeSession)
+  const { transcript, recording, error: transcriptionError, speakerWarning, stormWarning, storm, cancelStorm, elapsedSeconds, startRecording, stopRecording, finishRecording, restartTranscript, exportTranscript } = useTranscription(activeSession)
+  const { recordingActive, emptyStormThinking, memoInWelcome } = stormPresentation(recording, ideas.length, transcript.length, processingNewIdea)
   const [transcriptOpen, setTranscriptOpen] = useState(false)
+  const [compactNavigation, setCompactNavigation] = useState(() => window.matchMedia('(max-width: 1160px)').matches)
+  const [navigationOpen, setNavigationOpen] = useState(false)
+  const navigationRef = useRef<HTMLElement>(null)
+  const navigationToggleRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 1160px)')
+    const update = () => { setCompactNavigation(media.matches); setNavigationOpen(false); setTranscriptOpen(false) }
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+  useEffect(() => {
+    if (!navigationOpen) return
+    const toggle = navigationToggleRef.current
+    const panel = navigationRef.current
+    panel?.querySelector<HTMLButtonElement>('button')?.focus()
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setNavigationOpen(false); return }
+      if (event.key !== 'Tab') return
+      const items = Array.from(panel?.querySelectorAll<HTMLElement>('button:not(:disabled), input, summary, [tabindex="0"]') || []).filter(item => item.getClientRects().length > 0)
+      const first = items[0], last = items.at(-1)
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => { document.removeEventListener('keydown', handleKey); toggle?.focus() }
+  }, [navigationOpen])
   const transcriptFeedRef = useRef<HTMLDivElement>(null)
   const discussedCardRef = useRef<HTMLElement | null>(null)
   const boardRef = useRef<HTMLElement | null>(null)
@@ -173,6 +209,7 @@ function App() {
       const id = crypto.randomUUID()
       setSessions(current => [{ id, name: 'New storm', date: 'Just now', ideas: 0 }, ...current])
       setSessionIdeas(current => ({ ...current, [id]: [] }))
+      setNavigationOpen(false)
       setActiveSession(id)
       setExpanded(current => [...current, id])
       setSearch('')
@@ -217,27 +254,14 @@ function App() {
     }
   }
 
-  function addIdea() {
-    const nextIdea: Idea = {
-      id: crypto.randomUUID(),
-      title: 'A new idea taking shape',
-      summary: 'A fresh thought from the room. Add context as the conversation unfolds.',
-      tag: 'Just added',
-      votes: 0,
-      pattern: 'orbit',
-    }
-    setIdeas((current) => [...current, nextIdea])
-    setSelectedIdea(nextIdea.id)
-    setExpanded(current => current.includes(activeSession) ? current : [...current, activeSession])
-  }
-
   async function openSession(id: string, ideaId: string | null = null) {
     if (switchingRef.current || transitioning) return
-    if (id === activeSession) { setSelectedIdea(ideaId); return }
+    if (id === activeSession) { setSelectedIdea(ideaId); setNavigationOpen(false); return }
     switchingRef.current = true
     setSwitching(true)
     try {
       await finishRecording()
+      setNavigationOpen(false)
       setActiveSession(id)
       setSelectedIdea(ideaId)
       setExpanded(current => current.includes(id) ? current : [...current, id])
@@ -307,7 +331,7 @@ function App() {
         <p id="delete-storm-description">Remove “{stormToDelete?.name || 'New storm'}” and all its ideas and transcript from your workspace?</p>
         {deleteStormError && <p role="alert">{deleteStormError}</p>}
         <div className="restart-actions">
-          <button type="button" className="record-control primary-control" disabled={transitioning} onClick={() => void deleteStorm()}>{deletingStorm ? 'Deleting…' : 'Delete storm'}</button>
+          <button type="button" className="record-control primary-control destructive-control" disabled={transitioning} onClick={() => void deleteStorm()}>{deletingStorm ? 'Deleting…' : 'Delete storm'}</button>
           <button type="button" className="outline-button" disabled={deletingStorm} onClick={() => stormDeleteDialog.current?.close()}>Cancel</button>
         </div>
       </dialog>
@@ -331,8 +355,8 @@ function App() {
           <button className="outline-button" disabled={restarting} onClick={downloadMemory}><Download size={14} /> Download memory</button>
         </div>
       </dialog>
-      <aside className="session-sidebar" aria-label="Your storms">
-        <div className="wordmark">brainy stormy</div>
+      <aside ref={navigationRef} id="workspace-navigation" className={`session-sidebar ${navigationOpen ? 'navigation-open' : ''}`} aria-label="Your storms" role={compactNavigation ? 'dialog' : undefined} aria-modal={compactNavigation && navigationOpen ? true : undefined} inert={compactNavigation && !navigationOpen}>
+        <div className="navigation-heading"><div className="wordmark"><img className="brand-logo" src={brandLogo} alt="brainy storm" width="338" height="95" /></div><button type="button" className="icon-button navigation-close" aria-label="Close navigation" onClick={() => setNavigationOpen(false)}><X size={20} /></button></div>
         <button type="button" className="new-session-button" onClick={() => void createSession()} disabled={transitioning} aria-label="New storm">
           <Plus size={16} />
           <span>New storm</span>
@@ -378,6 +402,7 @@ function App() {
             {visibleSessions.length === 0 && <p className="empty-search">No storms or ideas found</p>}
           </div>
         </nav>
+        <button type="button" className="outline-button navigation-transcript" onClick={() => { setNavigationOpen(false); setTranscriptOpen(true) }}><AudioLines size={18} /> Transcript</button>
         <div className="sidebar-bottom">
           <button type="button" className="profile-row" aria-label="Leonarda Lovrić profile">
             <Avatar className="profile-avatar" initials="LL" color="avatar-self" />
@@ -387,19 +412,25 @@ function App() {
         </div>
       </aside>
 
-      <main className="main-column">
+      {navigationOpen && <button type="button" className="navigation-scrim" tabIndex={-1} aria-label="Close navigation" onClick={() => setNavigationOpen(false)} />}
+      <main className="main-column" inert={compactNavigation && navigationOpen}>
+        <header className="compact-topbar">
+          <button ref={navigationToggleRef} type="button" className="icon-button" aria-label="Open navigation" aria-expanded={navigationOpen} aria-controls="workspace-navigation" onClick={() => { setTranscriptOpen(false); setNavigationOpen(true) }}><Menu size={22} /></button>
+          <span className="compact-wordmark"><img className="brand-logo" src={brandLogo} alt="brainy storm" width="338" height="95" /></span>
+        </header>
         <section ref={boardRef} className={`board-scroll ${!currentIdea && layout === 'horizontal' ? 'horizontal-board' : ''}`}>
           <div className="board-content">
             {currentIdea ? <article className="idea-page">
               <div className="idea-page-banner">
                 <BrandShape variant={ideas.findIndex(idea => idea.id === currentIdea.id)} />
-                {currentIdea.thumbnail && <img key={currentIdea.thumbnail} className="idea-thumbnail" src={thumbnailUrl(currentIdea.thumbnail)} alt="" onError={event => { event.currentTarget.style.display = 'none' }} />}
+                {currentIdea.thumbnail && <IdeaThumbnail key={currentIdea.thumbnail} src={thumbnailUrl(currentIdea.thumbnail)} />}
               </div>
               <div className="idea-page-toolbar"><button type="button" className="idea-back-button" onClick={() => setSelectedIdea(null)}>← Back to {activeProject.name || 'New storm'}</button>{collaboratorActions}</div>
               <EditableIdea key={currentIdea.id} idea={currentIdea} storageError={storageError} syncError={Boolean(currentIdea.pendingTextEdit && textSyncErrors[currentIdea.id])} onChange={fields => setIdeas(current => current.map(idea => idea.id === currentIdea.id ? editIdea(idea, fields) : idea))} />
             </article> : <>
             <div className="board-heading-row">
               <div>
+
                 <h1 className="project-title"><input aria-label="Name of this storm" value={activeProject.name} placeholder="New storm"
                   onChange={event => renameSession(event.target.value)}
                   onBlur={() => renameSession(activeProject.name.trim() || 'New storm')}
@@ -421,12 +452,13 @@ function App() {
                     aria-current={visibleFocusedIdeaId === idea.id ? 'true' : undefined}
                   >
                     <div className={`idea-art art-${idea.pattern}`}>
+                      {visibleFocusedIdeaId === idea.id && <div className="brainy-status-label discussion-badge" role="status">Brainy · Discussing now</div>}
+                      {!processingNewIdea && (visibleFocusedIdeaId === idea.id || (!visibleFocusedIdeaId && index === ideas.length - 1)) && <div className="card-brainy-target" data-agent-target="Brainy" data-agent-scale="0.65" data-agent-wander="near" />}
                       <BrandShape variant={index} />
-                      {idea.thumbnail && <img key={idea.thumbnail} className="idea-thumbnail" src={thumbnailUrl(idea.thumbnail)} alt="" onError={event => { event.currentTarget.style.display = 'none' }} />}
+                      {idea.thumbnail && <IdeaThumbnail key={idea.thumbnail} src={thumbnailUrl(idea.thumbnail)} />}
                     </div>
                     <div className="idea-card-body">
                       <div className="idea-card-topline">
-                        {visibleFocusedIdeaId === idea.id && <span className="discussion-label">Brainy · Discussing now</span>}
                         <IdeaStances idea={idea} />
                         <IdeaCardMenu idea={idea} onDelete={() => { setIdeaToDelete(idea); deleteDialog.current?.showModal() }} />
                       </div>
@@ -436,32 +468,27 @@ function App() {
                     </div>
                   </article>
                 ))}
-                <button type="button" className="add-idea-card" onClick={addIdea}>
-                  <span className="add-idea-icon"><AbstractSymbol /></span>
-                  <strong>Capture an idea</strong>
-                  <span>Or let one emerge from the conversation</span>
-                </button>
+                {processingNewIdea && <BrainyPlaceholder key={activeSession} started active control={null} />}
               </div>
             ) : (
-              <div className="empty-board">
-                <MemoPreview />
-                <strong>{recording === 'recording' ? 'Speak freely about your ideas' : 'Start the session and speak freely about your ideas'}</strong>
-                <p>{recording === 'recording' ? 'Memo is listening and transcribing. Your ideas will take shape here.' : 'Memo will listen, transcribe, and give your ideas a home here.'}</p>
-                <button className="record-control primary-control" type="button" disabled={transitioning} aria-busy={transitioning} onClick={toggleRecording}>{recordingIcon}<span>{recordingLabel}</span></button>
-              </div>
+              <BrainyPlaceholder key={activeSession} started={emptyStormThinking} active={emptyStormThinking} control={
+                <button className="record-control primary-control" type="button" disabled={transitioning} aria-busy={transitioning} onClick={toggleRecording}>{recordingIcon}<span>{memoInWelcome && !transitioning ? 'Start recording' : recordingLabel}</span></button>
+              } />
             )}
 
             </>}
           </div>
         </section>
 
-        {storm && <div className="storm-intervention" role="status" aria-atomic="true">
-          <span className="storm-badge" aria-hidden="true">◆</span>
-          <div><strong>Storm <span>{storm.phase === 'speaking' ? 'is speaking' : '· focus check'}</span></strong><p>{storm.text}</p></div>
-        </div>}
+        <FlyingAgent name="Memo" enabled={(memoInWelcome || recordingActive) && !storm} />
+        <FlyingAgent name="Brainy" />
+        <StormPresence storm={storm} />
         <footer className={`recording-dock${storm ? ' storm-takeover' : ''}`}>
           <RecordingShape active={recording === 'recording'} storm={!!storm} stormSpeaking={storm?.phase === 'speaking'} />
           <span className="recording-time"><Clock3 size={14} /> {minutes}:{seconds}</span>
+          {storm ? (
+            <button type="button" className="record-control primary-control" onClick={cancelStorm}>Skip</button>
+          ) : <>
           <button
             type="button"
             className="record-control primary-control"
@@ -473,12 +500,16 @@ function App() {
             <span>{recordingLabel}</span>
           </button>
           <button type="button" className="record-control restart-control" disabled={transitioning} onClick={() => { setRestartError(''); restartDialog.current?.showModal() }}><RotateCcw size={14} /><span>Restart</span></button>
+
+          </>}
+
         </footer>
       </main>
 
-      <aside className={`transcript-sidebar ${transcriptOpen ? 'mobile-open' : ''}`} aria-label="Live transcript">
+      <aside className={`transcript-sidebar ${transcriptOpen ? 'mobile-open' : ''}`} aria-label="Live transcript" inert={compactNavigation && (!transcriptOpen || navigationOpen)}>
         <div className="transcript-header">
           <div><div className="transcript-title-row"><h2>Transcript</h2><button type="button" className="icon-button small mobile-close" onClick={() => setTranscriptOpen(false)} aria-label="Close transcript"><X size={16} /></button></div></div>
+          <div className="transcript-memo" data-agent-target={!memoInWelcome && recordingActive ? "Memo" : undefined} data-agent-scale="0.5" />
           <details className="transcript-options" onBlur={event => {
             if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false
           }} onKeyDown={event => {

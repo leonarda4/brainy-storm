@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { Avatar } from './Avatar'
+import { AgentCharacter } from './AgentCharacter'
 import { transcriptDateKey, transcriptDateLabel } from './transcript'
 import type { TranscriptLine } from './transcript'
 
@@ -19,9 +20,9 @@ export function TranscriptContent({ transcript, recording, stormActive = false }
     {completed.map((line, index) => <Fragment key={line.id || index}>
       {line.recordedAt && transcriptDateKey(line.recordedAt) !== transcriptDateKey(completed[index - 1]?.recordedAt) && <div className="transcript-date"><span /><time dateTime={transcriptDateKey(line.recordedAt)}>{transcriptDateLabel(line.recordedAt)}</time><span /></div>}
       <article className={`transcript-line${line.agent === 'storm' ? ' storm-transcript-line' : ''}`}>
-        <Avatar className="speaker-avatar" initials={line.initials} color={line.color} aria-hidden="true" />
+        {line.agent === 'storm' ? <div className="storm-transcript-avatar"><AgentCharacter name="Storm" compact avatar /></div> : <Avatar className="speaker-avatar" initials={line.initials} color={line.color} aria-hidden="true" />}
         <div className="transcript-line-content">
-          <div className="speaker-meta"><strong>{line.person}{line.agent === 'storm' && <span className="storm-agent-label">Focus agent</span>}</strong>{line.recordedAt && <time dateTime={line.recordedAt} title={new Date(line.recordedAt).toLocaleString()}>{line.time}</time>}</div>
+          <div className="speaker-meta"><strong>{line.person}</strong>{line.recordedAt && <time dateTime={line.recordedAt} title={new Date(line.recordedAt).toLocaleString()}>{line.time}</time>}</div>
           <p>{line.text}</p>
         </div>
       </article>
@@ -33,7 +34,6 @@ export function TranscriptContent({ transcript, recording, stormActive = false }
         <span className="capture-pulse" aria-hidden="true" />
       </div>
     )}
-    {recording === 'recording' && !stormActive && !speaking && <div className="transcript-capture" role="status">Listening for the next thought</div>}
     {recording === 'saving' && <div className="transcript-capture" role="status">Finishing transcript…</div>}
   </>
 }

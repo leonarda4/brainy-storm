@@ -1,25 +1,40 @@
 {
-  "generator": "title-svg-v2",
-  "source_hash": "b83c82ee689978370ede6abd0e27e6f8667faccf834086142b4f585cd39f5253",
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "0138314bf953d5599d86339c7cdb2b5a80f4738e2f808d2ee6f516ea7b41e3f5",
   "title": "Autonomous Gaming Agent",
   "palette": [
     "#000000",
-    "#a83cf4",
-    "#ff4545"
+    "#FFFFFF",
+    "#FB3535"
   ],
   "art_direction": {
-    "style": "simple-subject",
-    "composition": "side-bleed",
-    "background": "#000000",
-    "foreground": "#a83cf4",
-    "accent": "#ff4545"
+    "motif": "open",
+    "variant": 1,
+    "selection_source": "random-fallback"
   },
   "width": 800,
-  "height": 400,
-  "generated_at": 1791676907.6985412,
-  "svg_hash": "71ffa0a81ae1be62",
+  "height": 450,
+  "generated_at": 1792157551.006324,
+  "svg_hash": "45bacadd3677184f",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "ee7690a25a437179423a597c0f52d788",
+    "shape": "open",
+    "variant": 1,
+    "pair_index": 11,
+    "palette": {
+      "background": "#000000",
+      "foreground": "#FFFFFF",
+      "accent": "#FB3535"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "45bacadd3677184f",
+    "selection_source": "random-fallback"
+  },
   "generation": {
-    "source_hash": "b83c82ee689978370ede6abd0e27e6f8667faccf834086142b4f585cd39f5253",
+    "source_hash": "0138314bf953d5599d86339c7cdb2b5a80f4738e2f808d2ee6f516ea7b41e3f5",
     "status": "ready",
     "attempts": 1,
     "next_retry_at": 0

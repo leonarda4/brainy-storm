@@ -1,0 +1,42 @@
+{
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "7efcfc81b8a949899b3716a8a67169ab6ec8e826158a8957fc95127735f23202",
+  "title": "A new idea tamhnhtking shape",
+  "palette": [
+    "#F9D715",
+    "#000000",
+    "#FFFFFF"
+  ],
+  "art_direction": {
+    "motif": "summit",
+    "variant": 0,
+    "selection_source": "random-fallback"
+  },
+  "width": 800,
+  "height": 450,
+  "generated_at": 1792158482.409984,
+  "svg_hash": "a55ccee707c41fa5",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "0b0e8d47b424235a9678c7bf0bb09416",
+    "shape": "summit",
+    "variant": 0,
+    "pair_index": 7,
+    "palette": {
+      "background": "#F9D715",
+      "foreground": "#000000",
+      "accent": "#FFFFFF"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "a55ccee707c41fa5",
+    "selection_source": "random-fallback"
+  },
+  "generation": {
+    "source_hash": "7efcfc81b8a949899b3716a8a67169ab6ec8e826158a8957fc95127735f23202",
+    "status": "ready",
+    "attempts": 1,
+    "next_retry_at": 0
+  }
+}

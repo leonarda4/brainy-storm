@@ -51,3 +51,28 @@ class ProjectTests(unittest.TestCase):
             topic = root / 'classified.jsonl'
             processor.tick(extract, root / 'updates.jsonl', topic, 1)
             self.assertFalse(topic.exists())
+
+class BrainyActivityTests(unittest.TestCase):
+    def test_activity_tracks_new_ideas_and_clears_on_failure(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'transcript.txt'
+            path.write_text('[Maya] A tool library for neighbors.\n')
+            processor = TranscriptProcessor(path, root / 'ideas.json', 's')
+            activity_path = path.with_suffix('.brainy.json')
+
+            def extract(known, chunk):
+                self.assertEqual(json.loads(activity_path.read_text())['phase'], 'classifying')
+                return [IdeaUpdate(id=None, title='Tool library', summary='Share tools')]
+
+            processor.tick(extract, root / 'updates', root / 'classified', 1)
+            activity = json.loads(activity_path.read_text())
+            self.assertEqual(activity['phase'], 'classified')
+            self.assertEqual(len(activity['new_idea_ids']), 1)
+
+            def fail(known, chunk):
+                raise RuntimeError('offline')
+
+            with self.assertRaises(RuntimeError):
+                processor.tick(fail, root / 'updates', root / 'classified', 1)
+            self.assertEqual(json.loads(activity_path.read_text())['phase'], 'idle')

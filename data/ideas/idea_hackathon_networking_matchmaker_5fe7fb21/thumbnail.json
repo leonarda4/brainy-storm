@@ -1,26 +1,40 @@
 {
-  "generator": "title-svg-v2",
-  "style_revision": "simple-forms-v3",
-  "source_hash": "b2f0ca0ad483e289df39e71be07783eec91042a54ec904e1d64ab530c86f73d4",
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "9ef22f199533495757ff79136c63a6808c0531e55e0d3a62a4a6a296e4c6dbdd",
   "title": "Hackathon Networking Matchmaker",
   "palette": [
+    "#868C0C",
     "#000000",
-    "#ff7146"
+    "#FFFFFF"
   ],
   "art_direction": {
-    "style": "suggestive-shape",
-    "composition": "side-bleed",
-    "background": "#000000",
-    "foreground": "#ff7146",
-    "accent": "#f4ff61",
-    "color_mode": "two-tone"
+    "motif": "growth",
+    "variant": 0,
+    "selection_source": "random-fallback"
   },
   "width": 800,
-  "height": 400,
-  "generated_at": 1791680515.086299,
-  "svg_hash": "ef32c896ca12d07b",
+  "height": 450,
+  "generated_at": 1792157550.9357078,
+  "svg_hash": "fe30c10e3fc6ba91",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "495bc5f6a3b3d3334f76331e1bec72a5",
+    "shape": "growth",
+    "variant": 0,
+    "pair_index": 13,
+    "palette": {
+      "background": "#868C0C",
+      "foreground": "#000000",
+      "accent": "#FFFFFF"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "fe30c10e3fc6ba91",
+    "selection_source": "random-fallback"
+  },
   "generation": {
-    "source_hash": "b2f0ca0ad483e289df39e71be07783eec91042a54ec904e1d64ab530c86f73d4",
+    "source_hash": "9ef22f199533495757ff79136c63a6808c0531e55e0d3a62a4a6a296e4c6dbdd",
     "status": "ready",
     "attempts": 1,
     "next_retry_at": 0

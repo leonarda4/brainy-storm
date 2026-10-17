@@ -1,26 +1,40 @@
 {
-  "generator": "title-svg-v2",
-  "style_revision": "simple-forms-v3",
-  "source_hash": "00f81a3b252512ea41e53548208651094d618b76a663751bbce699a6ce804faa",
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "f559e7ebf71cc44fdbfcd6a3a325f4c22b71d3ae726af7604ac18f4ad3338380",
   "title": "Brainstorming Idea and Decision Tracker",
   "palette": [
     "#000000",
-    "#ff4545"
+    "#A346E0",
+    "#3FFAE9"
   ],
   "art_direction": {
-    "style": "simple-subject",
-    "composition": "diagonal-bleed",
-    "background": "#ff4545",
-    "foreground": "#000000",
-    "accent": "#9da51a",
-    "color_mode": "two-tone"
+    "motif": "layers",
+    "variant": 2,
+    "selection_source": "random-fallback"
   },
   "width": 800,
-  "height": 400,
-  "generated_at": 1791679049.173685,
-  "svg_hash": "fb7492fd30a69af8",
+  "height": 450,
+  "generated_at": 1792157551.122893,
+  "svg_hash": "ffea2896fb4062d9",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "af59dbe3d635a0d31cf89698f4896ddf",
+    "shape": "layers",
+    "variant": 2,
+    "pair_index": 10,
+    "palette": {
+      "background": "#000000",
+      "foreground": "#A346E0",
+      "accent": "#3FFAE9"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "ffea2896fb4062d9",
+    "selection_source": "random-fallback"
+  },
   "generation": {
-    "source_hash": "00f81a3b252512ea41e53548208651094d618b76a663751bbce699a6ce804faa",
+    "source_hash": "f559e7ebf71cc44fdbfcd6a3a325f4c22b71d3ae726af7604ac18f4ad3338380",
     "status": "ready",
     "attempts": 1,
     "next_retry_at": 0

@@ -129,7 +129,7 @@ class StorageManager:
 
     async def update_thumbnail(
         self, idea_id: str, expected_source: str, generation: dict,
-        svg: Optional[str] = None,
+        svg: Optional[str] = None, graphic_recipe: Optional[dict] = None,
     ) -> bool:
         """Commit only thumbnail fields against the latest idea, never a stale copy."""
         async with _storage_lock:
@@ -153,6 +153,16 @@ class StorageManager:
                     "generated_at": time.time(),
                     "svg_hash": hashlib.sha256(svg.encode()).hexdigest()[:16],
                 }
+                if graphic_recipe is not None:
+                    metadata["graphic_recipe"] = graphic_recipe
+                    metadata["palette"] = list(dict.fromkeys(graphic_recipe["palette"].values()))
+                    metadata["art_direction"] = {
+                        "motif": graphic_recipe["shape"],
+                        "variant": graphic_recipe["variant"],
+                        "selection_source": graphic_recipe["selection_source"],
+                    }
+                    metadata["width"] = graphic_recipe["width"]
+                    metadata["height"] = graphic_recipe["height"]
             metadata["generation"] = generation
             self.artifacts._write_json(folder / "thumbnail.json", metadata)
             if svg is not None:

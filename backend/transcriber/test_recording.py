@@ -302,3 +302,25 @@ class RecordingTests(unittest.IsolatedAsyncioTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class BrainyActivityTests(unittest.IsolatedAsyncioTestCase):
+    async def test_activity_expires_and_does_not_survive_a_transcript_reset(self):
+        import json
+        import time
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / 'transcript.txt'
+            path.write_text('A new thought\n')
+            stat = path.stat()
+            activity_path = path.with_suffix('.brainy.json')
+            activity = {'phase': 'classified', 'new_idea_ids': ['new'], 'identity': [stat.st_dev, stat.st_ino], 'updated_at': time.time()}
+            with patch.object(main, 'TRANSCRIPT_FILE', path):
+                self.assertEqual((await main.brainy_activity())['phase'], 'idle')
+                activity_path.write_text(json.dumps(activity))
+                self.assertEqual((await main.brainy_activity())['new_idea_ids'], ['new'])
+                activity['updated_at'] -= 121
+                activity_path.write_text(json.dumps(activity))
+                self.assertEqual((await main.brainy_activity())['phase'], 'idle')
+                activity['updated_at'] = time.time()
+                activity['identity'] = [0, 0]
+                activity_path.write_text(json.dumps(activity))
+                self.assertEqual((await main.brainy_activity())['phase'], 'idle')

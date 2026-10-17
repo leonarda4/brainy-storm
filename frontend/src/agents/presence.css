@@ -1,0 +1,25 @@
+.agent-character { display: flex; justify-content: center; }
+.agent-character-memo { margin-bottom: 16px; animation: memo-hover 4.8s ease-in-out infinite; }
+.storm-presence { position: absolute; overflow: hidden; inset: 0; z-index: 40; pointer-events: none; }
+.storm-presence-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 24px 100px; }
+.storm-presence-flight { position: relative; z-index: 1; pointer-events: none; animation: storm-arrive 550ms cubic-bezier(.2,.8,.2,1) both; }
+.storm-presence.is-leaving .storm-presence-flight { position: relative; z-index: 1; pointer-events: none; animation: storm-fly-away 700ms cubic-bezier(.5,0,.8,.4) both; }
+.recording-dock.storm-takeover { position: relative; z-index: 41; }
+@keyframes memo-hover { 0%,100% { transform: translateY(2px); } 50% { transform: translateY(-7px); } }
+@keyframes storm-arrive { from { transform: translate(-100vw, 60vh) scale(.65) rotate(-12deg); } to { opacity: 1; transform: none; } }
+@keyframes storm-fly-away { 20% { transform: translate(-16px, 12px) rotate(-8deg); } to { transform: translate(100vw, -100vh) scale(.25) rotate(24deg); } }
+@media (max-width: 480px), (max-height: 650px) { .storm-presence-flight { zoom: .75; } .storm-presence-content { padding-bottom: 110px; } }
+@media (prefers-reduced-motion: reduce) {
+  .agent-character-memo, .is-storm .recording-lobes polygon { animation: none; }
+  .storm-presence .storm-presence-flight { animation: none; }
+  .storm-presence.is-leaving { opacity: 0; }
+}
+
+
+
+.flying-agent { position: fixed; left: 0; top: 0; width: 168px; height: 112px; z-index: 39; pointer-events: none; visibility: hidden; will-change: transform; }
+.flying-agent .agent-character { height: 100%; align-items: center; }
+.flying-agent .agent-character-memo { margin: 0; }
+
+/* Card companions stay over their card but underneath navigation and transcript panels. */
+.flying-agent.is-card-bound { z-index: 19; }

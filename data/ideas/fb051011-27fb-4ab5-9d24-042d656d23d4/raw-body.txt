@@ -1,0 +1,2 @@
+User written contribution (not spoken; edited fields supersede earlier descriptions):
+{"title": "A new idea tamhnhtking shape", "summary": "A fresh thought from the room. Add context as the conversation unfolds."}

@@ -305,44 +305,31 @@ uses the **idea title only**: no summary generation or transcript processing
 is required. A changed title schedules fresh artwork; summary updates and
 reordering cards do not. The existing image remains visible during generation.
 
-Generated thumbnails are minimal 800 × 400 SVG illustrations. A stable choice
-per idea mixes abstract squiggly/scalloped patterns, paired organic patterns,
-suggestive forms, and occasional recognizable subjects. Style, cropping, and
-background are varied independently. Large shapes fill much of the frame and
-extend beyond its edges; they need not be centered or linked by connectors.
-Black and the two selected brand colors exchange background and ink roles.
-Most new thumbnails use just one brand color and black. Occasional accents
-are restricted to selected color pairs; a third color is rejected for two-tone
-compositions. The preferred reference is the Code Review thumbnail's separated
-rounded bars. New work uses one to three simple forms, with a hard ceiling of
-five foreground shapes. Paths have a bounded number of commands and coordinates;
-compound cutouts and elaborate layered patterns are rejected or discouraged.
-The palette uses orange (`#FF7146`), pink (`#F47AFF`), aqua (`#9FF6EE`),
-yellow (`#F4FF61`), purple (`#A83CF4`), lemon (`#FFE600`), olive green
-(`#9DA51A`), or vivid red (`#FF4545`). The same palette is available to the
-abstract placeholders and their optional dots; white is excluded and blue
-(`#414DFF`) is reserved for CTA controls, outside these eight supporting colors.
-There is no visible text, shading, gradient, or embedded raster image.
-An SVG allowlist rejects active content,
-external references, unsupported elements, and colors outside the palette.
+Thumbnails are local, editable 800 × 450 SVGs rendered from the approved
+`brand_graphics.json` catalog: eight semantic motif families, three variants
+per motif, and eighteen curated color pairs. Designs use one dominant abstract
+relationship, large cropped forms, flat fills, deliberate negative space, and
+at most one small focal accent. No text, gradients, connectors, or stock icons
+appear in the artwork. Both instant placeholders and completed thumbnails use
+the same local renderer; geometry, variant, and palette parameters are randomized.
 
-The existing text-model connection generates the SVG source; this does not
-require a Nano Banana image-model call or a new API key. `THUMBNAIL_MODEL`
-optionally overrides `GEMINI_MODEL`; with the OpenAI provider, `OPENAI_MODEL`
-is used. `THUMBNAIL_TIMEOUT_SECONDS` defaults to 60. Set
-`THUMBNAILS_ENABLED=false` to retain local placeholders only. Mock mode or
-missing model credentials also leaves placeholders in place.
+Gemini receives only the idea title and catalog descriptions, and returns one
+motif ID. It never produces SVG or other artwork. If the chooser call is
+unavailable, errors, or returns an unknown ID, the backend logs that Gemini is
+not working and selects a random motif. Local rendering works without model
+credentials. `THUMBNAIL_MODEL` optionally overrides `GEMINI_MODEL`, and
+`THUMBNAIL_TIMEOUT_SECONDS` defaults to 60. Set `THUMBNAILS_ENABLED=false` to
+retain local placeholders only.
 
-`thumbnail.json` stores the source hash, palette, art direction, output hash and generation
+`thumbnail.json` stores the source hash, rendered recipe, palette, output hash and generation
 state. Failed requests retry up to three times with backoff, preserving the
 previous image. Removing the `generation` entry from this metadata allows
 another attempt after exhausted retries. Pending work survives service restarts
 through these files, and results for deleted or renamed ideas are discarded.
 The worker runs in the API process; use one API worker with this file store.
-The generator version is included in the source hash; v2 refreshes existing v1
-thumbnails in the background. The `simple-forms-v3` prompt refinement records a
-separate `style_revision` without invalidating completed v2 artwork, preserving
-approved thumbnails. Selected existing images can be replaced individually.
+The generator version is included in the source hash; catalog updates refresh
+older thumbnails in the background. Existing artwork remains visible during
+generation and ordinary saves preserve finished thumbnails.
 
 The idea's `thumbnail` URL includes an output-hash query parameter after
 generation. The frontend's normal polling picks up the replacement without a

@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import re
+import time
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -118,6 +119,19 @@ async def transcript(session_id: str = "Hackathon"):
     except OSError as exc:
         logger.error("Cannot read transcript: %s", exc)
         raise HTTPException(500, "Cannot read transcript") from exc
+
+
+@app.get("/brainy")
+async def brainy_activity(session_id: str = "Hackathon"):
+    path = transcript_path(session_id)
+    try:
+        activity = json.loads(await file_operation(path.with_suffix(".brainy.json").read_text, encoding="utf-8"))
+        stat = path.stat()
+        if activity.get("identity") == [stat.st_dev, stat.st_ino] and time.time() - activity["updated_at"] < 120:
+            return activity
+    except (OSError, ValueError, KeyError, TypeError):
+        pass
+    return {"phase": "idle", "new_idea_ids": []}
 
 
 @app.post("/transcript/reset")

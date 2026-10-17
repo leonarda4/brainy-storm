@@ -1,30 +1,42 @@
 {
-  "generator": "title-svg-v2",
-  "style_revision": "simple-forms-v3",
-  "source_hash": "d172bb1f0e4ecfd7f59dabcc92a2bf6eb469d0425098ac45127abb8e150196fa",
+  "generator": "brand-graphics-v1",
+  "style_revision": "catalog-recipes-v1",
+  "source_hash": "343ef85066797b59538074c40ebff7b0c3a054a7011f3d55a0a6607feb373340",
   "title": "Product Recommendation System",
   "palette": [
+    "#F9D715",
     "#000000",
-    "#f4ff61"
+    "#FFFFFF"
   ],
   "art_direction": {
-    "style": "suggestive-shape",
-    "composition": "diagonal-bleed",
-    "background": "#f4ff61",
-    "foreground": "#000000",
-    "accent": "#9da51a",
-    "color_mode": "two-tone"
+    "motif": "converge",
+    "variant": 1,
+    "selection_source": "random-fallback"
   },
   "width": 800,
-  "height": 400,
-  "generated_at": 1791678445.630496,
-  "svg_hash": "9be798e4bd9bcc27",
+  "height": 450,
+  "generated_at": 1792157550.886848,
+  "svg_hash": "ecd18cb41af403da",
+  "graphic_recipe": {
+    "catalog_version": "brand-abstract-v1",
+    "seed": "7860523d98ff332c8988701299b20308",
+    "shape": "converge",
+    "variant": 1,
+    "pair_index": 7,
+    "palette": {
+      "background": "#F9D715",
+      "foreground": "#000000",
+      "accent": "#FFFFFF"
+    },
+    "width": 800,
+    "height": 450,
+    "svg_hash": "ecd18cb41af403da",
+    "selection_source": "random-fallback"
+  },
   "generation": {
-    "source_hash": "d172bb1f0e4ecfd7f59dabcc92a2bf6eb469d0425098ac45127abb8e150196fa",
+    "source_hash": "343ef85066797b59538074c40ebff7b0c3a054a7011f3d55a0a6607feb373340",
     "status": "ready",
-    "attempts": 0,
-    "next_retry_at": 0,
-    "method": "curated-svg",
-    "design": "Two offset circles; oversized lower-left circle"
+    "attempts": 1,
+    "next_retry_at": 0
   }
 }

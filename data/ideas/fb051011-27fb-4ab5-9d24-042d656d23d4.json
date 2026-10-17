@@ -1,0 +1,32 @@
+{
+  "session_id": "team-discussion",
+  "id": "fb051011-27fb-4ab5-9d24-042d656d23d4",
+  "title": "A new idea tamhnhtking shape",
+  "short_summary": null,
+  "summary": "A fresh thought from the room. Add context as the conversation unfolds.",
+  "is_currently_discussed": false,
+  "transcript": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+  "raw_body": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+  "transcript_segments": [
+    {
+      "chunk_id": "text-edit:875a244b-5b88-474f-ad02-d94557c1e579",
+      "text": "User written contribution (not spoken; edited fields supersede earlier descriptions):\n{\"title\": \"A new idea tamhnhtking shape\", \"summary\": \"A fresh thought from the room. Add context as the conversation unfolds.\"}",
+      "captured_at": 1792158481.716554,
+      "reason": "User added or corrected idea text"
+    }
+  ],
+  "content_version": 1,
+  "enriched_version": 0,
+  "proponents": [],
+  "opponents": [],
+  "thumbnail": "/ideas/fb051011-27fb-4ab5-9d24-042d656d23d4/artifacts/thumbnail.svg?v=a55ccee707c41fa5",
+  "competitors": null,
+  "workflow": null,
+  "pros_cons": null,
+  "systemGraph": null,
+  "status": "error",
+  "active_tools": [],
+  "created_at": 1792158481.716527,
+  "updated_at": 1792158481.91612,
+  "metadata": {}
+}

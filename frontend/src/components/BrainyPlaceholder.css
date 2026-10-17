@@ -1,0 +1,31 @@
+.welcome-idea-morph { position: relative; width: 100%; height: 420px; min-height: 350px; box-sizing: border-box; flex-shrink: 0; border: 1px dashed #d4d4d4; border-radius: 9px; background: #fafafa; transition: width 900ms cubic-bezier(.22,1,.36,1), height 900ms cubic-bezier(.22,1,.36,1), border-radius 900ms; }
+.welcome-idea-morph.has-started { width: min(300px, 100%); height: 410px; border-radius: 0; }
+.horizontal-board .welcome-idea-morph.has-started { height: calc(100% - 90px); }
+.welcome-idea-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; text-align: center; transition: opacity 250ms, transform 650ms; }
+.welcome-idea-content strong { font-family: 'Recia', Georgia, serif; font-size: var(--text-heading); font-weight: 500; }
+.welcome-idea-content p { max-width: 320px; margin: 0; color: #737373; font-size: var(--text-body); line-height: 1.6; }
+.welcome-idea-content button { margin-top: 12px; }
+.has-started .welcome-idea-content { opacity: 0; transform: translateY(-12px); pointer-events: none; }
+.brainy-idea-content { position: absolute; inset: 0; display: flex; flex-direction: column; opacity: 0; pointer-events: none; transition: opacity 400ms 250ms; }
+.has-started .brainy-idea-content { opacity: 1; }
+.brainy-playground { position: relative; flex: 1; min-height: 160px; margin: 12px 14px 24px; }
+.transcript-memo { flex: 1; min-width: 0; pointer-events: none; }
+@media (max-width: 640px) { .welcome-idea-morph { height: 420px; } }
+@media (prefers-reduced-motion: reduce) {
+  .welcome-idea-morph, .welcome-idea-content, .brainy-idea-content { transition: none; }
+}
+
+.idea-rail .welcome-idea-morph.has-started { height: 100%; }
+
+.brainy-status-label { flex: 0 0 auto; margin: 0; padding: 0; border-radius: 0; color: #414dff; font-family: Supreme, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 20px; text-align: left; }
+.welcome-memo { width: 168px; height: 112px; }
+.brainy-work-target { position: absolute; inset: 0; }
+.idea-art { position: relative; }
+.card-brainy-target { position: absolute; right: -18px; bottom: -26px; width: 112px; height: 76px; pointer-events: none; }
+.brainy-idle-target { display: block; position: absolute; right: 0; top: 0; width: 84px; height: 56px; }
+.board-heading-row > div:first-child { position: relative; }
+.transcript-memo { min-height: 56px; animation: none; }
+
+.brainy-status-label { align-self: flex-start; display: inline-block; margin: 0; padding: 3px 6px; background: var(--brand-blue, #414dff); color: white; border-radius: 0; font-size: 10px; line-height: 14px; }
+.discussion-badge { position: absolute; top: 0; left: 0; z-index: 2; margin: 0; }
+.brainy-playground { margin: 12px 14px 24px; }

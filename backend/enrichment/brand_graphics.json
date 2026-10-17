@@ -1,0 +1,1832 @@
+{
+  "version": "brand-abstract-v1",
+  "palette": {
+    "blue": "#0088EE",
+    "orange": "#FF8C00",
+    "yellow": "#F9D715",
+    "olive": "#868C0C",
+    "aqua": "#3FFAE9",
+    "red": "#FB3535",
+    "purple": "#A346E0",
+    "pink": "#F9A3EF"
+  },
+  "palette_note": "The supplied palette photo is the visual authority. These hex codes are working visual matches, not verified pixel samples of the original image. Standard CSS comparisons below are optional references; they do not replace the brand colors.",
+  "motifs": [
+    {
+      "id": "sequence",
+      "title": "Lines of thought",
+      "meaning": "Horizontal pills can suggest code, writing, messages, queues, or a linear process. Different lengths imply rhythm; an accent singles out a change.",
+      "keywords": [
+        "code",
+        "text",
+        "writing",
+        "document",
+        "process",
+        "workflow",
+        "pipeline",
+        "transcript",
+        "json",
+        "export",
+        "task",
+        "decision",
+        "tracker",
+        "program"
+      ],
+      "references": [
+        11,
+        13,
+        14
+      ],
+      "variants": [
+        [
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": -80,
+              "y": 70,
+              "width": 530,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -50,
+              "y": 155,
+              "width": 720,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -20,
+              "y": 240,
+              "width": 470,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 10,
+              "y": 325,
+              "width": 640,
+              "height": 42,
+              "rx": 21.0
+            }
+          }
+        ],
+        [
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -80,
+              "y": 70,
+              "width": 530,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": -50,
+              "y": 155,
+              "width": 720,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -20,
+              "y": 240,
+              "width": 470,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 10,
+              "y": 325,
+              "width": 640,
+              "height": 42,
+              "rx": 21.0
+            }
+          }
+        ],
+        [
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -80,
+              "y": 70,
+              "width": 530,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": -50,
+              "y": 155,
+              "width": 720,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": -20,
+              "y": 240,
+              "width": 470,
+              "height": 42,
+              "rx": 21.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 10,
+              "y": 325,
+              "width": 640,
+              "height": 42,
+              "rx": 21.0
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "summit",
+      "title": "A point above",
+      "meaning": "Hills and one elevated dot can suggest the best option, aspiration, comparison, a benchmark, or a discovery. These are poetic heights, not measured data.",
+      "keywords": [
+        "best",
+        "rank",
+        "compare",
+        "comparison",
+        "recommendation",
+        "benchmark",
+        "quality",
+        "goal",
+        "winner",
+        "optimize",
+        "priority"
+      ],
+      "references": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 600,
+              "rx": 150,
+              "ry": 370
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 600,
+              "rx": 150,
+              "ry": 450
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 630,
+              "cy": 600,
+              "rx": 150,
+              "ry": 320
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 90,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 600,
+              "rx": 150,
+              "ry": 345
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 600,
+              "rx": 150,
+              "ry": 450
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 630,
+              "cy": 600,
+              "rx": 150,
+              "ry": 350
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 90,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 600,
+              "rx": 150,
+              "ry": 320
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 600,
+              "rx": 150,
+              "ry": 450
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 630,
+              "cy": 600,
+              "rx": 150,
+              "ry": 380
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 90,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "pair",
+      "title": "Two in relation",
+      "meaning": "Two soft masses suggest friendship, dialogue, partnership, contrast, or duality. Similar size implies peers; asymmetry suggests mentoring or an unequal comparison.",
+      "keywords": [
+        "friend",
+        "conversation",
+        "networking",
+        "match",
+        "matchmaker",
+        "team",
+        "collaboration",
+        "dual",
+        "contrast",
+        "partner",
+        "social",
+        "chat",
+        "meeting"
+      ],
+      "references": [
+        2,
+        10
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 180,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 255,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 330,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 405,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 205,
+              "cy": 85,
+              "r": 23
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 245,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 320,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 395,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 470,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 595,
+              "cy": 150,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 180,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 255,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 330,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 405,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 205,
+              "cy": 85,
+              "r": 23
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 210,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 285,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 360,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 435,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 595,
+              "cy": 115,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 180,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 255,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 330,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 205,
+              "cy": 405,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 205,
+              "cy": 85,
+              "r": 23
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 175,
+              "rx": 100,
+              "ry": 48
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 250,
+              "rx": 115,
+              "ry": 55
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 325,
+              "rx": 130,
+              "ry": 62
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 595,
+              "cy": 400,
+              "rx": 145,
+              "ry": 69
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 595,
+              "cy": 80,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "layers",
+      "title": "An idea taking shape",
+      "meaning": "Stacked, swelling ellipses suggest accumulated knowledge, memory, building on ideas, depth, or a growing collection. Shared fill turns simple parts into one scalloped mass.",
+      "keywords": [
+        "knowledge",
+        "memory",
+        "collection",
+        "archive",
+        "learn",
+        "learning",
+        "research",
+        "data",
+        "library",
+        "brainstorm",
+        "organize"
+      ],
+      "references": [
+        1,
+        8,
+        15
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 140,
+              "rx": 195,
+              "ry": 58
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 225,
+              "rx": 230,
+              "ry": 67
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 310,
+              "rx": 265,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 395,
+              "rx": 300,
+              "ry": 85
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 55,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 495,
+              "cy": 140,
+              "rx": 195,
+              "ry": 58
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 495,
+              "cy": 225,
+              "rx": 230,
+              "ry": 67
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 495,
+              "cy": 310,
+              "rx": 265,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 495,
+              "cy": 395,
+              "rx": 300,
+              "ry": 85
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 495,
+              "cy": 55,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 590,
+              "cy": 140,
+              "rx": 195,
+              "ry": 58
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 590,
+              "cy": 225,
+              "rx": 230,
+              "ry": 67
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 590,
+              "cy": 310,
+              "rx": 265,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 590,
+              "cy": 395,
+              "rx": 300,
+              "ry": 85
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 590,
+              "cy": 55,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "converge",
+      "title": "Room for agreement",
+      "meaning": "Opposing scalloped edges and a shared dot evoke negotiation, exchange, bridging perspectives, or arriving at a common point. The empty space holds the relationship.",
+      "keywords": [
+        "agreement",
+        "consensus",
+        "exchange",
+        "bridge",
+        "connect",
+        "negotiation",
+        "merge",
+        "sharing",
+        "trade"
+      ],
+      "references": [
+        10
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 170,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 270,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 370,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 230,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 130,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 30,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 160,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 170,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 270,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 370,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 230,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 130,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 30,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 200,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 170,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 270,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": -30,
+              "cy": 370,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 230,
+              "rx": 260,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 130,
+              "rx": 290,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 830,
+              "cy": 30,
+              "rx": 320,
+              "ry": 72
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 240,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "growth",
+      "title": "A changing rhythm",
+      "meaning": "Upright pills suggest progress, milestones, activity, sound, or parallel work. Unequal heights imply variation without pretending to chart real numbers.",
+      "keywords": [
+        "growth",
+        "progress",
+        "milestone",
+        "audio",
+        "music",
+        "voice",
+        "sound",
+        "activity",
+        "parallel",
+        "scale",
+        "record"
+      ],
+      "references": [
+        12
+      ],
+      "variants": [
+        [
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 70,
+              "y": 80,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 170,
+              "y": 153,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": 270,
+              "y": 226,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 370,
+              "y": 129,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 470,
+              "y": 202,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 570,
+              "y": 105,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 670,
+              "y": 178,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          }
+        ],
+        [
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 70,
+              "y": 153,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 170,
+              "y": 226,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 270,
+              "y": 129,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": 370,
+              "y": 202,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 470,
+              "y": 105,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 570,
+              "y": 178,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 670,
+              "y": 81,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          }
+        ],
+        [
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 70,
+              "y": 226,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 170,
+              "y": 129,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 270,
+              "y": 202,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 370,
+              "y": 105,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "accent",
+            "attrs": {
+              "x": 470,
+              "y": 178,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 570,
+              "y": 81,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          },
+          {
+            "tag": "rect",
+            "role": "ink",
+            "attrs": {
+              "x": 670,
+              "y": 154,
+              "width": 46,
+              "height": 410,
+              "rx": 23.0
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "focus",
+      "title": "One thing stands out",
+      "meaning": "A small dot next to a large organic field suggests attention, discovery, an exception, a signal, or a new possibility. Its isolation creates focus without a literal target icon.",
+      "keywords": [
+        "focus",
+        "attention",
+        "signal",
+        "search",
+        "discover",
+        "alert",
+        "detect",
+        "autonomous",
+        "gaming",
+        "agent",
+        "insight"
+      ],
+      "references": [
+        7,
+        8
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 20,
+              "rx": 230,
+              "ry": 95
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 140,
+              "rx": 245,
+              "ry": 103
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 260,
+              "rx": 260,
+              "ry": 111
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 180,
+              "cy": 380,
+              "rx": 275,
+              "ry": 119
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 650,
+              "cy": 140,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 240,
+              "cy": 20,
+              "rx": 230,
+              "ry": 95
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 240,
+              "cy": 140,
+              "rx": 245,
+              "ry": 103
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 240,
+              "cy": 260,
+              "rx": 260,
+              "ry": 111
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 240,
+              "cy": 380,
+              "rx": 275,
+              "ry": 119
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 650,
+              "cy": 200,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 300,
+              "cy": 20,
+              "rx": 230,
+              "ry": 95
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 300,
+              "cy": 140,
+              "rx": 245,
+              "ry": 103
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 300,
+              "cy": 260,
+              "rx": 260,
+              "ry": 111
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 300,
+              "cy": 380,
+              "rx": 275,
+              "ry": 119
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 650,
+              "cy": 260,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": "open",
+      "title": "An open possibility",
+      "meaning": "A broad organic shape and open space leave unfamiliar topics intentionally ambiguous. Use when the idea does not clearly imply a relationship; avoid inventing a literal symbol.",
+      "keywords": [
+        "idea",
+        "possibility",
+        "explore",
+        "creative",
+        "new"
+      ],
+      "references": [
+        7,
+        9,
+        15
+      ],
+      "variants": [
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": -40,
+              "rx": 430,
+              "ry": 100
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 50,
+              "rx": 380,
+              "ry": 92
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 140,
+              "rx": 330,
+              "ry": 84
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 230,
+              "rx": 280,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 300,
+              "cy": 340,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": -40,
+              "rx": 430,
+              "ry": 100
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 50,
+              "rx": 380,
+              "ry": 92
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 140,
+              "rx": 330,
+              "ry": 84
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 230,
+              "rx": 280,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 400,
+              "cy": 340,
+              "r": 23
+            }
+          }
+        ],
+        [
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": -40,
+              "rx": 430,
+              "ry": 100
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 50,
+              "rx": 380,
+              "ry": 92
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 140,
+              "rx": 330,
+              "ry": 84
+            }
+          },
+          {
+            "tag": "ellipse",
+            "role": "ink",
+            "attrs": {
+              "cx": 400,
+              "cy": 230,
+              "rx": 280,
+              "ry": 76
+            }
+          },
+          {
+            "tag": "circle",
+            "role": "accent",
+            "attrs": {
+              "cx": 500,
+              "cy": 340,
+              "r": 23
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "name": "Midnight blue",
+      "background": "#000000",
+      "ink": "#0088EE",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Purple / sun",
+      "background": "#A346E0",
+      "ink": "#000000",
+      "accent": "#F9D715"
+    },
+    {
+      "name": "Aqua / violet",
+      "background": "#3FFAE9",
+      "ink": "#000000",
+      "accent": "#A346E0"
+    },
+    {
+      "name": "Orange / paper",
+      "background": "#FF8C00",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Red / sun",
+      "background": "#000000",
+      "ink": "#FB3535",
+      "accent": "#F9D715"
+    },
+    {
+      "name": "Olive / sun",
+      "background": "#000000",
+      "ink": "#868C0C",
+      "accent": "#F9D715"
+    },
+    {
+      "name": "Pink / ink",
+      "background": "#F9A3EF",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Yellow / ink",
+      "background": "#F9D715",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Aqua / signal",
+      "background": "#000000",
+      "ink": "#3FFAE9",
+      "accent": "#FB3535"
+    },
+    {
+      "name": "Blue / pink",
+      "background": "#0088EE",
+      "ink": "#000000",
+      "accent": "#F9A3EF"
+    },
+    {
+      "name": "Purple / aqua",
+      "background": "#000000",
+      "ink": "#A346E0",
+      "accent": "#3FFAE9"
+    },
+    {
+      "name": "Paper / red",
+      "background": "#000000",
+      "ink": "#FFFFFF",
+      "accent": "#FB3535"
+    },
+    {
+      "name": "Blue / black & white",
+      "background": "#0088EE",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Olive / black & white",
+      "background": "#868C0C",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Aqua / black & white",
+      "background": "#3FFAE9",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Red / black & white",
+      "background": "#FB3535",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Purple / black & white",
+      "background": "#A346E0",
+      "ink": "#000000",
+      "accent": "#FFFFFF"
+    },
+    {
+      "name": "Paper / orange",
+      "background": "#000000",
+      "ink": "#FFFFFF",
+      "accent": "#FF8C00"
+    }
+  ],
+  "color_names": {
+    "blue": "Brainy Blue",
+    "orange": "Mandarin",
+    "yellow": "Sunflower",
+    "olive": "Olive",
+    "aqua": "Electric Aqua",
+    "red": "Signal Red",
+    "purple": "Storm Purple",
+    "pink": "Candy Pink"
+  },
+  "css_comparisons": {
+    "blue": {
+      "name": "dodgerblue",
+      "hex": "#1E90FF"
+    },
+    "orange": {
+      "name": "darkorange",
+      "hex": "#FF8C00"
+    },
+    "yellow": {
+      "name": "gold",
+      "hex": "#FFD700"
+    },
+    "olive": {
+      "name": "olive",
+      "hex": "#808000"
+    },
+    "aqua": {
+      "name": "turquoise",
+      "hex": "#40E0D0"
+    },
+    "red": {
+      "name": "tomato",
+      "hex": "#FF6347"
+    },
+    "purple": {
+      "name": "darkorchid",
+      "hex": "#9932CC"
+    },
+    "pink": {
+      "name": "violet",
+      "hex": "#EE82EE"
+    }
+  }
+}
