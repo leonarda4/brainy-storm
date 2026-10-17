@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import type { StormTakeover } from './stormVoice'
 import { AgentCharacter } from './AgentCharacter'
 
@@ -13,14 +12,9 @@ export function StormPresence({ storm }: { storm: StormTakeover | null }) {
   }, [storm])
   const visible = storm || lastStorm
   if (!visible) return null
-  return createPortal(<div className={`storm-presence${storm ? '' : ' is-leaving'}`}>
-    <div className="storm-presence-shade" />
+  return <div className={`storm-presence${storm ? '' : ' is-leaving'}`}>
     <div className="storm-presence-content">
       <div className="storm-presence-flight"><AgentCharacter name="Storm" featured speaking={visible.phase === 'speaking'} /></div>
-      <div className="storm-presence-caption" role="status" aria-atomic="true">
-        <span>{visible.phase === 'speaking' ? 'Storm is speaking' : 'Storm · Focus check'}</span>
-        <p>{visible.text}</p>
-      </div>
     </div>
-  </div>, document.body)
+  </div>
 }

@@ -45,6 +45,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   outline-offset: 2px;
 }
 
-::selection { color: #fff; background: #27272a; }
+::selection { color: #171717; background: var(--brand-yellow, #f9d715); }
 
 #root { min-height: 100vh; }

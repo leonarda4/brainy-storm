@@ -247,3 +247,12 @@ test('live focus follows idea flags within each storm without replacing card IDs
   const cleared = mergeSessionIdeas(updated, incoming.map(idea => ({ ...idea, is_currently_discussed: false })))
   assert.ok(cleared['storm-a'].every(idea => !idea.is_currently_discussed))
 })
+
+test('blank and legacy capture cards never become workspace ideas', () => {
+  const blank = { ...idea, id: 'blank', title: '  ', summary: '\n' }
+  const placeholder = { ...idea, id: 'placeholder', title: 'A new idea tamhnhtking shape', summary: 'A fresh thought from the room. Add context as the conversation unfolds.' }
+  const real = { ...idea, id: 'real', title: 'A new idea taking shape', summary: 'Build a shared neighborhood tool library.' }
+  const saved = { sessions: [{ id: 's', name: 'Storm', date: 'Saved', ideas: 3 }], sessionIdeas: { s: [blank, placeholder, real] } }
+  assert.deepEqual(migrateWorkspace(saved).sessionIdeas.s.map(i => i.id), ['real'])
+  assert.deepEqual(mergeGeneratedIdeas([blank, placeholder], [blank, placeholder, real]).map(i => i.originalId), ['real'])
+})

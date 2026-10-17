@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { AgentCharacter } from './AgentCharacter'
 
 /** Abstract artwork inspired by the brand's scalloped silhouettes. */
 export function BrandShape({ variant: index }: { variant: number }) {
@@ -27,10 +26,6 @@ export function AbstractSymbol({ className = '' }: { className?: string }) {
   </svg>
 }
 
-export function MemoPreview() {
-  return <AgentCharacter name="Memo" />
-}
-
 export function RecordingShape({ active, storm = false, stormSpeaking = false }: { active: boolean; storm?: boolean; stormSpeaking?: boolean }) {
   const svgRef = useRef<SVGSVGElement>(null)
   const [width, setWidth] = useState(448)
@@ -50,8 +45,11 @@ export function RecordingShape({ active, storm = false, stormSpeaking = false }:
   const step = count > 1 ? (width - diameter) / (count - 1) : 0
 
   return (
-    <div className={`recording-visual ${active ? 'is-recording' : ''}${storm ? ' is-storm' : ''}`}>
-      <span className="recording-agent" role="status">{storm ? <><strong>Storm</strong><small>{stormSpeaking ? 'Speaking' : 'Focus check'}</small></> : <><strong>Memo</strong><small>{active ? 'Listening' : 'Ready to record'}</small></>}</span>
+    <div className={`recording-visual ${active ? 'is-recording' : ''}${storm ? ' is-storm' : ''}${stormSpeaking ? ' is-speaking' : ''}`}>
+      <span className="recording-agent" role="status">
+        <strong>{storm ? 'Storm' : 'Memo'}</strong>
+        <small>{storm ? 'is speaking' : active ? 'is listening' : 'is ready'}</small>
+      </span>
       <svg ref={svgRef} viewBox={`0 0 ${width} 56`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <g className="recording-lobes" key={storm ? 'storm' : 'memo'}>
           {storm && <path className="storm-connector" d={`M0 28H${width}`} />}

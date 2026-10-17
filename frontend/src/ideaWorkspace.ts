@@ -158,7 +158,18 @@ export function readWorkspace(raw: string | null): Workspace | null {
   } catch { return null }
 }
 
+// Old capture cards contained boilerplate rather than an actual idea.
+export function hasIdeaContent(idea: Pick<GeneratedIdea, 'title' | 'summary'>): boolean {
+  const title = idea.title.trim()
+  const summary = idea.summary.trim()
+  if (summary === 'A fresh thought from the room. Add context as the conversation unfolds.'
+    && /^A new idea .*shape$/i.test(title)) return false
+  return Boolean(title || summary)
+}
+
 export function mergeGeneratedIdeas(current: Idea[], incoming: GeneratedIdea[]): Idea[] {
+  current = current.filter(hasIdeaContent)
+  incoming = incoming.filter(hasIdeaContent)
   const merged: Idea[] = incoming.map((idea, index) => {
     const previous = current.find(entry => entry.id === `engine-${idea.id}` || entry.id === String(idea.id))
     const acknowledged = Boolean(previous?.pendingTextEdit && idea.transcript_segments?.some(segment => segment.chunk_id === `text-edit:${previous.pendingTextEdit?.edit_id}`))
@@ -241,7 +252,7 @@ export function migrateWorkspace(saved: Workspace | null): Workspace {
   const sessionIdeas: Record<string, Idea[]> = {}
   for (const session of saved?.sessions || []) {
     if (deletedSessionIds.includes(session.id || session.name)) continue
-    const ideas = (saved?.sessionIdeas[session.id || session.name] || []).filter(idea => !deleted.has(idea.originalId || idea.id.replace(/^engine-/, '')))
+    const ideas = (saved?.sessionIdeas[session.id || session.name] || []).filter(idea => hasIdeaContent(idea) && !deleted.has(idea.originalId || idea.id.replace(/^engine-/, '')))
     if (!session.id && !ideas.length && (sampleSessions.has(session.name) || /^New brainstorm \d+$/.test(session.name))) continue
     const id = session.id || (session.name === 'Hackathon' ? 'team-discussion' : crypto.randomUUID())
     sessions.push({ ...session, id, name: session.name.trim() || 'New storm' })

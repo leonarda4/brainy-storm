@@ -16,13 +16,13 @@
   --brand-orange: #ff7146;
   --brand-pink: #f47aff;
   --brand-aqua: #9ff6ee;
-  --brand-yellow: #f4ff61;
+  --brand-yellow: #f9d715;
   --brand-purple: #a83cf4;
   --brand-lemon: #ffe600;
   --brand-olive: #9da51a;
   --brand-red: #ff4545;
   --agent-memo: var(--brand-aqua);
-  --agent-storm: var(--brand-purple);
+  --agent-storm: #a346e0;
   --radius: 7px;
   font-family: 'Supreme', Arial, sans-serif;
   font-weight: 400;
@@ -99,8 +99,6 @@ h1, h2, h3, .wordmark, .empty-board strong,
 .storm-intervention strong { font-size: var(--text-body); font-weight: 600; }
 .storm-intervention strong span { color: color-mix(in srgb, var(--agent-storm) 65%, #171717); font-size: var(--text-small); font-weight: 400; }
 .storm-intervention p { margin: 5px 0 0; font-size: var(--text-body); line-height: 1.5; }
-.storm-transcript-line { margin-left: -6px; padding: 10px 6px; background: color-mix(in srgb, var(--agent-storm) 8%, #fff); border-radius: 7px; }
-.storm-agent-label { display: block; margin-top: 2px; color: color-mix(in srgb, var(--agent-storm) 65%, #171717); font-size: 10px; font-weight: 400; }
 .avatar.avatar-storm { color: #171717; background: var(--agent-storm); border-radius: 0; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
 .recording-time { margin-inline-start: 14px; white-space: nowrap; color: #eee; font-size: var(--text-body); }
 .primary-control { height: 36px; padding: 0 13px; color: #fff; background: var(--brand-blue); border-color: var(--brand-blue); font-size: var(--text-body); }
@@ -108,7 +106,7 @@ h1, h2, h3, .wordmark, .empty-board strong,
 .primary-control:disabled { opacity: 0.6; cursor: wait; }
 .transcript-line-content p { color: #666; font-size: var(--text-body); font-weight: 400; }
 .speaker-meta strong { color: #404040; font-size: var(--text-small); }
-::selection { color: #171717; background: var(--brand-aqua); }
+::selection { color: #171717; background: var(--brand-yellow); }
 button:focus-visible, a:focus-visible, input:focus-visible { outline-color: var(--brand-blue); }
 @keyframes brand-listen { from { transform: scaleY(0.4); } to { transform: scaleY(1); } }
 @media (max-width: 640px) {
@@ -167,3 +165,16 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline-color: var(
 @media (prefers-reduced-motion: reduce) {
   .is-recording .recording-lobes ellipse, .is-recording .recording-lobes polygon { animation: none; transform: scaleY(0.7); }
 }
+
+.storm-transcript-avatar { width: 32px; height: 32px; flex: 0 0 32px; margin: -5px -3px 0; }
+
+/* Storm keeps its purple diamonds and the same pulse as the listening state. */
+.is-storm .recording-lobes polygon { fill: var(--agent-storm); animation: none; }
+.is-storm.is-speaking .recording-lobes polygon { animation: brand-listen 950ms ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) {
+  .is-storm.is-speaking .recording-lobes polygon { animation: none; transform: scaleY(.7); }
+}
+
+/* Exact outlined wordmark from brand-studio.html → Logotype. */
+.brand-logo { display: block; width: 140px; max-width: 100%; height: auto; }
+.compact-wordmark .brand-logo { width: 130px; }

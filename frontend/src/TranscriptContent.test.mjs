@@ -107,7 +107,7 @@ test('unattributed completed chunks remain visible when speaker identification f
 })
 
 test('idle, saving, paused, and stopped states do not claim someone is speaking', () => {
-  assert.ok(render([]).includes('Listening for the next thought'))
+  assert.ok(!render([]).includes('Listening for the next thought'))
   assert.ok(!render([]).includes('is speaking'))
   const pending = [transcriptLine({ text: 'Still processing', pending: true })]
   for (const state of ['saving', 'paused', 'stopped', 'connecting']) {
@@ -132,8 +132,8 @@ test('Storm takeover suppresses human speaking indicators and labels its saved c
     transcriptLine({ agent: 'storm', text: 'Move on to another idea.' })]
   const html = renderToStaticMarkup(createElement(TranscriptContent, { transcript, recording: 'recording', stormActive: true }))
   assert.ok(html.includes('storm-transcript-line'))
-  assert.ok(html.includes('Focus agent'))
-  assert.ok(html.includes('avatar-storm'))
+  assert.ok(!html.includes('Focus agent'))
+  assert.ok(html.includes('agent-character-storm'))
   assert.ok(html.includes('Move on to another idea.'))
   assert.ok(!html.includes('Someone is speaking'))
   assert.ok(!html.includes('Listening for the next thought'))
@@ -148,6 +148,6 @@ test('the animated listening shapes switch from Memo bubbles to connected Storm 
   assert.ok(storm.includes('<polygon'))
   assert.ok(storm.includes('storm-connector'))
   assert.ok(storm.includes('<strong>Storm</strong>'))
-  assert.ok(storm.includes('Speaking'))
+  assert.ok(storm.includes('is-speaking'))
   assert.ok(!storm.includes('<ellipse'))
 })

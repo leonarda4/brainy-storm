@@ -41,6 +41,16 @@
   transform: none;
 }
 
+.record-control.destructive-control {
+  color: #fff;
+  background: #dc2626;
+  border-color: #dc2626;
+}
+.record-control.destructive-control:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
 .icon-button, .icon-button.small, .layout-picker button {
   width: var(--control-height);
   height: var(--control-height);

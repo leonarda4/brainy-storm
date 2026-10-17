@@ -40,6 +40,15 @@ export function useTranscription(sessionId: string) {
     stormMuted.current = false
   }
 
+  function speakStorm(intervention: { id: string; text: string }) {
+    stormVoice.current ??= createStormVoice(
+      value => { if (mounted.current) setStorm(value) },
+      muted => { stormMuted.current = muted },
+      warning => { if (mounted.current) setStormWarning(warning) },
+    )
+    stormVoice.current.speak(intervention)
+  }
+
   function clearTimers() {
     window.clearTimeout(readyTimer.current)
     window.clearTimeout(completionTimer.current)
@@ -279,12 +288,7 @@ export function useTranscription(sessionId: string) {
             stormEvents.current.add(message.id)
             setTranscript(current => [...current, transcriptLine({ ...message, agent: 'storm', pending: false })])
             if (ready && !stopping.current) {
-              stormVoice.current ??= createStormVoice(
-                value => { if (mounted.current) setStorm(value) },
-                muted => { stormMuted.current = muted },
-                warning => { if (mounted.current) setStormWarning(warning) },
-              )
-              stormVoice.current.speak(message)
+              speakStorm(message)
             }
           } else if (message.type === 'error') {
             failed = true
@@ -395,5 +399,5 @@ export function useTranscription(sessionId: string) {
     }
   }
 
-  return { transcript: historySession === sessionId ? transcript : [], recording, resetting, error: error || historyError, speakerWarning, stormWarning, storm, loaded: historySession === sessionId && loaded, elapsedSeconds, startRecording, stopRecording, finishRecording, resetTranscript, restartTranscript, exportTranscript }
+  return { cancelStorm, transcript: historySession === sessionId ? transcript : [], recording, resetting, error: error || historyError, speakerWarning, stormWarning, storm, loaded: historySession === sessionId && loaded, elapsedSeconds, startRecording, stopRecording, finishRecording, resetTranscript, restartTranscript, exportTranscript }
 }
