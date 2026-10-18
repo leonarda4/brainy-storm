@@ -6,9 +6,9 @@
 
 ## What this is
 
-**brainy stormy** is a shared workspace that turns a team's spoken brainstorming session into organized, evolving ideas. People stay in the conversation while AI handles transcription, idea tracking, summaries, arguments, competitor research, open questions, and system design.
+**brainy storm** is a shared workspace that turns a team's spoken brainstorming session into organized, evolving ideas. People stay in the conversation while AI handles transcription, idea tracking, summaries, arguments, competitor research, open questions, and system design.
 
-A **storm** is a brainstorm session—the project that holds its transcript and ideas. The app name is always **brainy stormy**. Use sentence case for action labels, such as **New storm** and **Start recording**; **Storm** is capitalized only when naming the focus agent.
+A **storm** is a brainstorm session—the project that holds its transcript and ideas. The app name is always **brainy storm**. Use sentence case for action labels, such as **New storm** and **Start recording**; **Storm** is capitalized only when naming the focus agent.
 
 Each idea receives a stable ID and its own record containing the relevant transcript excerpts, current summary, categorized pros and cons, assumptions, open questions, competitors, workflow, system architecture, thumbnail, and generated artifacts.
 
@@ -36,18 +36,7 @@ Browser microphone
   -> React idea board
 ```
 
-![brainy stormy system diagram: audio flows through Gradium transcription into a transcript; the Gemini-powered engine and enrichment service maintain ideas for the frontend.](public/diagram.png)
-
-### Main components
-
-| Component | Responsibility |
-| --- | --- |
-| **Frontend — React, TypeScript, Vite** | Captures microphone audio, displays live captions and idea cards, polls enriched ideas, and presents editable notes and static generated diagrams. |
-| **Transcriber — Python, FastAPI, Gradium** | Receives browser audio over WebSocket, streams it to Gradium, returns captions, and persists transcript batches. |
-| **Idea engine — Python, Gemini** | Reads new transcript chunks, recognizes new and existing ideas, assigns stable IDs, and publishes classified chunk/idea pairs. |
-| **Enrichment API — Python, FastAPI, Gemini** | Stores ideas, exposes API and queue endpoints, and runs summary, pros/cons, workflow, architecture, and competitor agents. |
-| **Classified-chunk worker** | Tails JSONL, checkpoints its byte offset, and submits each chunk to the enrichment queue exactly once. |
-| **File storage** | Retains the raw transcript, aggregate idea database, per-idea JSON, Markdown, thumbnails, Mermaid source, and static SVG artifacts. |
+<img width="8200" height="7840" alt="brainy_storm_eng" src="https://github.com/user-attachments/assets/78cfd2ba-5f14-4fba-aeca-2737b1f23984" />
 
 ### Agentic behavior
 
