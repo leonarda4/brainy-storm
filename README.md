@@ -4,8 +4,6 @@
 
 **brainy storm** is a shared workspace that turns a team's spoken brainstorming session into organized, evolving ideas. People stay in the conversation while AI handles transcription, idea tracking, summaries, arguments, competitor research, open questions, and system design.
 
-A **storm** is a brainstorm session—the project that holds its transcript and ideas. The app name is always **brainy storm**. Use sentence case for action labels, such as **New storm** and **Start recording**; **Storm** is capitalized only when naming the focus agent.
-
 Each idea receives a stable ID and its own record containing the relevant transcript excerpts, current summary, categorized pros and cons, assumptions, open questions, competitors, workflow, system architecture, thumbnail, and generated artifacts.
 
 ## Why we built this
@@ -14,7 +12,7 @@ We spent so much time trying to come up with ideas for this hackathon that the b
 
 We kept moving between ideas, raising objections, checking whether something already existed, and circling back to earlier suggestions. Keeping track of all that took attention away from the discussion. We wanted a tool that could follow the conversation with us and preserve the useful parts as our thinking changed.
 
-So we built brainy stormy: a brainstorming companion that helps a team remember what it considered, why an idea mattered, and what it still needs to decide.
+So we built brainy storm: a brainstorming companion that helps a team remember what it considered, why an idea mattered, and what it still needs to decide.
 
 ## Architecture
 
