@@ -1,9 +1,5 @@
 # {Tech: Europe} Zurich Agentic AI Hack
 
-<p align="center">
-  <a href="https://drive.google.com/file/d/1SAJt3qMT15nwZS-8X08hiZE9KjyscsY8/view"><strong>Watch the demo</strong></a>
-</p>
-
 ## What this is
 
 **brainy storm** is a shared workspace that turns a team's spoken brainstorming session into organized, evolving ideas. People stay in the conversation while AI handles transcription, idea tracking, summaries, arguments, competitor research, open questions, and system design.
@@ -304,10 +300,3 @@ python -m unittest discover -s backend/enrichment -p "test_*.py"
 cd backend/engine
 uv run python -m unittest test_focus -v
 ```
-
-## Contributors
-
-- [Marko Haralović](https://github.com/MarkoHaralovic)
-- [Leonarda Lovrić](https://github.com/leonarda4)
-- [Giacomo Cirò](https://github.com/giacomo-ciro)
-- [Alex John Caldarone](https://github.com/alexcaldarone)
