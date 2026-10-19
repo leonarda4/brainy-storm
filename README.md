@@ -6,8 +6,6 @@
 
 Each idea receives a stable ID and its own record containing the relevant transcript excerpts, current summary, categorized pros and cons, assumptions, open questions, competitors, workflow, system architecture, thumbnail, and generated artifacts.
 
-<img width="1920" height="1080" alt="system-architecture-3" src="https://github.com/user-attachments/assets/6eaa1004-847e-4433-bd16-bbe42d5f9aad" />
-
 
 ## Architecture
 
